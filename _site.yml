@@ -1,17 +1,13 @@
 name: "CFLNM"
 navbar:
-  title: "HFCVDG"
+  title: "cflnm"
   left:
     - text: "Inicio"
       href: index.html
-    - text: "Data vis"
+    - text: "Programa_de_CFLNM.html"
       href: Programa_de_CFLNM.html
-    - text: "Comunicación efectiva"
+    - text: "Clases"
       href: Clases.html
-    - text: "Glosario"
-      href: Glosario.html
-    - text: "Aviso de responsabilidad"
-      href: Disclamer.html
     # - text: "Links"
     #   href: Links.html
     # - text: "Primera unidad"
