@@ -1,5 +1,7 @@
 ---
-title: "Recursos"
+title: "Programa"
+subtitle: "Consulta de fuentes y lectura numérica del mundo"
+author: "Dra. Daniela Serrano Campos"
 date: "`r format(Sys.Date(), '%d de %B de %Y')`"
 output:
   html_document:
@@ -15,8 +17,8 @@ output:
 
 /* Navbar Styles */
 .navbar {
-  background-color:  #00BFB3 !important; /* Background color of the navbar */
-  border-color:  #0077C8 !important; /* Border color of the navbar */
+  background-color: #CD8C95 !important; /* Background color of the navbar */
+  border-color: #8B5F65 !important; /* Border color of the navbar */
   background-image: none !important; /* Removes any background image */
   height: 65px; /* Sets navbar height */
 }
@@ -29,18 +31,18 @@ output:
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color:  #00BFB3 !important; /* Hover and focus text color */
+  color: #8B5F65 !important; /* Hover and focus text color */
   font-weight: bold; /* Keeps text bold on hover/focus */
 }
 
 /* Navbar Collapse Menu Styles */
 .navbar-collapse {
-  background-color:  #00BFB3 !important; /* Background color for the collapsed navbar */
+  background-color: #CD8C95 !important; /* Background color for the collapsed navbar */
 }
 
 /* Dropdown Menu Link Styles */
 .navbar-nav > li > a {
-  color: #D8CEFF; /* Text color for dropdown links */
+  color: #FFFFFF; /* Text color for dropdown links */
   font-weight: bold;
   padding: 10px 15px; /* Padding for dropdown links */
 }
@@ -48,7 +50,7 @@ output:
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus,
 .navbar-nav > .active > a {
-  background-color: #D8CEFF; /* Background color on hover/active */
+  background-color: #005a9c; /* Background color on hover/active */
   color: #FFFFFF; /* Text color on hover/active */
 }
 
@@ -57,22 +59,22 @@ output:
 .list-group-item.active:focus,
 .list-group-item.active:hover {
   z-index: 2;
-  color:  #00BFB3; /* Text color for active list item */
-  background-color: #E4D0EF; /* Background color for active list item */
-  border-color:  #00BFB3; /* Border color for active list item */
+  color: #8B5F65; /* Text color for active list item */
+  background-color: #EEDFCC; /* Background color for active list item */
+  border-color: #8B5F65; /* Border color for active list item */
 }
 
 /* Title, Subtitle, Author, and Date Styles */
 h1.title {
-  color: #003057; /* Color for title */
+  color: #8B5F65; /* Color for title */
 }
 
 h4.subtitle {
-  color: #003057; /* Color for subtitle */
+  color: #8B5F65; /* Color for subtitle */
 }
 
 h5.author {
-  color: #003057; /* Color for author */
+  color: #8B5F65; /* Color for author */
 }
 
 h5.date {
@@ -81,7 +83,7 @@ h5.date {
 
 /* Hyperlink Styles */
 a {
-  color: #003057; /* Text color for hyperlinks */
+  color: #582C35; /* Text color for hyperlinks */
   text-decoration: none; /* Removes underline from hyperlinks */
 }
 
@@ -107,21 +109,30 @@ a:active {
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
-**Nota:** Este sitio es colaborativo y está en construcción continua, envíanos tus propuestas de contenido: videos, tutoriales, materiales, libros, reseñas.
+**Nota:** Este programa de estudios estará en construcción.
+
+### Información sobre el curso
+
+- **Sección:** BÁSICA 2102
+- **Horario:** 5:00pm - 7:15pm, lunes y jueves
+- **Salón:** Aula de cómputo, edificio "D"
+
+### Información de los docentes
+
+- **Profesora titular:** Dra. Daniela Serrano Campos
+- **Email:** [daniela.campos@politicas.unam.mx](mailto:daniela.campos@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
+- **Profesor adjunto:** Rodrigo Nieves
+- **Email:** [rodrigo.nieves@politicas.unam.mx](mailto:modrigo.nieves@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
 
 
-### Información 
-
-- **Elaboró:** Dra. Daniela Serrano Campos
-- **Email:** [daniela.serrano@inegi.org.mx](mailto:daniela.serrano@inegi.org.mx) (por favor pon ‘HFACVDG’ en el asunto)
-
-
-# Descripción general y objetivos del Hub
+# Descripción general y objetivos del curso
 
 2024 | 8 | 07 Última actualización: `r Sys.Date()`
 
-Este sitio provee de herramientas, guías, manuales y recursos para la visualización y comunicación efectiva y ciudadada de datos de gobierno. 
+Introducción práctica y centrada en las habilidades para utilizar software de programación de código abierto (R, R-studio y R Markdown) en varios aspectos de la investigación en ciencias sociales. El curso cubre la programación básica en R, la manipulación de datos, la creación de gráficos y el uso de R para crear manuscritos correctamente citados y gestionando las referencias y fuentes utilizadas.
 
+
+Requisitos especiales: NINGUNO
 
 # Objetivos
 
@@ -131,42 +142,131 @@ Este sitio provee de herramientas, guías, manuales y recursos para la visualiza
 - Comunicación de la investigación: cómo utilizar los scripts de R Markdown para crear manuscritos correctamente referenciados para comunicar la investigación.  
 - Investigación reproducible: principios de la ciencia abierta, incluidas herramientas para compartir datos, compartir manuscritos, diseños de investigación, compartir métodos.
 
-# ¿Cómo seleccionar la gráfica adecuada para tu análisis?
-## 🌟 Data to Viz: Guía para la Visualización de Datos  
+# Estructura del curso
 
-**Data to Viz** es una herramienta que clasifica los tipos de gráficos según el formato de los datos de entrada. Utiliza un árbol de decisión que orienta hacia las visualizaciones más adecuadas para representar un conjunto de datos.  
+Nos reunimos dos veces por semana en el laboratorio de computación. Cada clase implicará una exposición sobre conceptos de la lógica y metodología de la investigación y casos prácticos tipo taller. Al completar las tareas, las y los estudiantes crearán un portafolio de scripts de codificación de R que demuestre una variedad de habilidades de comunicación y análisis de fuentes y datos. El proceso de aprender a codificar requiere paciencia, tiempo y práctica. Se espera que las y los estudiantes practiquen la codificación fuera del horario de clase cada semana.
 
-📌 **Principios clave:**  
-1️⃣ La mayoría de los análisis de datos pueden resumirse en unos veinte formatos de dataset.  
-2️⃣ Tanto los datos como su contexto determinan el gráfico adecuado.  
-
-🔍 **Método sugerido:** Identificar y probar todas las visualizaciones viables para elegir la mejor opción.  
-
-💡 *data-to-viz.com* ayuda a seleccionar el mejor gráfico, señala errores comunes y proporciona código reproducible en R.  
-
-🚀 Aunque el mundo de la dataviz es infinito, este proyecto es un excelente punto de partida.  
-
-<style>
-  .custom-img {
-    max-width: 400px; /* Ajusta según lo que prefieras */
-    width: 100%;
-    margin: 10px auto; /* Añade un poco de espacio alrededor */
-    display: block; /* Asegura que la imagen no tenga alineaciones extrañas */
-  }
-</style>
-<div class="full-width text-center">
-  <a href="https://www.data-to-viz.com/#explore" target="_blank">
-    <img src="images/from_Data_to_vis.png" class="img-fluid custom-img">
-  </a>
-</div>
+<!-- ## Calendario de lecturas -->
 
 
-# Lecturas 
+# Evaluación
 
-- [Bunge, M. (2000). La Investigación científica su estrategia y su filosofía. Barcelona: S.XXI.](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia)  
+ La rúbrica de calificación se encuentra a continuación:
+
+
+| Tarea                | Puntos | Total |
+|----------------------|--------|-------|
+| 3  exámenes parciales| 25     | 75    |
+| N  tareas            | 25     | 25    |
+| **Total**            |        | 100   |
+
+
+
+
+# Tareas y exámenes
+Se deberán entregar y realizar en tiempo y forma en la plataforma [classroom CFLNM-0032-2025](https://classroom.google.com/c/NzAzMDczNzAyMzg2?cjc=tsoeb5c) (**Solicita ACCESO**)
+
+
+
+
+# Cronograma del Curso
+
+El curso tiene una duración de 15 semanas. Es una clase presencial y se espera que las y los estudiantes participen en todos los aspectos de la clase. Esta clase implica el aprendizaje de habilidades de programación informática para la visualización y análisis de datos. Se asume que las y los estudiantes pueden no poseer habilidades previas en esta área, por lo que el curso tiene un componente de formación aplicada. El tiempo de clase involucrará una mezcla de actividades, incluyendo conferencias, trabajo en grupo, actividades de codificación aplicadas, presentaciones y discusiones.
+
+
+# Lecturas por clase
+
+| Semana | Fecha          | Tema                                  | Lecturas                        |
+|--------|----------------|---------------------------------------|---------------------------------|
+| S0 L:  | 5 de agosto    | Presentación                          | Ninguna                         |
+| S0 J:  | 8 de agosto    | Introducción                          | Capítulo 1  [Gerring 2014](https://drive.google.com/file/d/1a7haW3adv-CmJz16wDixVq1hvvuXEo7_/view?usp=sharing);  [Bunge 2000, pp.3-41](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n45/mode/2up)                   |
+| S1 L:  | 12 de agosto   | Introducción                          | Capítulo 2 Y 3 [Gerring 2014, pp. 49-94](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing)                     |
+| S1 J:  | 15 de agosto   | Búsqueda de fuentes                   | Capítulo 1 [Martínez Valdes, Gustavo AND Huerta Silva, José Luis AND Lara Escalante, Mónica 2024, PP.11-59). Gestión de la información para el análisis político. México: UNAM-FCPyS.](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf) ; [UNAM](https://docenciadigital.unam.mx/ayuda-busqueda#tip8); [UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion)                       |
+| S2 L:  | 19 de agosto   |  Búsqueda de fuentes              |  Capítulo 1 [Martínez Valdes, Gustavo AND Huerta Silva, José Luis AND Lara Escalante, Mónica 2024, PP.11-59). Gestión de la información para el análisis político. México: UNAM-FCPyS.](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf) ; [UNAM](https://docenciadigital.unam.mx/ayuda-busqueda#tip8); [UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion)                      |
+| S2 J:  | 22 de agosto   | Conceptos, Intro a R,               | Capítulo 5 [Gerring 2014, pp. 127-158](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing)
+| S3 L:  | 26 de agosto   | Gestores bibliográficos (Zotero), BibTex y RMarkdown   | Capítulo 4 [Gerring 2014, pp. 95- 125](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing); Cap. 1-3 [Mendoza 2024](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html)                       |
+| S3 J:  | 29 de agosto   | Gestores bibliográficos (Zotero), BibTex y RMarkdown   | Capítulo 4 [Gerring 2014, pp. 95- 125](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing); Cap. 1-3 [Mendoza 2024](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html)                       |
+| S4 L:  | 2 de septiembre| Gestores bibliográficos (Zotero), BibTex y RMarkdown   | Capítulo 4 [Gerring 2014, pp. 95- 125](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing); Cap. 1-3 [Mendoza 2024](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html)                       |
+| S4 J:  | 5 de septiembre|Gestores bibliográficos (Zotero, Mendeley), BibTex                 |    [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1)                  |
+| S5 L:  | 9 de septiembre| RMarkdown                  | [Anónimo](https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11)                     |
+| S5 J:  | 12 de septiembre|                    |No hubo clase                     |
+| S6 L:  | 16 de septiembre| Feriado                              | Ninguna                         |
+| S6 J:  | 19 de septiembre| EXAMEN                              | EXAMEN                      |
+| S7 L:  | 23 de septiembre|Tipos de datos y variables                         | Capítulo 6 y 7 [Gerring 2014, pp. 159- 210](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing); Capítulos 4-5 [Mendoza](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html) [Unidad 3](https://docenciadigital.unam.mx/ayuda-busqueda#tip8); [UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion)                     |
+| S7 J:  | 26 de septiembre| Tipos de datos y variables                         | Capítulo 6 y 7 [Gerring 2014, pp. 159- 210](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing); Capítulos 4-5 [Mendoza](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html) [Unidad 3](https://docenciadigital.unam.mx/ayuda-busqueda#tip8); [UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion)                     |
+| S8 L:  | 30 de septiembre| Relaciones de datos                  | Capítulo 9                      |
+| S8 J:  | 3 de octubre   | Informe de práctica                   | Capítulo 10                     |
+| S9 L:  | 7 de octubre   | Informe de práctica                   | Capítulo 10                     |
+| S9 J:  | 10 de octubre  | Informe de práctica                   | Capítulo 10                     |
+| S10 L: | 14 de octubre  | Limpieza de datos                     | Capítulo 11                     |
+| S10 J: | 17 de octubre  | Limpieza de datos                     | Capítulo 11                     |
+| S11 L: | 21 de octubre  | Manipulación de datos                 | Capítulo 12                     |
+| S11 J: | 24 de octubre  | Manipulación de datos                 | Capítulo 12                     |
+| S12 L: | 28 de octubre  | Personalización de informes           | Capítulo 13                     |
+| S12 J: | 31 de octubre  | Personalización de informes           | Capítulo 13                     |
+| S13 L: | 4 de noviembre | Tidy                                  | Capítulo 14                     |
+| S13 J: | 7 de noviembre | Tidy                                  | Capítulo 14                     |
+| S14 L: | 11 de noviembre| Conclusión                            | Ninguna                         |
+| S14 J: | 14 de noviembre| Examen final (5:00 PM - 7:00 PM)      | Ninguna                         |
+
+### Asistencia
+Se espera que las y los estudiantes asistan y participen en cada clase.
+
+### Políticas del curso
+Fechas de entrega
+Es muy importante entregar en tiempo y forma. No se aceptan trabajos atrasados, salvo justificación por enfermedad o problemas personales comunicados a tiempo. Es posible que puedas trabajar con anticipación, pero no se recomienda que te quedes atrás.
+
+Debes enviar al profesor adjunto un correo electrónico si tienes una circunstancia excepcional que te impida realizar algún trabajo, tarea o examen.
+
+### Cambios en el programa de estudios
+El programa de estudios puede actualizarse para mayor claridad o para realizar ajustes con fines pedagógicos. La versión más actualizada del programa de estudios siempre está disponible en el sitio web del curso.
+
+### Pérdida de un examen
+
+En caso de emergencia, comunícate con el profesor adjunto lo antes posible.
+
+# Normativa universitaria sobre el principio de ética e integridad académica
+
+De acuerdo con el sitio de la [UNAM](https://liec.dgb.unam.mx/index.php/integridad-academica/normativa-universitaria-sobre-el-principio-de-etica-e-integridad-academica):
+
+
+En la Legislación Universitaria no aparece expresamente el tema del plagio académico, sin embargo, en el Estatuto General de la UNAM y en el Reglamento del Tribunal Universitario y de la Comisión de Honor, así como en otros Reglamentos, se incluyen artículos que hacen referencia a un comportamiento ético, profesional y honorable, que garantice la integridad y honestidad académica, y prevenir o proceder, con medidas preventivas y mecanismos sancionatorios, en contra de faltas a este principio universitario.
+
+# El Código de ética de la UNAM
+El [Código de Ética de la Universidad Nacional Autónoma de México](http://www.abogadogeneral.unam.mx:6060/legislacion/view/84) establece principios y valores que pretender ser una guía de las acciones y conductas de los universitarios, entiéndase por éstos a los alumnos, académicos, investigadores y trabajadores, así como de todos aquellos que realizan alguna actividad, al interior y exterior, relacionada con la Universidad, dentro de los ámbitos académicos, científicos, culturales, artísticos, sociales, administrativos, políticos, económicos, deportivos, entre otros.
+
+De acuerdo con dicho Código, los principios éticos que rigen a la UNAM son:
+
+- Convivencia pacífica y respeto a la diversidad cultural, étnica y personal.
+
+- Igualdad
+
+- Libertad de pensamiento y de expresión.
+
+- Respeto y tolerancia.
+
+- Laicidad en las actividades universitarias.
+
+- **Integridad y honestidad académica.**
+
+- **Reconocimiento y protección de la autoría intelectual.**
+
+- Responsabilidad social y ambiental en el quehacer universitario.
+
+- Objetividad, honestidad e imparcialidad en las evaluaciones académicas.
+
+- Cuidado, uso honesto y responsable del patrimonio universitario.
+
+- Transparencia en el uso de la información y de los recursos públicos de la Universidad.
+
+- Privacidad y protección de la información personal.
+ 
+# Fuentes de información
+
+- Bunge, M. (2000). La Investigación científica su estrategia y su filosofía. Barcelona: S.XXI.  
 - [Martínez Valdes, Gustavo AND Huerta Silva, José Luis AND Lara Escalante, Mónica (2024). Gestión de la información para el análisis político. México: UNAM-FCPyS.](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf)  
 - [Gerring, J. (2014). Metodología de las ciencias sociales. Madrid: Alianza](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing).  
-- [Guía definitiva para todo lo relacionado con R Markdown (la encontrarás muy útil a medida que mejores en esta habilidad](https://bookdown.org/yihui/rmarkdown/).    
+- Guía definitiva para todo lo relacionado con R Markdown (la encontrarás muy útil a medida que mejores en esta habilidad):[links page](https://bookdown.org/yihui/rmarkdown/).    
 
 <!-- ### third level header -->
 

@@ -1,15 +1,9 @@
----
-title: "CFLNM"
-output: html_document
----
-
-
 <style type="text/css">
 
 /* Navbar Styles */
 .navbar {
-  background-color:  #00BFB3 !important; /* Background color of the navbar */
-  border-color:   #00BFB3 !important; /* Border color of the navbar */
+  background-color: #CD8C95 !important; /* Background color of the navbar */
+  border-color: #8B5F65 !important; /* Border color of the navbar */
   background-image: none !important; /* Removes any background image */
   height: 65px; /* Sets navbar height */
 }
@@ -22,18 +16,18 @@ output: html_document
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #D8CEFF !important; /* Hover and focus text color */
+  color: #8B5F65 !important; /* Hover and focus text color */
   font-weight: bold; /* Keeps text bold on hover/focus */
 }
 
 /* Navbar Collapse Menu Styles */
 .navbar-collapse {
-  background-color: #00BFB3 !important; /* Background color for the collapsed navbar */
+  background-color: #CD8C95 !important; /* Background color for the collapsed navbar */
 }
 
 /* Dropdown Menu Link Styles */
 .navbar-nav > li > a {
-  color: #D8CEFF; /* Text color for dropdown links */
+  color: #FFFFFF; /* Text color for dropdown links */
   font-weight: bold;
   padding: 10px 15px; /* Padding for dropdown links */
 }
@@ -41,8 +35,8 @@ output: html_document
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus,
 .navbar-nav > .active > a {
-  background-color:  #00BFB3; /* Background color on hover/active */
-  color:  #00BFB3; /* Text color on hover/active */
+  background-color: #005a9c; /* Background color on hover/active */
+  color: #FFFFFF; /* Text color on hover/active */
 }
 
 /* Active List Group Item Styles */
@@ -50,32 +44,31 @@ output: html_document
 .list-group-item.active:focus,
 .list-group-item.active:hover {
   z-index: 2;
-  color: #00BFB3; /* Text color for active list item */
-  background-color:  #E4D0EF; /* Background color for active list item */
-  border-color: #E4D0EF; /* Border color for active list item */
+  color: #8B5F65; /* Text color for active list item */
+  background-color: #EEDFCC; /* Background color for active list item */
+  border-color: #8B5F65; /* Border color for active list item */
 }
 
 /* Title, Subtitle, Author, and Date Styles */
 h1.title {
-  color:  #003057; /* Color for title */
+  color: #8B5F65; /* Color for title */
 }
 
 h4.subtitle {
-  color:  #003057; /* Color for subtitle */
+  color: #8B5F65; /* Color for subtitle */
 }
 
 h5.author {
-  color:  #003057; /* Color for author */
+  color: #8B5F65; /* Color for author */
 }
 
 h5.date {
-  color: #00BFB3; /* Color for date */
+  color: #8B5F65; /* Color for date */
 }
-
 
 /* Hyperlink Styles */
 a {
-  color: #582C35; /* Text color for hyperlinks */
+  color:#582C35; /* Text color for hyperlinks */
   text-decoration: none; /* Removes underline from hyperlinks */
 }
 
@@ -92,26 +85,19 @@ a:active {
   color: #4A2C31; /* Color for active hyperlinks (while clicking) */
 }
 
-
-/* Cambia el color del cuerpo del texto */
-body {
-  color: #2E3A46 !important; /* Un gris oscuro para mejorar la lectura */
-}
-
-/* Cambia el color de los párrafos */
-p {
-  color: #354A5F !important; /* Azul-grisáceo más claro */
-}
-
-/* Cambia el color del texto en listas */
-ul li {
-  color: #005a9c !important; /* Azul más fuerte */
-}
-
 </style>
 
 
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6" style="color:#00BFB3;">
+Disfruta y envía recomendaciones a este espacio
 
+
+</div>
+<div class="col-sm-6">
+
+<!-- ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) -->
+
+<!-- <a href = "https://crumplab.github.io"> -->
+![](images/investigadora_pregunta.jpg)
+</a>
+</div>
 

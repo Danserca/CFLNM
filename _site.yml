@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Inicio"
       href: index.html
-    - text: "Programa_de_CFLNM.html"
+    - text: "Programa"
       href: Programa_de_CFLNM.html
     - text: "Clases"
       href: Clases.html
