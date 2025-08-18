@@ -87,7 +87,9 @@ a:active {
 
 </style>
 
+HOLA
 
+Bienvenidas y bienvenidos a este curso
 Disfruta y envía recomendaciones a este espacio
 
 

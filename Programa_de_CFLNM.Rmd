@@ -154,10 +154,11 @@ Nos reunimos dos veces por semana en el laboratorio de computación. Cada clase 
  La rúbrica de calificación se encuentra a continuación:
 
 
-| Tarea                | Puntos | Total |
+|| Tarea                | Puntos | Total |
 |----------------------|--------|-------|
-| 3  exámenes parciales| 25     | 75    |
-| N  tareas            | 25     | 25    |
+| 3 exámenes parciales | 20     | 60    |
+| N tareas             | 25     | 25    |
+| Exposición           | 15     | 15    |
 | **Total**            |        | 100   |
 
 
