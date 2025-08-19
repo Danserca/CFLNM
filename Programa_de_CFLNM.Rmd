@@ -176,14 +176,13 @@ El curso tiene una duración de 15 semanas. Es una clase presencial y se espera 
 
 
 
-# Lecturas por clase
 
 # Lecturas por clase
 
 | Semana | Fecha          | Tema                                  | Lecturas                        |
 |--------|----------------|---------------------------------------|---------------------------------|
 | S0 L:  | 18 de agosto   | Presentación del curso                | Ninguna                         |
-| S0 J:  | 21 de agosto   | Fuentes de información (primarias, secundarias, terciarias). Ética académica: plagio, parafraseo y citación en APA | Capítulo 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/la-busqueda-de-informacion); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/etica-academica); [Bunge 2000, pp.3-41](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n45/mode/2up) |
+| S0 J:  | 21 de agosto   | Fuentes de información (primarias, secundarias, terciarias). Ética académica: plagio, parafraseo y citación en APA | Capítulo 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/la-busqueda-de-informacion); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/etica-academica); [Bunge 2000, pp.3-13](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n27/mode/2up) |
 | S1 L:  | 25 de agosto   | Taller de búsqueda de artículos, libros... | [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
 | S1 J:  | 28 de agosto   | Taller: detección de plagio y parafraseo. Uso de Zotero/Mendeley | [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
 | S2 L:  | 1 de septiembre| **EXAMEN PARCIAL 1** (Fuentes, ética académica, citación APA) | Material de clases previas      |
