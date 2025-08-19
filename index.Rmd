@@ -87,14 +87,16 @@ a:active {
 
 </style>
 
-HOLA
+Hola  
 
-Bienvenidas y bienvenidos a este curso
-Disfruta y envía recomendaciones a este espacio
+
+Bienvenidas y bienvenidos a su curso de Consulta de Fuentes de Lectura Numérica del Mundo. 
+
+Disfruta, aprende y envía recomendaciones a este espacio.
 
 
 </div>
-<div class="col-sm-6">
+<div class="col-sm-12">
 
 <!-- ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) -->
 
