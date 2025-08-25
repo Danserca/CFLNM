@@ -11,12 +11,12 @@
 
 
 
-<title>Glosario</title>
+<title>index_old.knit</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -222,69 +219,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -292,16 +226,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -342,199 +266,100 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Glosario</h1>
-<h4 class="date">25 de agosto de 2025</h4>
 
 </div>
 
 
 <style type="text/css">
 
-/* Navbar Styles */
-.navbar {
-  background-color:  #00BFB3 !important; /* Background color of the navbar */
-  border-color:  #0077C8 !important; /* Border color of the navbar */
-  background-image: none !important; /* Removes any background image */
-  height: 65px; /* Sets navbar height */
+/* Reset básico */
+body {
+  background-color: #1E1E1E; /* Fondo oscuro */
+  color: #EEDFCC;           /* Texto beige claro */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin:0;
+  padding-top:70px; /* espacio para navbar fija */
 }
 
-/* Navbar Link Styles */
+/* Navbar fija con transparencia */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(139,95,101,0.9); /* vino semitransparente */
+  border: none;
+  height: 65px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
 .navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;  /* Text color for links */
-  font-weight: bold !important; /* Bold text */
+  color: #FFFFFF !important;
+  font-weight: bold;
+  padding: 20px 15px;
+  transition: all 0.3s ease;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color:  #00BFB3 !important; /* Hover and focus text color */
-  font-weight: bold; /* Keeps text bold on hover/focus */
+  color: #FFD7DA !important; /* rosa claro en hover */
+  background: none;
 }
 
-/* Active List Group Item Styles */
-.list-group-item.active,
-.list-group-item.active:focus,
-.list-group-item.active:hover {
-  z-index: 2;
-  color:  #00BFB3; /* Text color for active list item */
-  background-color: #E4D0EF; /* Background color for active list item */
-  border-color:  #00BFB3; /* Border color for active list item */
+/* Activo */
+.navbar-nav > .active > a {
+  color: #FFD7DA !important;
+  background: none !important;
+  border-bottom: 2px solid #FFD7DA;
 }
 
-/* Title, Subtitle, Author, and Date Styles */
-h1.title {
-  color: #003057; /* Color for title */
+/* Títulos */
+h1.title, h2, h3, h4, h5 {
+  color: #FFD7DA;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
 }
 
-h4.subtitle {
-  color: #003057; /* Color for subtitle */
+/* Texto */
+p {
+  color: #EEDFCC;
+  font-size: 18px;
+  text-align: center;
 }
 
-h5.author {
-  color: #003057; /* Color for author */
-}
-
-h5.date {
-  color: #8B5F65; /* Color for date */
-}
-
-/* Hyperlink Styles */
+/* Links */
 a {
-  color: #003057; /* Text color for hyperlinks */
-  text-decoration: none; /* Removes underline from hyperlinks */
+  color: #CD8C95;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #005a9c; /* Color when hovering over hyperlinks */
-  text-decoration: underline; /* Underlines text when hovering over hyperlinks */
+  color: #FFD7DA;
+  text-decoration: underline;
 }
 
-a:visited {
-  color: #6C4F56; /* Color for visited hyperlinks */
-}
-
-a:active {
-  color: #4A2C31; /* Color for active hyperlinks (while clicking) */
+/* Imagen */
+.course-img {
+  display:block;
+  margin: 30px auto;
+  max-width: 75%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
 </style>
-<div id="glosario" class="section level1">
-<h1>📖 Glosario</h1>
-<!-- Barra de búsqueda -->
-<p><input type="text" id="glosario-busqueda" onkeyup="filtrarGlosario()" placeholder="🔍 Buscar un término..." class="form-control mb-3"></p>
-<!-- Tabla de términos -->
-<table class="table table-striped">
-<thead>
-<tr>
-<th>
-Término
-</th>
-<th>
-Definición
-</th>
-</tr>
-</thead>
-<tbody id="glosario">
-<tr>
-<td>
-<strong>Accesibilidad</strong>
-</td>
-<td>
-El grado de sencillez y claridad con el que las personas usuarias pueden
-acceder, localizar, entender y obtener los datos.
-</td>
-</tr>
-<tr>
-<td>
-<strong>Acceso abierto</strong>
-</td>
-<td>
-Acceso gratuito, oportuno y sin restricciones a datos y recursos
-mediante software libre o código abierto.
-</td>
-</tr>
-<tr>
-<td>
-<strong>API</strong>
-</td>
-<td>
-Interfaz de comunicación que permite intercambiar, acceder y aprovechar
-datos y funcionalidades de una aplicación.
-</td>
-</tr>
-<tr>
-<td>
-<strong>Big Data</strong>
-</td>
-<td>
-Enfoque de análisis de datos de gran volumen y velocidad que no pueden
-ser procesados con herramientas convencionales.
-</td>
-</tr>
-<tr>
-<td>
-<strong>Ciencia de datos</strong>
-</td>
-<td>
-Disciplina que combina estadística, programación y visualización para
-analizar datos masivos.
-</td>
-</tr>
-<tr>
-<td>
-<strong>Datos abiertos</strong>
-</td>
-<td>
-Datos que pueden ser utilizados y redistribuidos libremente por
-cualquier persona sin restricciones.
-</td>
-</tr>
-<tr>
-<td>
-<strong>SQL</strong>
-</td>
-<td>
-Lenguaje de consulta estructurada utilizado para gestionar bases de
-datos relacionales.
-</td>
-</tr>
-<tr>
-<td>
-<strong>Visualización de datos</strong>
-</td>
-<td>
-Presentación de datos en gráficos para facilitar su interpretación y
-comunicación.
-</td>
-</tr>
-</tbody>
-</table>
-<!-- JavaScript para la búsqueda en glosario -->
-<script>
-  function filtrarGlosario() {
-    let input = document.getElementById("glosario-busqueda");
-    let filter = input.value.toLowerCase();
-    let table = document.getElementById("glosario");
-    let tr = table.getElementsByTagName("tr");
-
-    for (let i = 0; i < tr.length; i++) {
-      let td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        let textValue = td.textContent || td.innerText;
-        if (textValue.toLowerCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    }
-  }
-</script>
+<!-- Contenido -->
+<div class="container">
+<h2>
+Hola
+</h2>
+<p>
+<p>Bi</p>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -567,35 +392,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

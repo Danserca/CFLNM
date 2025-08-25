@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Dra. Daniela Serrano Campos" />
 
 
-<title>Clases</title>
+<title>Profesores</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -62,6 +61,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
 
 
 
@@ -343,235 +343,238 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Clases</h1>
-<h3 class="subtitle">Consulta de fuentes y lectura numérica del
-mundo</h3>
-<h4 class="author">Dra. Daniela Serrano Campos</h4>
-<h4 class="date">25 de agosto de 2025</h4>
+<h1 class="title toc-ignore">Profesores</h1>
 
 </div>
 
 
-<style type="text/css">
-
-/* Navbar Styles */
-.navbar {
-  background-color: #CD8C95 !important; /* Background color of the navbar */
-  border-color: #8B5F65 !important; /* Border color of the navbar */
-  background-image: none !important; /* Removes any background image */
-  height: 65px; /* Sets navbar height */
+<!-- ====== ESTILOS ====== -->
+<style>
+:root{
+  --vino:#8B5F65; --rosa:#CD8C95; --beige:#EEDFCC; --marron:#582C35; --vino-osc:#4A2C31;
+}
+/* Links */
+a,a:visited{color:var(--marron)!important;text-decoration:none}
+a:hover,a:focus{color:var(--vino)!important;text-decoration:underline}
+a:active{color:var(--vino-osc)!important}
+/* Navbar */
+.navbar{background-color:var(--rosa)!important;border-color:var(--vino)!important;background-image:none!important;height:65px}
+.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a{color:#fff!important;font-weight:700}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a{background-color:var(--beige)!important;color:var(--vino)!important}
+/* Títulos */
+h1.title,h4.subtitle,h5.author,h5.date{color:var(--vino)}
+/* Card de perfil */
+.profile-card{background:#fff;border:1px solid var(--beige);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:90px}
+.profile-card img{width:100%;height:auto;border-radius:12px;border:2px solid var(--vino)}
+.profile-name{font-size:1.6rem;font-weight:800;color:var(--marron);margin-top:12px}
+.profile-role{color:#6b6b6b;margin-bottom:0}
+/* TOC a la derecha y sin invadir el contenido */
+.tocify{right:15px!important;left:auto!important;width:260px!important;border-color:var(--beige)!important}
+.toc-content{max-width:900px;margin-right:290px} 
+@media (max-width:991px){
+  .profile-card{position:static;margin-bottom:15px}
+  .tocify{position:static!important;width:auto!important}
+  .toc-content{margin-right:0}
 }
 
-/* Navbar Link Styles */
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;  /* Text color for links */
-  font-weight: bold !important; /* Bold text */
+/* Estilo general del menú TOC */
+.list-group .list-group-item {
+  color: var(--marron) !important;   /* color de texto */
+  background-color: #fff !important; /* fondo normal */
+  border-color: var(--beige) !important;
+  font-weight: 500;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #8B5F65 !important; /* Hover and focus text color */
-  font-weight: bold; /* Keeps text bold on hover/focus */
+/* Item activo */
+.list-group .list-group-item.active,
+.list-group .list-group-item.active:hover,
+.list-group .list-group-item.active:focus {
+  background-color: var(--beige) !important;  /* fondo al estar activo */
+  border-color: var(--vino) !important;
+  color: var(--vino) !important;              /* texto al estar activo */
+  font-weight: 700;
 }
 
-/* Navbar Collapse Menu Styles */
-.navbar-collapse {
-  background-color: #CD8C95 !important; /* Background color for the collapsed navbar */
+/* Hover */
+.list-group .list-group-item:hover {
+  background-color: #f7f1eb !important; /* un beige más claro */
+  color: var(--vino) !important;
 }
 
-/* Dropdown Menu Link Styles */
-.navbar-nav > li > a {
-  color: #FFFFFF; /* Text color for dropdown links */
-  font-weight: bold;
-  padding: 10px 15px; /* Padding for dropdown links */
+/* ===== Columnas y divisor ===== */
+.left-pane{
+  padding-right: 24px;
+  border-right: 1px solid #e6e6e6;   /* divisor como el ejemplo */
+}
+.content-pane{
+  padding-left: 32px;                 /* respiración a la derecha del divisor */
 }
 
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > .active > a {
-  background-color: #005a9c; /* Background color on hover/active */
-  color: #FFFFFF; /* Text color on hover/active */
+/* ===== Tarjeta de foto (como panel grande) ===== */
+.profile-card{
+  background:#fff;
+  border:1px solid var(--beige);
+  border-radius:10px;
+  overflow:hidden;                    /* recorta la imagen dentro */
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  margin-bottom:14px;
 }
 
-/* Active List Group Item Styles */
-.list-group-item.active,
-.list-group-item.active:focus,
-.list-group-item.active:hover {
-  z-index: 2;
-  color: #8B5F65; /* Text color for active list item */
-  background-color: #EEDFCC; /* Background color for active list item */
-  border-color: #8B5F65; /* Border color for active list item */
+/* Foto alta, llena el ancho, recorte tipo portada */
+.profile-card img{
+  width:100%;
+  height: 420px;                      /* AJUSTA esta altura para igualar el ejemplo */
+  object-fit: cover;                  /* mantiene proporción y recorta sobrante */
+  display:block;
 }
 
-/* Title, Subtitle, Author, and Date Styles */
-h1.title {
-  color: #8B5F65; /* Color for title */
+/* Bloque de texto bajo la foto */
+.profile-meta{ padding-left: 6px; }
+.profile-name{
+  font-size: 1.8rem;                  /* grande como en el ejemplo */
+  font-weight: 800;
+  color: var(--marron);
+  margin: 4px 0 2px;
+  line-height: 1.2;
+}
+.profile-role{
+  color:#6b6b6b;
+  margin: 0 0 6px;
+}
+.profile-src{
+  font-size: 12px;
+  color: var(--vino);
+  margin: 0;
+}
+.profile-card img{
+  width:100%;
+  aspect-ratio: 3 / 4;   /* 3:4 como retrato */
+  object-fit: cover;
+  display:block;
 }
 
-h4.subtitle {
-  color: #8B5F65; /* Color for subtitle */
+
+/* ===== Títulos y TOC ===== */
+h2{ font-weight:800; }
+.tocify{ right:15px!important; left:auto!important; width:260px!important; }
+.toc-content{ max-width:950px; margin-right:290px; }
+
+/* Responsive: quitamos divisor y hacemos stack */
+@media (max-width: 991px){
+  .left-pane{ border-right:none; padding-right:15px; }
+  .content-pane{ padding-left:15px; }
 }
 
-h5.author {
-  color: #8B5F65; /* Color for author */
-}
-
-h5.date {
-  color: #8B5F65; /* Color for date */
-}
-
-/* Hyperlink Styles */
-a {
-  color:#582C35; /* Text color for hyperlinks */
-  text-decoration: none; /* Removes underline from hyperlinks */
-}
-
-a:hover {
-  color: #005a9c; /* Color when hovering over hyperlinks */
-  text-decoration: underline; /* Underlines text when hovering over hyperlinks */
-}
-
-a:visited {
-  color: #6C4F56; /* Color for visited hyperlinks */
-}
-
-a:active {
-  color: #4A2C31; /* Color for active hyperlinks (while clicking) */
-}
 
 </style>
-<div style="color:#8B5F65;">
-<p><strong>Nota:</strong> Iré agregando las presentaciones de las
-clases.</p>
-<div id="clase-1.-8-de-agosto.-introducción" class="section level1">
-<h1>1. Clase 1. 8 de agosto. Introducción</h1>
-<p><a
-href="https://uapa.cuaieed.unam.mx/sites/default/files/minisite/static/5955012c-005c-4441-b3a3-e9868a0cf8d1/contenido/index.html">Hacer
-ejercicio de autoevaluación y subir a classroom</a> <br><br>
-<br><br></p>
-<div id="presentación-1" class="section level2">
-<h2>Presentación 1</h2>
-<iframe src="intro_met_ccss.html" style="width: 800px; height: 600px; border: none;">
-</iframe>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-5 col-md-4 left-pane">
+<div class="profile-card">
+<p><img src="images/dsc_inegi.jpg" alt="Dra. Daniela Serrano Campos"></p>
+</div>
+<div class="profile-meta">
+<div class="profile-name">
+Daniela Serrano Campos
+</div>
+<p class="profile-role">
+Profesora titular
+</p>
+<p class="profile-src">
+Fuente: archivo personal
+</p>
 </div>
 </div>
-<div id="clase-2.-12-de-agosto.-introducción" class="section level1">
-<h1>2. Clase 2. 12 de agosto. Introducción</h1>
-<p><a
-href="https://uapa.cuaieed.unam.mx/sites/default/files/minisite/static/5955012c-005c-4441-b3a3-e9868a0cf8d1/contenido/index.html">Hacer
-ejercicio de autoevaluación y subir a classroom</a> <br><br>
-<br><br></p>
-<div id="presentación-1-1" class="section level2">
-<h2>Presentación 1</h2>
-<iframe src="Gerring_2014_cap2.html" style="width: 800px; height: 600px; border: none;">
-</iframe>
+<div class="col-sm-7 col-md-8 content-pane">
+<!-- aquí va todo tu contenido (Formación, Experiencia, etc.) -->
+<div id="formación-académica" class="section level2">
+<h2>Formación Académica</h2>
+<ul>
+<li><p><strong>Doctorado en Ciencia Política, 2022</strong> — <em>Centro
+de Investigación y Docencia Económicas, CIDE, México.</em><br />
+Evidencias: <a
+href="https://drive.google.com/drive/folders/1u4YeI3lOswNOv2TvtQE5mLpKlDxb_gOu?usp=drive_link">Carpeta</a><br />
+<strong>Tesis:</strong> <a
+href="http://hdl.handle.net/11651/5515"><em>Fue el Estado. Problemas
+perversos, atribución de culpa y participación
+política.</em></a></p></li>
+<li><p><strong>Maestría en Sociología Política, 2016</strong> —
+<em>Instituto Mora, México.</em><br />
+<strong>Tesis:</strong> <em>Protestar contra la violencia criminal sin
+morir en el intento.</em><br />
+Mención especial: <a
+href="https://www.cdeunodc.inegi.org.mx/unodc/index.php/inicio-concurso-internacional-de-tesis-sexto-concurso/index.htm">dictamen</a></p></li>
+<li><p><strong>Licenciatura en Sociología, 2014</strong> — <em>FCPyS,
+UNAM, México.</em><br />
+<strong>Tesis:</strong> <a
+href="http://132.248.9.195/ptd2014/junio/0715118/Index.html"><em>La
+participación ciudadana en la democratización del Distrito
+Federal.</em></a></p></li>
+</ul>
 </div>
-<div id="presentación-2" class="section level2">
-<h2>Presentación 2</h2>
-<iframe src="Gerring_2014_cap3.html" style="width: 800px; height: 600px; border: none;">
-</iframe>
+<div id="experiencia-profesional" class="section level2">
+<h2>Experiencia profesional</h2>
+<ul>
+<li><strong>Directora general adjunta de desarrollo, análisis e
+indicadores de gobierno, UEGSPJ, INEGI</strong> — <em>01/10/2024 –
+actual</em><br />
+</li>
+<li><strong>Investigadora, DGAI, INEGI</strong> — <em>17/10/2022 –
+2024l</em><br />
+</li>
+<li><strong>Jefa de Departamento para una Ciudad Segura, SEMUJERES
+GCDMX</strong> — <em>16/02/2021 – 15/10/2022</em><br />
+</li>
+<li><strong>Profesora de asignatura, FCPyS UNAM</strong> —
+<em>16/02/2019 – actual</em></li>
+</ul>
 </div>
+<div id="habilidades" class="section level2">
+<h2>Habilidades</h2>
+<ul>
+<li>Análisis estadístico; <strong>R</strong>, Stata; RAP, visualización,
+redacción técnica y divulgación.</li>
+</ul>
 </div>
-<div id="clase-3.-15-de-agosto.-fuentes-operadores-booleanos-y-búsqueda"
-class="section level1">
-<h1>3. Clase 3. 15 de agosto. Fuentes, operadores booleanos y
-búsqueda</h1>
-<p><a
-href="https://ri.uaemex.mx/bitstream/handle/20.500.11799/33878/secme-21200.pdf?sequence=1&amp;isAllowed=yhttps://ri.uaemex.mx/bitstream/handle/20.500.11799/33878/secme-21200.pdf?sequence=1&amp;isAllowed=y">Hacer
-ejercicios de las páginas 1 a la 8 y subir a classroom</a></p>
-<p><a href="https://ceib.dgb.unam.mx/index.php/operadores-booleanos">Ver
-tutoriales de operadores booleanos, de proximidad, de truncamiento,
-paréntesis</a> <a
-href="https://ceib.dgb.unam.mx/index.php/busquedas-eficientes-de-informacion">Ver
-tutorial de búsquedas eficientes</a></p>
+<div id="líneas-de-investigación" class="section level2">
+<h2>Líneas de investigación</h2>
+<ul>
+<li>Participación política; medición de violencias y desplazamiento
+forzado; calidad del dato.</li>
+</ul>
 </div>
-<div
-id="clase-4.-19-de-agosto.-búsqueda-bitácora-y-recuperación-de-información-y-recursos"
-class="section level1">
-<h1>4. Clase 4. 19 de agosto. Búsqueda, bitácora y recuperación de
-información y recursos</h1>
-<p><a
-href="https://drive.google.com/file/d/1B6-a7QMhrE9L0YQ7MImhAzF81MC7Nue8/view?usp=sharing">Hacer
-ejercicio</a></p>
+<div id="publicaciones" class="section level2">
+<h2>Publicaciones</h2>
+<ul>
+<li>Serrano, D. et al. <em>Las TIC para el análisis de eventos de
+protesta en México</em>.<br />
+</li>
+<li>Serrano, D. y Cadena-Roa, J. <em>Yo Soy 132 and the Return of
+PRI</em>.</li>
+</ul>
 </div>
-<div
-id="clase-5.-22-de-agosto.-hacer-bases-de-datos-a-partir-de-noticias"
-class="section level1">
-<h1>5. Clase 5. 22 de agosto. Hacer bases de datos a partir de
-noticias</h1>
-<p><a
-href="https://drive.google.com/file/d/11wdnLPLlmIuoPSSd77uU7k5l_WQDx_WA/view?usp=classroom_web&amp;authuser=0">Hacer
-ejercicio</a> <a
-href="https://docs.google.com/spreadsheets/d/1pMUBPnanbHVqQlqOswpoHkLisFvxlLy1LVQW0X2XgZQ/edit?usp=classroom_web&amp;authuser=0">Registra
-tus casos aquí</a></p>
+<div id="formación-complementaria-cursos-talleres-diplomados"
+class="section level2">
+<h2>Formación complementaria (Cursos, Talleres, Diplomados)</h2>
+<ul>
+<li><strong>Diplomado en Estadística Aplicada, 2024</strong> —
+ITAM.<br />
+</li>
+<li><strong>Historia de Eventos, 2015</strong> — El Colegio de
+México.<br />
+</li>
+<li><strong>Taller “Fundamentos y Herramientas de Análisis en la
+Investigación Cualitativa”, 2015</strong> — El Colegio de México.<br />
+<a
+href="https://drive.google.com/file/d/1FQ9TIq3q4SDrC9O_WibkYXkcSSr8EkCz/view?usp=drive_link">constancia</a></li>
+<li><strong>Curso “Hoja de Cálculo Excel”, 2015</strong> — UNAM,
+DGTIC.<br />
+<a
+href="https://drive.google.com/file/d/1m-XXnLf1CQHSROB_7jDq1jSEPC7iwGnP/view?usp=drive_link">constancia</a></li>
+</ul>
 </div>
-<div id="clase-6.-26-de-agosto.-rmarkdown-mendeley-citas"
-class="section level1">
-<h1>6. Clase 6. 26 de agosto. RMarkdown, mendeley, citas</h1>
-<div
-id="introducción-a-r.-introducción-a-r-y-rstudio.-escritura-de-comandos-en-la-consola.-cálculos-simples.-uso-de-funciones.-introducción-a-las-variables.-datos-numéricos-de-caracteres-y-lógicos.-almacenamiento-de-múltiples-valores-como-un-vector."
-class="section level3">
-<h3>Introducción a R. Introducción a R y Rstudio. Escritura de comandos
-en la consola. Cálculos simples. Uso de funciones. Introducción a las
-variables. Datos numéricos, de caracteres y lógicos. Almacenamiento de
-múltiples valores como un vector.</h3>
-<p><a
-href="https://365inegi-my.sharepoint.com/:f:/g/personal/daniela_serrano_inegi_org_mx/EmnA2xp3FL5CjOyIYtPD1REB2RTvTj4wSwhPB8M_wnD4XA?e=1RQaqZ">Hacer
-práctica</a></p>
-</div>
-</div>
-<div id="clase-7.-29-de-agosto.-intro-a-r" class="section level1">
-<h1>7. Clase 7. 29 de agosto. Intro a R</h1>
-<p><a
-href="https://365inegi-my.sharepoint.com/:f:/g/personal/daniela_serrano_inegi_org_mx/EpGFWZG3kalGoFjYd7YFhbIBp9ycr4xF_cFBGVEAFaX_LA?e=JALbYc">Hacer
-práctica</a></p>
-</div>
-<div id="clase-8.-2-de-septiembre" class="section level1">
-<h1>8. Clase 8. 2 de septiembre</h1>
-<iframe src="https://www.bioetica.unam.mx/cursos-autogestivos/multimedia/extra/manuales/cpcfta_manual.pdf" width="100%" height="800px">
-</iframe>
-<p><em>Práctica</em></p>
-<p>1- Tema, pregunta, problema de investigación</p>
-<p>•2.- Algoritmo o ecuación de búsqueda</p>
-<p>•3.- Bitácora de búsqueda</p>
-<p>•4.- 1 articulo</p>
-<p>•5.- Leer resumen e introducción</p>
-<p>•6.- Identificar y clasificar las citas del texto</p>
-<p>•7.- Van a hacer 2 citas anotando qué tipo de cita están haciendo</p>
-<p>•8.- Bibliografía</p>
-</div>
-<div id="clase-10.-citando-en-rmarkdown" class="section level1">
-<h1>10. Clase 10. Citando en RMarkdown</h1>
-<iframe src="images/portada_rm.pdf" width="100%" height="800px">
-</iframe>
-</div>
-<div id="examen" class="section level1">
-<h1>11. <em>EXAMEN</em></h1>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1CFmJrBrCW9QGDbzmSgReEodIueQKJHeOh1GEwZxe2aitlw/viewform?embedded=true" width="640" height="6763" frameborder="0" marginheight="0" marginwidth="0">
-Cargando…
-</iframe>
-</div>
-<div id="guía-para-crear-pdf-con-rm-y-citar-con-mendeley"
-class="section level1">
-<h1>12. <em>GUÍA PARA CREAR PDF CON RM Y CITAR CON MENDELEY</em></h1>
-<iframe src="images/guia_cita_rm_mendeley.pdf" width="100%" height="800px">
-</iframe>
-</div>
-<div id="clase.-23-de-agosto.-descripción-y-medición"
-class="section level1">
-<h1>13. Clase. 23 de agosto. Descripción y Medición</h1>
-<p>Tipos de datos en R <a
-href="https://bookdown.org/jboscomendoza/r-principiantes4/tipos-de-datos.html">Mendoza
-s/a</a> <br><br></p>
-<div id="presentación-1-2" class="section level2">
-<h2>Presentación 1</h2>
-<iframe src="Gerring_2014_cap6.html" style="width: 800px; height: 600px; border: none;">
-</iframe>
-</div>
-<div id="presentación-2-1" class="section level2">
-<h2>Presentación 2</h2>
-<iframe src="Gerring_2014_cap7.html" style="width: 800px; height: 600px; border: none;">
-</iframe>
 </div>
 </div>
 </div>
@@ -625,7 +628,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {

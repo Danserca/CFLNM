@@ -1,0 +1,86 @@
+<style type="text/css">
+
+/* Reset básico */
+body {
+  background-color: #1E1E1E; /* Fondo oscuro */
+  color: #EEDFCC;           /* Texto beige claro */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  margin:0;
+  padding-top:70px; /* espacio para navbar fija */
+}
+
+/* Navbar fija con transparencia */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(139,95,101,0.9); /* vino semitransparente */
+  border: none;
+  height: 65px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF !important;
+  font-weight: bold;
+  padding: 20px 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFD7DA !important; /* rosa claro en hover */
+  background: none;
+}
+
+/* Activo */
+.navbar-nav > .active > a {
+  color: #FFD7DA !important;
+  background: none !important;
+  border-bottom: 2px solid #FFD7DA;
+}
+
+/* Títulos */
+h1.title, h2, h3, h4, h5 {
+  color: #FFD7DA;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Texto */
+p {
+  color: #EEDFCC;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #CD8C95;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFD7DA;
+  text-decoration: underline;
+}
+
+/* Imagen */
+.course-img {
+  display:block;
+  margin: 30px auto;
+  max-width: 75%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+</style>
+
+
+<!-- Contenido -->
+<div class="container">
+  <h2>Hola</h2>
+  <p>
+    Bi

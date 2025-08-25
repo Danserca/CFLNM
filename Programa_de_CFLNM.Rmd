@@ -119,15 +119,17 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 
 ### Información de los docentes
 
-- **Profesora titular:** Dra. Daniela Serrano Campos
+- **Profesora titular:** Daniela Serrano Campos
 - **Email:** [daniela.campos@politicas.unam.mx](mailto:daniela.campos@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
+- **Profesora adjunta:** Ximena Gloria Casillas
+- **Email:** [ximena.gloria@politicas.unam.mx](mailto:ximena.gloria@politicas.unam.mx)
 - **Profesor adjunto:** Rodrigo Nieves
 - **Email:** [rodrigo.nieves@politicas.unam.mx](mailto:modrigo.nieves@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
 
 
 # Descripción general y objetivos del curso
 
-2024 | 8 | 07 Última actualización: `r Sys.Date()`
+2025 | 8 | 23 Última actualización: `r Sys.Date()`
 
 Introducción práctica y centrada en las habilidades para utilizar software de programación de código abierto (R, R-studio y R Markdown) en varios aspectos de la investigación en ciencias sociales. El curso cubre la programación básica en R, la manipulación de datos, la creación de gráficos y el uso de R para crear manuscritos correctamente citados y gestionando las referencias y fuentes utilizadas.
 
@@ -140,11 +142,38 @@ Requisitos especiales: NINGUNO
 - Transformación de datos: procesamiento de archivos de datos para un análisis deseado.  
 - Visualización de datos: representación gráfica.  
 - Comunicación de la investigación: cómo utilizar los scripts de R Markdown para crear manuscritos correctamente referenciados para comunicar la investigación.  
-- Investigación reproducible: principios de la ciencia abierta, incluidas herramientas para compartir datos, compartir manuscritos, diseños de investigación, compartir métodos.
+- Investigación reproducible: principios de la ciencia abierta, incluidas herramientas para compartir datos, compartir manuscritos, diseños de investigación, compartir métodos.  
+
+ 
+🎯 Metodología general  
+
+El curso se desarrolla bajo el enfoque learning by doing, donde cada sesión combina explicación y práctica inmediata.
+
+Talleres de búsqueda en catálogos, bases de datos y gestores bibliográficos.
+
+Ejercicios de citación en distintos estilos, incluyendo citación automatizada en RMarkdown.
+
+Uso directo de bases de datos reales (INEGI, ONU, Banco Mundial).
+
+Manipulación, transformación y análisis de variables en R.
+
+Elaboración de reportes reproducibles en RMarkdown.  
+
 
 # Estructura del curso
 
 Nos reunimos dos veces por semana en el laboratorio de computación. Cada clase implicará una exposición sobre conceptos de la lógica y metodología de la investigación y casos prácticos tipo taller. Al completar las tareas, las y los estudiantes crearán un portafolio de scripts de codificación de R que demuestre una variedad de habilidades de comunicación y análisis de fuentes y datos. El proceso de aprender a codificar requiere paciencia, tiempo y práctica. Se espera que las y los estudiantes practiquen la codificación fuera del horario de clase cada semana.
+
+El curso se divide en dos grandes unidades.  
+
+
+📚 Unidad 1. Consulta de fuentes académicas, científicas y hemerográficas
+
+Objetivo de la unidad: Que las y los estudiantes desarrollen habilidades para localizar, seleccionar, evaluar, organizar y citar fuentes de manera ética y rigurosa, utilizando herramientas digitales y gestores bibliográficos, y que aprendan a citar de manera automatizada en RMarkdown para elaborar reportes y trabajos académicos reproducibles.
+
+📊 Unidad 2. Lectura numérica del mundo: consulta, manipulación y análisis de datos
+
+Objetivo de la unidad: Que las y los estudiantes adquieran competencias para comprender, manipular, transformar y analizar datos provenientes de encuestas, censos y registros administrativos, utilizando R y RMarkdown para la generación de reportes reproducibles con análisis de variables que integren fuentes y citas automatizadas.
 
 <!-- ## Calendario de lecturas -->
 
@@ -165,59 +194,70 @@ Nos reunimos dos veces por semana en el laboratorio de computación. Cada clase 
 
 
 # Tareas y exámenes
-Se deberán entregar y realizar en tiempo y forma en la plataforma [classroom CFLNM-0032-2025](https://classroom.google.com/c/NzAzMDczNzAyMzg2?cjc=tsoeb5c) (**Solicita ACCESO**)
+Se deberán entregar y realizar en tiempo y forma en la plataforma [classroom CFLNM-0032-2026](https://classroom.google.com/c/Nzc0Mjk0Mzc0MzE5?cjc=2sin7ehh) (**Solicita acceso**)
 
 
 
 
 # Cronograma del Curso
 
-El curso tiene una duración de 15 semanas. Es una clase presencial y se espera que las y los estudiantes participen en todos los aspectos de la clase. Esta clase implica el aprendizaje de habilidades de programación informática para la visualización y análisis de datos. Se asume que las y los estudiantes pueden no poseer habilidades previas en esta área, por lo que el curso tiene un componente de formación aplicada. El tiempo de clase involucrará una mezcla de actividades, incluyendo conferencias, trabajo en grupo, actividades de codificación aplicadas, presentaciones y discusiones.
-
+El curso tiene una duración de 15 semanas. Es una clase presencial y se espera que las y los estudiantes participen en todos los aspectos de la clase. Esta clase implica el aprendizaje de habilidades de programación en R para la visualización y análisis de datos. Se asume que las y los estudiantes pueden no poseer habilidades previas en esta área, por lo que el curso tiene un componente de formación aplicada. El tiempo de clase involucrará una mezcla de actividades, incluyendo conferencias, trabajo en grupo, actividades de codificación aplicadas, presentaciones y discusiones.
 
 
 
 # Lecturas por clase
 
-| Semana | Fecha          | Tema                                  | Lecturas                        |
-|--------|----------------|---------------------------------------|---------------------------------|
-| S0 L:  | 18 de agosto   | Presentación del curso                | Ninguna                         |
-| S0 J:  | 21 de agosto   | Fuentes de información (primarias, secundarias, terciarias). Ética académica: plagio, parafraseo y citación en APA | Capítulo 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/la-busqueda-de-informacion); [UNAM](https://bibliotecacentral.unam.mx/index.php/dcide/etica-academica); [Bunge 2000, pp.3-13](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n27/mode/2up) |
-| S1 L:  | 25 de agosto   | Taller de búsqueda de artículos, libros... | [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
-| S1 J:  | 28 de agosto   | Taller: detección de plagio y parafraseo. Uso de Zotero/Mendeley | [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
-| S2 L:  | 1 de septiembre| **EXAMEN PARCIAL 1** (Fuentes, ética académica, citación APA) | Material de clases previas      |
-| S2 J:  | 4 de septiembre| Conceptos introductorios de R y RStudio | Cap. 1-3 [Mendoza 2024](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html) |
-| S3 L:  | 8 de septiembre| RMarkdown: ¿qué es un documento reproducible? | [Anónimo](https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11) |
-| S3 J:  | 11 de septiembre| Taller: crear el primer documento en RMarkdown, texto + código | [Anónimo](https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11) |
-| S4 L:  | 15 de septiembre| **FERIADO (No hay clase)**            | Ninguna                         |
-| S4 J:  | 18 de septiembre| Teoría de conjuntos y operadores booleanos/lógicos (AND / &, OR /, NOT / !) | Capítulo 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf); [UNAM](https://docenciadigital.unam.mx/ayuda-busqueda#tip8) |
-| S5 L:  | 22 de septiembre| Taller: Diagramas de Venn y construcción de ecuaciones de búsqueda (BIDIUNAM y Google Scholar) | [UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion) |
-| S5 J:  | 25 de septiembre| Taller: Aplicación en R – operadores lógicos en bases de datos | Capítulos 4-5 [Mendoza 2024](https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html) |
-| S6 L:  | 29 de septiembre| Tipos de variables (dependiente, independiente, interviniente, moderadora, continua, discreta, razón, categórica, Likert) | Capítulo 6-7 [Gerring 2014, pp. 159-210](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing) |
-| S6 J:  | 2 de octubre   | **Exposiciones estudiantiles 1:** Ejemplos de variables aplicadas (parte I) | Capítulo 6-7 [Gerring 2014] |
-| S7 L:  | 6 de octubre   | **Exposiciones estudiantiles 2:** Ejemplos de variables aplicadas (parte II) | Capítulo 6-7 [Gerring 2014] |
-| S7 J:  | 9 de octubre   | **EXAMEN PARCIAL 2** (Operadores, teoría de conjuntos, variables, condicionales en R) | Material de clases previas |
-| S8 L:  | 13 de octubre  | Creación de variables en R con `if`, `if_else`, `case_when` | Capítulos 6-7 [Gerring 2014] |
-| S8 J:  | 16 de octubre  | Citas en RMarkdown con archivos .bib y gestores | [UNAM](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
-| S9 L:  | 20 de octubre  | Taller: Insertar bibliografía y exportar en Word, PDF y HTML | [Anónimo](https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11) |
-| S9 J:  | 23 de octubre  | Indicadores sociales: tasas, razones, proporciones | Capítulo 9 [Gerring 2014] |
-| S10 L: | 27 de octubre  | Taller: Cálculo de tasas y proporciones en R | Cap. 11 [Mendoza 2024] |
-| S10 J: | 30 de octubre  | Interpretación de gráficas y tablas | Capítulo 10 [Gerring 2014] |
-| S11 L: | 3 de noviembre | Taller: creación de gráficas en R (`ggplot2`) | Cap. 12 [Mendoza 2024] |
-| S11 J: | 6 de noviembre | Reportes reproducibles con tablas y gráficas en RMarkdown | Capítulo 13 [Gerring 2014] |
-| S12 L: | 10 de noviembre| Taller: Informe reproducible en RMarkdown con citas y visualizaciones | Cap. 13 [Mendoza 2024] |
-| S12 J: | 13 de noviembre| **EXAMEN PARCIAL 3** (RMarkdown, tasas, proporciones, lectura numérica de indicadores sociales) | Material de clases previas |
-| S13 L: | 17 de noviembre| **FERIADO (No hay clase)**            | Ninguna                         |
-| S13 J: | 20 de noviembre| Proyecto integrador – elección de tema y fuentes de información | Ninguna |
-| S14 L: | 24 de noviembre| Proyecto integrador – estrategia de búsqueda y construcción de bibliografía en `.bib` | Ninguna |
-| S14 J: | 27 de noviembre| Proyecto integrador – descarga de datos abiertos (INEGI, ONU, BM) | Ninguna |
-| S15 L: | 1 de diciembre | Proyecto integrador – limpieza y creación de variables en R | Ninguna |
-| S15 J: | 4 de diciembre | **Exposiciones finales de proyectos** y cierre del curso | Ninguna |
 
+# Lecturas por clase – Unidad 1
+
+| Semana | Fecha        | Tema                                                                                              | Lecturas                                                                                                                                      |
+| ------ | ------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| S0 L:  | 18 de agosto | **Clase 1. Presentación del curso.**<br>🔹 *Actividad práctica:* dinámica rompehielo: cada alumna menciona qué entiende por “fuente” y un ejemplo cotidiano.<br>🔹 *Ejemplo:* contrastar opiniones de redes sociales vs. un artículo científico.<br>🔹 *Tarea:* escribir una breve reflexión: ¿qué espero aprender y cómo lo aplicaré en mi carrera? | Ninguna |
+| S0 J:  | 21 de agosto | **Clase 2. Ciencias sociales y la consulta de fuentes como soporte de argumentos.**<br>🔹 *Ejemplo práctico:* comparar un argumento basado en sentido común vs. uno sustentado en datos de encuesta (INEGI).<br>🔹 *Taller:* identificar en un artículo académico qué fuentes sostienen sus conclusiones.<br>🔹 *Tarea:* traer un ejemplo de argumento en redes/noticias y contrastarlo con evidencia científica. | [Bunge 2000, pp.3-13](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n27/mode/2up) |
+| S1 L:  | 25 de agosto | **Clase 3. Tipos de fuentes y metabuscadores.**<br>🔹 *Ejercicio práctico:* clasificar un set de documentos (ley, encuesta, paper, noticia, blog, tesis) en primarias, secundarias y terciarias.<br>🔹 *Taller:* búsqueda en metabuscadores (Google Scholar, Scielo, JSTOR).<br>🔹 *Tarea:* localizar un artículo académico en JSTOR y guardarlo en PDF. | Cap. 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf) |
+| S1 J:  | 28 de agosto | **Clase 4. Tipos de búsqueda + teoría de conjuntos (diagramas de Venn) para algoritmos de búsqueda y parámetros.**<br>🔹 *Ejemplo práctico:* diseñar diagramas de Venn para búsquedas de “violencia contra las mujeres” en diferentes bases de datos.<br>🔹 *Taller:* crear ecuaciones de búsqueda con AND, OR, NOT.<br>🔹 *Tarea:* elaborar 3 ecuaciones de búsqueda distintas sobre un mismo tema. | [Rendón 2017](https://ru.iibi.unam.mx/jspui/bitstream/IIBI_UNAM/L140/2/introduccion_conjuntos_s.pdf);[UNAM](https://docenciadigital.unam.mx/ayuda-busqueda#tip8) |
+| S2 L:  | 1 de septiembre | **Clase 5. Introducción a búsquedas sistemáticas y revisiones sistemáticas de literatura.**<br>🔹 *Ejemplo práctico:* diferencias entre revisión narrativa, revisión sistemática y meta-análisis.<br>🔹 *Taller en R:* diseñar un protocolo simple de revisión (palabras clave + criterios de inclusión/exclusión).<br>🔹 *Tarea:* elaborar un cuadro con una estrategia de búsqueda sistemática sobre un tema elegido. | [Escoto 2021](https://ciid.politicas.unam.mx/www/libros/como_empezar_estudiar_mercadotrabajo_mexico.pdf); [Universidad de Navarra](https://biblioguias.unav.edu/revisionessistematicas/visiongeneral);[UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion) |
+| S2 J:  | 4 de septiembre | **Clase 6. Construcción de base de datos a partir de revisión sistemática de artículos y noticias.**<br>🔹 *Ejemplo práctico:* búsqueda de noticias sobre migración/violencia en El Universal, Infolatina o Google News.<br>🔹 *Taller en R:* crear un `data.frame` con artículos de prensa (título, autor, fecha, medio, tema).<br>🔹 *Actividad:* marcar relevancia de cada nota (alta, media, baja).<br>🔹 *Tarea:* entregar una base de 5–10 noticias sobre un tema de interés personal. | Ninguna |
+| S3 L:  | 8 de septiembre | **Clase 7. Qué hacer con las fuentes: selección, organización y fichado.**<br>🔹 *Ejemplo práctico:* fichar un artículo académico (tema, autor, conclusión, cita).<br>🔹 *Taller:* crear una base de datos de referencias en R con `tibble` o `data.frame`.<br>🔹 *Actividad:* uso básico de Zotero/Mendeley para guardar las fuentes.<br>🔹 *Tarea:* crear una mini-base con 5 fichas en R + 5 referencias en Zotero. | Ninguna |
+| S3 J:  | 11 de septiembre | **Clase 8. Ética académica, plagio, tipos de citas, estilos de citación.**<br>🔹 *Ejemplo práctico:* transformar un párrafo en cita directa, indirecta y paráfrasis, en APA y Chicago.<br>🔹 *Taller:* detectar y corregir plagio en un texto dado.<br>🔹 *Actividad creativa:* trivia rápida de citas correctas e incorrectas.<br>🔹 *Tarea:* citar correctamente 3 artículos en Zotero en dos estilos distintos. | [UNAM: Ética académica](https://bibliotecentral.unam.mx/index.php/dcide/etica-academica); [UNAM: Citas APA](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
+| S4 L:  | 15 de septiembre | **FERIADO (No hay clase)** | Ninguna |
+| S4 J:  | 18 de septiembre | **Examen parcial 1 (Fuentes, búsqueda, ética y citación)** | Material de clases previas |
+| S5 L:  | 22 de septiembre | **Clase 9. Citación en RMarkdown.**<br>🔹 *Ejemplo práctico:* insertar citas con `.bib` y generar bibliografía automática.<br>🔹 *Taller:* redactar un mini-ensayo en RMarkdown con al menos 3 citas automatizadas.<br>🔹
+
+
+
+# Lecturas por clase – Unidad 2
+
+| Semana | Fecha        | Tema                                                                                              | Lecturas                                                                                                                                      |
+| ------ | ------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| S5 L:  | 22 de septiembre | **Clase 10. Introducción a la estadística: población, muestra y representatividad.**<br>🔹 *Ejemplo práctico:* urna con canicas para simular muestra aleatoria.<br>🔹 *Taller:* diferenciar población vs muestra en encuestas de INEGI.<br>🔹 *Tarea:* redactar ejemplo propio de población/muestra. | Cap. 9 [Gerring 2014] |
+| S5 J:  | 25 de septiembre | **Clase 11. Fuentes de datos: encuestas, censos y registros administrativos.**<br>🔹 *Ejemplo práctico:* revisar ENVIPE, Censo de Población y registros penitenciarios.<br>🔹 *Actividad:* comparar ventajas y limitaciones de cada fuente.<br>🔹 *Tarea:* elegir un tema y señalar qué fuente lo mide mejor. | Ninguna |
+| S6 L:  | 29 de septiembre | **Clase 12. De los conceptos a las variables en ciencias sociales.**<br>🔹 *Ejemplo práctico:* de la teoría a la variable (violencia → hipótesis → concepto → variables).<br>🔹 *Taller:* tabla “teoría → hipótesis → concepto → variable”.<br>🔹 *Actividad creativa:* cada equipo transforma un concepto de interés en al menos 2 variables medibles.<br>🔹 *Tarea:* armar 3 variables a partir de un concepto propio. | Cap. 6-7 [Gerring 2014] |
+| S6 J:  | 2 de octubre | **Clase 13. Tipos de variables: cualitativas y cuantitativas.**<br>🔹 *Ejemplo práctico:* variables de ENSU (percepción de inseguridad vs. edad).<br>🔹 *Actividad creativa:* juego “clasifica la variable”.<br>🔹 *Tarea:* clasificar 10 variables de un dataset público. | Cap. 6-7 [Gerring 2014] |
+| S7 L:  | 6 de octubre | **Clase 14. Variables en R: vectores, data frames y factores.**<br>🔹 *Ejemplo práctico:* crear `data.frame` con características del grupo.<br>🔹 *Taller en R:* manipular con `mutate`, `filter` y `select`.<br>🔹 *Tarea:* crear una base en R con 10 observaciones. | Cap. 1-3 [Mendoza 2024] |
+| S7 J:  | 9 de octubre | **Examen parcial 2 (población, muestra, fuentes de datos y variables).** | Material de clases previas |
+| S8 L:  | 13 de octubre | **Clase 15. Creación de variables derivadas en R.**<br>🔹 *Ejemplo práctico:* generar variable “juega tenis sí/no”.<br>🔹 *Taller:* `if_else` y `case_when`.<br>🔹 *Tarea:* crear 3 variables derivadas en R. | Cap. 6-7 [Mendoza 2024] |
+| S8 J:  | 16 de octubre | **Clase 16. Indicadores sociales: tasas, razones y proporciones.**<br>🔹 *Ejemplo práctico:* calcular tasa de desempleo con datos de INEGI.<br>🔹 *Taller en R:* tasas simples con `dplyr`.<br>🔹 *Tarea:* entregar tabla con 3 tasas en R. | Cap. 9 [Gerring 2014] |
+| S9 L:  | 20 de octubre | **Clase 17. Teoría de la medición en ciencias sociales.**<br>🔹 *Ejemplo práctico:* analizar escala Likert.<br>🔹 *Taller:* validez y confiabilidad.<br>🔹 *Tarea:* proponer un indicador y justificar cómo medirlo. | Cap. 10 [Gerring 2014] |
+| S9 J:  | 23 de octubre | **Clase 18. Construcción de indicadores e índices.**<br>🔹 *Ejemplo práctico:* índice de bienestar con 3 variables.<br>🔹 *Taller en R:* estandarizar y sumar.<br>🔹 *Tarea:* entregar índice en R. | Cap. 10 [Gerring 2014]; Cap. 11 [Mendoza 2024] |
+| S10 L: | 27 de octubre | **Clase 19. Visualización de datos: tablas y gráficos.**<br>🔹 *Ejemplo práctico:* interpretar tabla de violencia de género.<br>🔹 *Taller en R:* gráficos básicos con `ggplot2`.<br>🔹 *Tarea:* entregar un gráfico sencillo. | Cap. 11 [Mendoza 2024] |
+| S10 J: | 30 de octubre | **Clase 20. Reportes reproducibles en RMarkdown.**<br>🔹 *Ejemplo práctico:* generar reporte con texto + tabla + gráfico.<br>🔹 *Taller:* armar documento en RMarkdown.<br>🔹 *Tarea:* mini-reporte con indicador y cita automatizada. | Cap. 13 [Mendoza 2024] |
+| S11 L: | 3 de noviembre | **Clase 21. Taller aplicado: integrar citas, indicadores y visualizaciones en RMarkdown.**<br>🔹 *Ejemplo práctico:* reproducir un reporte corto.<br>🔹 *Actividad grupal:* checklist de reproducibilidad.<br>🔹 *Tarea:* entregar borrador de reporte final. | Cap. 13 [Mendoza 2024] |
+| S11 J: | 6 de noviembre | **Examen parcial 3 (estadística básica, indicadores y reportes reproducibles).** | Material de clases previas |
+| S12 L: | 10 de noviembre | **Clase 22. Exposiciones estudiantiles I.**<br>🔹 Presentación de variables e indicadores con RMarkdown preliminar.<br>🔹 *Actividad:* retroalimentación colectiva. | Ninguna |
+| S12 J: | 13 de noviembre | **Clase 23. Exposiciones estudiantiles II.**<br>🔹 Continuación de presentaciones.<br>🔹 *Tarea:* entregar versión preliminar de reporte final. | Ninguna |
+| S13 L: | 17 de noviembre | **FERIADO (No hay clase)** | Ninguna |
+| S13 J: | 20 de noviembre | **Clase 24. Política pública basada en evidencia.**<br>🔹 *Ejemplo práctico:* caso de política mal diseñada sin evidencia.<br>🔹 *Debate:* ¿qué pasa sin estadísticas confiables?<br>🔹 *Tarea:* reflexión sobre un indicador que guíe política pública. | Lecturas del curso |
+| S14 L: | 24 de noviembre | **Clase 25. Síntesis aplicada: del dato al argumento.**<br>🔹 *Ejemplo práctico:* transformar un análisis de R en argumento académico.<br>🔹 *Taller:* cómo redactar hallazgos cuantitativos.<br>🔹 *Tarea:* redactar 1 cuartilla con hallazgos de su dataset. | Ninguna |
+| S14 J: | 27 de noviembre | **Clase 26. Proyecto integrador – trabajo en clase.**<br>🔹 *Actividad:* preparar reporte final en RMarkdown (citas + variables + indicadores + visualizaciones).<br>🔹 *Tarea:* subir borrador de entrega final. | Ninguna |
+| S15 L: | 1 de diciembre | **Clase 27. Exposiciones finales de proyectos I.**<br>🔹 *Actividad:* presentación de equipos.<br>🔹 *Retroalimentación:* discusión grupal. | Ninguna |
+| S15 J: | 4 de diciembre | **Clase 28. Exposiciones finales de proyectos II y cierre del curso.**<br>🔹 *Actividad:* conclusiones colectivas sobre consulta de fuentes y lectura numérica.<br>🔹 *Tarea final:* entregar reporte definitivo en RMarkdown. | Ninguna |
+                        
 
 
 ### Asistencia
-Se espera que las y los estudiantes asistan y participen en cada clase.
+Se espera que las y los estudiantes asistan y participen en cada clase.  
+Para tener derecho a evaluación es necesario tener un 80% de asistencia.
 
 ### Políticas del curso
 Fechas de entrega

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>syllabus_z.knit</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CFLNM-2026-0032</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Inicio</a>
+</li>
+<li>
+  <a href="Programa_de_CFLNM.html">Programa</a>
+</li>
+<li>
+  <a href="Clases.html">Clases</a>
+</li>
+<li>
+  <a href="Profesores.html">Profesores</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<table>
+<colgroup>
+<col width="8%" />
+<col width="16%" />
+<col width="40%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Semana</th>
+<th>Fecha</th>
+<th>Tema</th>
+<th>Lecturas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S0 L:</td>
+<td>18 de agosto</td>
+<td>Presentación del curso</td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S0 J:</td>
+<td>21 de agosto</td>
+<td>Fuentes de información (primarias, secundarias, terciarias). Ética
+académica: plagio, parafraseo y citación en APA</td>
+<td>Capítulo 1 <a
+href="http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf">Martínez
+Valdés, Huerta Silva, Lara Escalante 2024,pp.11-59</a>; <a
+href="https://bibliotecacentral.unam.mx/index.php/dcide/la-busqueda-de-informacion">UNAM</a>;
+<a
+href="https://bibliotecacentral.unam.mx/index.php/dcide/etica-academica">UNAM</a>;
+<a
+href="https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n27/mode/2up">Bunge
+2000, pp.3-13</a></td>
+</tr>
+<tr class="odd">
+<td>S1 L:</td>
+<td>25 de agosto</td>
+<td>Taller de búsqueda de artículos, libros…</td>
+<td><a
+href="https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1">UNAM</a></td>
+</tr>
+<tr class="even">
+<td>S1 J:</td>
+<td>28 de agosto</td>
+<td>Taller: detección de plagio y parafraseo. Uso de
+Zotero/Mendeley</td>
+<td><a
+href="https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1">UNAM</a></td>
+</tr>
+<tr class="odd">
+<td>S2 L:</td>
+<td>1 de septiembre</td>
+<td><strong>EXAMEN PARCIAL 1</strong> (Fuentes, ética académica,
+citación APA)</td>
+<td>Material de clases previas</td>
+</tr>
+<tr class="even">
+<td>S2 J:</td>
+<td>4 de septiembre</td>
+<td>Conceptos introductorios de R y RStudio</td>
+<td>Cap. 1-3 <a
+href="https://bookdown.org/jboscomendoza/r-principiantes4/introduccion-que-es-r-y-para-que-es-usado.html">Mendoza
+2024</a></td>
+</tr>
+<tr class="odd">
+<td>S3 L:</td>
+<td>8 de septiembre</td>
+<td>RMarkdown: ¿qué es un documento reproducible?</td>
+<td><a
+href="https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11">Anónimo</a></td>
+</tr>
+<tr class="even">
+<td>S3 J:</td>
+<td>11 de septiembre</td>
+<td>Taller: crear el primer documento en RMarkdown, texto + código</td>
+<td><a
+href="https://rstudio-pubs-static.s3.amazonaws.com/844849_e83808b06df24eb3b2a36394bf128859.html#11">Anónimo</a></td>
+</tr>
+<tr class="odd">
+<td>S4 L:</td>
+<td>15 de septiembre</td>
+<td><strong>FERIADO (No hay clase)</strong></td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S4 J:</td>
+<td>18 de septiembre</td>
+<td>Teoría de conjuntos y operadores booleanos/lógicos (AND / &amp;, OR
+/, NOT / !)</td>
+<td>Capítulo 1 <a
+href="http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf">Martínez
+Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59</a>; <a
+href="https://docenciadigital.unam.mx/ayuda-busqueda#tip8">UNAM</a></td>
+</tr>
+</tbody>
+</table>
+<div id="lecturas-por-clase-unidad-2" class="section level1">
+<h1>Lecturas por clase – Unidad 2</h1>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="4%" />
+<col width="37%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Semana</th>
+<th>Fecha</th>
+<th>Tema</th>
+<th>Lecturas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>S5 L:</td>
+<td>22 de septiembre</td>
+<td><strong>Clase 10. Introducción a la estadística: población, muestra
+y representatividad.</strong><br>🔹 <em>Ejemplo práctico:</em> urna con
+canicas para simular muestra aleatoria.<br>🔹 <em>Taller:</em>
+diferenciar población vs muestra en encuestas de INEGI.<br>🔹
+<em>Tarea:</em> redactar ejemplo propio de población/muestra.</td>
+<td>Cap. 9 [Gerring 2014]</td>
+</tr>
+<tr class="even">
+<td>S5 J:</td>
+<td>25 de septiembre</td>
+<td><strong>Clase 11. Fuentes de datos: encuestas, censos y registros
+administrativos.</strong><br>🔹 <em>Ejemplo práctico:</em> revisar
+ENVIPE, Censo de Población y registros penitenciarios.<br>🔹
+<em>Actividad:</em> comparar ventajas y limitaciones de cada
+fuente.<br>🔹 <em>Tarea:</em> elegir un tema y señalar qué fuente lo
+mide mejor.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="odd">
+<td>S6 L:</td>
+<td>29 de septiembre</td>
+<td><strong>Clase 12. Concepto de variable en ciencias
+sociales.</strong><br>🔹 <em>Ejemplo práctico:</em> de la teoría a la
+variable (violencia → hipótesis → concepto → variables).<br>🔹
+<em>Taller:</em> tabla “teoría → hipótesis → concepto → variable”.<br>🔹
+<em>Tarea:</em> armar 3 variables a partir de un concepto propio.</td>
+<td>Cap. 6-7 [Gerring 2014]</td>
+</tr>
+<tr class="even">
+<td>S6 J:</td>
+<td>2 de octubre</td>
+<td><strong>Clase 13. Tipos de variables: cualitativas y
+cuantitativas.</strong><br>🔹 <em>Ejemplo práctico:</em> variables de
+ENSU (percepción de inseguridad vs. edad).<br>🔹 <em>Actividad
+creativa:</em> juego “clasifica la variable”.<br>🔹 <em>Tarea:</em>
+clasificar 10 variables de un dataset público.</td>
+<td>Cap. 6-7 [Gerring 2014]</td>
+</tr>
+<tr class="odd">
+<td>S7 L:</td>
+<td>6 de octubre</td>
+<td><strong>Clase 14. Variables en R: vectores, data frames y
+factores.</strong><br>🔹 <em>Ejemplo práctico:</em> crear
+<code>data.frame</code> con características del grupo.<br>🔹 <em>Taller
+en R:</em> manipular con <code>mutate</code>, <code>filter</code> y
+<code>select</code>.<br>🔹 <em>Tarea:</em> crear una base en R con 10
+observaciones.</td>
+<td>Cap. 1-3 [Mendoza 2024]</td>
+</tr>
+<tr class="even">
+<td>S7 J:</td>
+<td>9 de octubre</td>
+<td><strong>Examen parcial 2 (población, muestra, fuentes de datos y
+variables).</strong></td>
+<td>Material de clases previas</td>
+</tr>
+<tr class="odd">
+<td>S8 L:</td>
+<td>13 de octubre</td>
+<td><strong>Clase 15. Creación de variables derivadas en
+R.</strong><br>🔹 <em>Ejemplo práctico:</em> generar variable “juega
+tenis sí/no”.<br>🔹 <em>Taller:</em> <code>if_else</code> y
+<code>case_when</code>.<br>🔹 <em>Tarea:</em> crear 3 variables
+derivadas en R.</td>
+<td>Cap. 6-7 [Mendoza 2024]</td>
+</tr>
+<tr class="even">
+<td>S8 J:</td>
+<td>16 de octubre</td>
+<td><strong>Clase 16. Indicadores sociales: tasas, razones y
+proporciones.</strong><br>🔹 <em>Ejemplo práctico:</em> calcular tasa de
+desempleo con datos de INEGI.<br>🔹 <em>Taller en R:</em> tasas simples
+con <code>dplyr</code>.<br>🔹 <em>Tarea:</em> entregar tabla con 3 tasas
+en R.</td>
+<td>Cap. 9 [Gerring 2014]</td>
+</tr>
+<tr class="odd">
+<td>S9 L:</td>
+<td>20 de octubre</td>
+<td><strong>Clase 17. Teoría de la medición en ciencias
+sociales.</strong><br>🔹 <em>Ejemplo práctico:</em> analizar escala
+Likert.<br>🔹 <em>Taller:</em> validez y confiabilidad.<br>🔹
+<em>Tarea:</em> proponer un indicador y justificar cómo medirlo.</td>
+<td>Cap. 10 [Gerring 2014]</td>
+</tr>
+<tr class="even">
+<td>S9 J:</td>
+<td>23 de octubre</td>
+<td><strong>Clase 18. Construcción de indicadores e
+índices.</strong><br>🔹 <em>Ejemplo práctico:</em> índice de bienestar
+con 3 variables.<br>🔹 <em>Taller en R:</em> estandarizar y sumar.<br>🔹
+<em>Tarea:</em> entregar índice en R.</td>
+<td>Cap. 10 [Gerring 2014]; Cap. 11 [Mendoza 2024]</td>
+</tr>
+<tr class="odd">
+<td>S10 L:</td>
+<td>27 de octubre</td>
+<td><strong>Clase 19. Visualización de datos: tablas y
+gráficos.</strong><br>🔹 <em>Ejemplo práctico:</em> interpretar tabla de
+violencia de género.<br>🔹 <em>Taller en R:</em> gráficos básicos con
+<code>ggplot2</code>.<br>🔹 <em>Tarea:</em> entregar un gráfico
+sencillo.</td>
+<td>Cap. 11 [Mendoza 2024]</td>
+</tr>
+<tr class="even">
+<td>S10 J:</td>
+<td>30 de octubre</td>
+<td><strong>Clase 20. Reportes reproducibles en
+RMarkdown.</strong><br>🔹 <em>Ejemplo práctico:</em> generar reporte con
+texto + tabla + gráfico.<br>🔹 <em>Taller:</em> armar documento en
+RMarkdown.<br>🔹 <em>Tarea:</em> mini-reporte con indicador y cita
+automatizada.</td>
+<td>Cap. 13 [Mendoza 2024]</td>
+</tr>
+<tr class="odd">
+<td>S11 L:</td>
+<td>3 de noviembre</td>
+<td><strong>Clase 21. Taller aplicado: integrar citas, indicadores y
+visualizaciones en RMarkdown.</strong><br>🔹 <em>Ejemplo práctico:</em>
+reproducir un reporte corto.<br>🔹 <em>Actividad grupal:</em> checklist
+de reproducibilidad.<br>🔹 <em>Tarea:</em> entregar borrador de reporte
+final.</td>
+<td>Cap. 13 [Mendoza 2024]</td>
+</tr>
+<tr class="even">
+<td>S11 J:</td>
+<td>6 de noviembre</td>
+<td><strong>Examen parcial 3 (estadística básica, indicadores y reportes
+reproducibles).</strong></td>
+<td>Material de clases previas</td>
+</tr>
+<tr class="odd">
+<td>S12 L:</td>
+<td>10 de noviembre</td>
+<td><strong>Clase 22. Exposiciones estudiantiles I.</strong><br>🔹
+Presentación de variables e indicadores con RMarkdown preliminar.<br>🔹
+<em>Actividad:</em> retroalimentación colectiva.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S12 J:</td>
+<td>13 de noviembre</td>
+<td><strong>Clase 23. Exposiciones estudiantiles II.</strong><br>🔹
+Continuación de presentaciones.<br>🔹 <em>Tarea:</em> entregar versión
+preliminar de reporte final.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="odd">
+<td>S13 L:</td>
+<td>17 de noviembre</td>
+<td><strong>FERIADO (No hay clase)</strong></td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S13 J:</td>
+<td>20 de noviembre</td>
+<td><strong>Clase 24. Política pública basada en
+evidencia.</strong><br>🔹 <em>Ejemplo práctico:</em> caso de política
+mal diseñada sin evidencia.<br>🔹 <em>Debate:</em> ¿qué pasa sin
+estadísticas confiables?<br>🔹 <em>Tarea:</em> reflexión sobre un
+indicador que guíe política pública.</td>
+<td>Lecturas del curso</td>
+</tr>
+<tr class="odd">
+<td>S14 L:</td>
+<td>24 de noviembre</td>
+<td><strong>Clase 25. Síntesis aplicada: del dato al
+argumento.</strong><br>🔹 <em>Ejemplo práctico:</em> transformar un
+análisis de R en argumento académico.<br>🔹 <em>Taller:</em> cómo
+redactar hallazgos cuantitativos.<br>🔹 <em>Tarea:</em> redactar 1
+cuartilla con hallazgos de su dataset.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S14 J:</td>
+<td>27 de noviembre</td>
+<td><strong>Clase 26. Proyecto integrador – trabajo en
+clase.</strong><br>🔹 <em>Actividad:</em> preparar reporte final en
+RMarkdown (citas + variables + indicadores + visualizaciones).<br>🔹
+<em>Tarea:</em> subir borrador de entrega final.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="odd">
+<td>S15 L:</td>
+<td>1 de diciembre</td>
+<td><strong>Clase 27. Exposiciones finales de proyectos
+I.</strong><br>🔹 <em>Actividad:</em> presentación de equipos.<br>🔹
+<em>Retroalimentación:</em> discusión grupal.</td>
+<td>Ninguna</td>
+</tr>
+<tr class="even">
+<td>S15 J:</td>
+<td>4 de diciembre</td>
+<td><strong>Clase 28. Exposiciones finales de proyectos II y cierre del
+curso.</strong><br>🔹 <em>Actividad:</em> conclusiones colectivas sobre
+consulta de fuentes y lectura numérica.<br>🔹 <em>Tarea final:</em>
+entregar reporte definitivo en RMarkdown.</td>
+<td>Ninguna</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

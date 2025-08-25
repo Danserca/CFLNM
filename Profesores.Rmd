@@ -1,0 +1,196 @@
+---
+title: "Profesores"
+output:
+  html_document:
+    theme: spacelab
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: false
+    css: "assets/css/styles.css"
+---
+
+
+<!-- ====== ESTILOS ====== -->
+<style>
+:root{
+  --vino:#8B5F65; --rosa:#CD8C95; --beige:#EEDFCC; --marron:#582C35; --vino-osc:#4A2C31;
+}
+/* Links */
+a,a:visited{color:var(--marron)!important;text-decoration:none}
+a:hover,a:focus{color:var(--vino)!important;text-decoration:underline}
+a:active{color:var(--vino-osc)!important}
+/* Navbar */
+.navbar{background-color:var(--rosa)!important;border-color:var(--vino)!important;background-image:none!important;height:65px}
+.navbar-default .navbar-brand,.navbar-default .navbar-nav>li>a{color:#fff!important;font-weight:700}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a{background-color:var(--beige)!important;color:var(--vino)!important}
+/* Títulos */
+h1.title,h4.subtitle,h5.author,h5.date{color:var(--vino)}
+/* Card de perfil */
+.profile-card{background:#fff;border:1px solid var(--beige);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:90px}
+.profile-card img{width:100%;height:auto;border-radius:12px;border:2px solid var(--vino)}
+.profile-name{font-size:1.6rem;font-weight:800;color:var(--marron);margin-top:12px}
+.profile-role{color:#6b6b6b;margin-bottom:0}
+/* TOC a la derecha y sin invadir el contenido */
+.tocify{right:15px!important;left:auto!important;width:260px!important;border-color:var(--beige)!important}
+.toc-content{max-width:900px;margin-right:290px} 
+@media (max-width:991px){
+  .profile-card{position:static;margin-bottom:15px}
+  .tocify{position:static!important;width:auto!important}
+  .toc-content{margin-right:0}
+}
+
+/* Estilo general del menú TOC */
+.list-group .list-group-item {
+  color: var(--marron) !important;   /* color de texto */
+  background-color: #fff !important; /* fondo normal */
+  border-color: var(--beige) !important;
+  font-weight: 500;
+}
+
+/* Item activo */
+.list-group .list-group-item.active,
+.list-group .list-group-item.active:hover,
+.list-group .list-group-item.active:focus {
+  background-color: var(--beige) !important;  /* fondo al estar activo */
+  border-color: var(--vino) !important;
+  color: var(--vino) !important;              /* texto al estar activo */
+  font-weight: 700;
+}
+
+/* Hover */
+.list-group .list-group-item:hover {
+  background-color: #f7f1eb !important; /* un beige más claro */
+  color: var(--vino) !important;
+}
+
+/* ===== Columnas y divisor ===== */
+.left-pane{
+  padding-right: 24px;
+  border-right: 1px solid #e6e6e6;   /* divisor como el ejemplo */
+}
+.content-pane{
+  padding-left: 32px;                 /* respiración a la derecha del divisor */
+}
+
+/* ===== Tarjeta de foto (como panel grande) ===== */
+.profile-card{
+  background:#fff;
+  border:1px solid var(--beige);
+  border-radius:10px;
+  overflow:hidden;                    /* recorta la imagen dentro */
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+  margin-bottom:14px;
+}
+
+/* Foto alta, llena el ancho, recorte tipo portada */
+.profile-card img{
+  width:100%;
+  height: 420px;                      /* AJUSTA esta altura para igualar el ejemplo */
+  object-fit: cover;                  /* mantiene proporción y recorta sobrante */
+  display:block;
+}
+
+/* Bloque de texto bajo la foto */
+.profile-meta{ padding-left: 6px; }
+.profile-name{
+  font-size: 1.8rem;                  /* grande como en el ejemplo */
+  font-weight: 800;
+  color: var(--marron);
+  margin: 4px 0 2px;
+  line-height: 1.2;
+}
+.profile-role{
+  color:#6b6b6b;
+  margin: 0 0 6px;
+}
+.profile-src{
+  font-size: 12px;
+  color: var(--vino);
+  margin: 0;
+}
+.profile-card img{
+  width:100%;
+  aspect-ratio: 3 / 4;   /* 3:4 como retrato */
+  object-fit: cover;
+  display:block;
+}
+
+
+/* ===== Títulos y TOC ===== */
+h2{ font-weight:800; }
+.tocify{ right:15px!important; left:auto!important; width:260px!important; }
+.toc-content{ max-width:950px; margin-right:290px; }
+
+/* Responsive: quitamos divisor y hacemos stack */
+@media (max-width: 991px){
+  .left-pane{ border-right:none; padding-right:15px; }
+  .content-pane{ padding-left:15px; }
+}
+
+
+</style>
+
+::: {.container-fluid}
+::: {.row}
+
+::: {.col-sm-5 .col-md-4 .left-pane}
+<div class="profile-card">
+  <img src="images/dsc_inegi.jpg" alt="Dra. Daniela Serrano Campos">
+</div>
+<div class="profile-meta">
+  <div class="profile-name">Daniela Serrano Campos</div>
+  <p class="profile-role">Profesora titular</p>
+  <p class="profile-src">Fuente: archivo personal</p>
+</div>
+:::
+
+::: {.col-sm-7 .col-md-8 .content-pane}
+<!-- aquí va todo tu contenido (Formación, Experiencia, etc.) -->
+
+## Formación Académica
+
+- **Doctorado en Ciencia Política, 2022** — *Centro de Investigación y Docencia Económicas, CIDE, México.*  
+  Evidencias: [Carpeta](https://drive.google.com/drive/folders/1u4YeI3lOswNOv2TvtQE5mLpKlDxb_gOu?usp=drive_link)  
+  **Tesis:** [*Fue el Estado. Problemas perversos, atribución de culpa y participación política.*](http://hdl.handle.net/11651/5515)
+
+- **Maestría en Sociología Política, 2016** — *Instituto Mora, México.*  
+  **Tesis:** *Protestar contra la violencia criminal sin morir en el intento.*  
+  Mención especial: [dictamen](https://www.cdeunodc.inegi.org.mx/unodc/index.php/inicio-concurso-internacional-de-tesis-sexto-concurso/index.htm)
+
+- **Licenciatura en Sociología, 2014** — *FCPyS, UNAM, México.*  
+  **Tesis:** [*La participación ciudadana en la democratización del Distrito Federal.*](http://132.248.9.195/ptd2014/junio/0715118/Index.html)
+
+## Experiencia profesional
+
+- **Directora general adjunta de desarrollo, análisis e indicadores de gobierno, UEGSPJ, INEGI** — *01/10/2024 – actual*  
+- **Investigadora, DGAI, INEGI** — *17/10/2022 – 2024l*  
+- **Jefa de Departamento para una Ciudad Segura, SEMUJERES GCDMX** — *16/02/2021 – 15/10/2022*  
+- **Profesora de asignatura, FCPyS UNAM** — *16/02/2019 – actual*
+
+## Habilidades
+- Análisis estadístico; **R**, Stata; RAP, visualización, redacción técnica y divulgación.
+
+## Líneas de investigación
+- Participación política; medición de violencias y desplazamiento forzado; calidad del dato.
+
+## Publicaciones
+- Serrano, D. et al. *Las TIC para el análisis de eventos de protesta en México*.  
+- Serrano, D. y Cadena-Roa, J. *Yo Soy 132 and the Return of PRI*.
+
+## Formación complementaria (Cursos, Talleres, Diplomados)
+- **Diplomado en Estadística Aplicada, 2024** — ITAM.  
+- **Historia de Eventos, 2015** — El Colegio de México.   
+- **Taller “Fundamentos y Herramientas de Análisis en la Investigación Cualitativa”, 2015** — El Colegio de México.  
+  [constancia](https://drive.google.com/file/d/1FQ9TIq3q4SDrC9O_WibkYXkcSSr8EkCz/view?usp=drive_link)
+- **Curso “Hoja de Cálculo Excel”, 2015** — UNAM, DGTIC.  
+  [constancia](https://drive.google.com/file/d/1m-XXnLf1CQHSROB_7jDq1jSEPC7iwGnP/view?usp=drive_link)
+
+:::
+
+:::
+:::
+
+

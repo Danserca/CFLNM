@@ -2,41 +2,41 @@
 
 /* Navbar Styles */
 .navbar {
-  background-color: #CD8C95 !important; /* Background color of the navbar */
-  border-color: #8B5F65 !important; /* Border color of the navbar */
-  background-image: none !important; /* Removes any background image */
-  height: 65px; /* Sets navbar height */
+  background-color: #CD8C95 !important; /* Fondo rosado */
+  border-color: #8B5F65 !important;     /* Borde vino */
+  background-image: none !important;
+  height: 65px;
 }
 
 /* Navbar Link Styles */
 .navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;  /* Text color for links */
-  font-weight: bold !important; /* Bold text */
+  color: #FFFFFF !important;
+  font-weight: bold !important;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #8B5F65 !important; /* Hover and focus text color */
-  font-weight: bold; /* Keeps text bold on hover/focus */
+  color: #8B5F65 !important;
+  font-weight: bold;
 }
 
 /* Navbar Collapse Menu Styles */
 .navbar-collapse {
-  background-color: #CD8C95 !important; /* Background color for the collapsed navbar */
+  background-color: #CD8C95 !important;
 }
 
 /* Dropdown Menu Link Styles */
 .navbar-nav > li > a {
-  color: #FFFFFF; /* Text color for dropdown links */
+  color: #FFFFFF;
   font-weight: bold;
-  padding: 10px 15px; /* Padding for dropdown links */
+  padding: 10px 15px;
 }
 
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus,
 .navbar-nav > .active > a {
-  background-color: #005a9c; /* Background color on hover/active */
-  color: #FFFFFF; /* Text color on hover/active */
+  background-color: #005a9c;
+  color: #FFFFFF;
 }
 
 /* Active List Group Item Styles */
@@ -44,64 +44,76 @@
 .list-group-item.active:focus,
 .list-group-item.active:hover {
   z-index: 2;
-  color: #8B5F65; /* Text color for active list item */
-  background-color: #EEDFCC; /* Background color for active list item */
-  border-color: #8B5F65; /* Border color for active list item */
+  color: #8B5F65;
+  background-color: #EEDFCC;
+  border-color: #8B5F65;
 }
 
 /* Title, Subtitle, Author, and Date Styles */
 h1.title {
-  color: #8B5F65; /* Color for title */
+  color: #8B5F65;
 }
 
-h4.subtitle {
-  color: #8B5F65; /* Color for subtitle */
-}
-
-h5.author {
-  color: #8B5F65; /* Color for author */
-}
-
+h4.subtitle,
+h5.author,
 h5.date {
-  color: #8B5F65; /* Color for date */
+  color: #8B5F65;
 }
 
 /* Hyperlink Styles */
 a {
-  color:#582C35; /* Text color for hyperlinks */
-  text-decoration: none; /* Removes underline from hyperlinks */
+  color:#582C35;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #005a9c; /* Color when hovering over hyperlinks */
-  text-decoration: underline; /* Underlines text when hovering over hyperlinks */
+  color: #005a9c;
+  text-decoration: underline;
 }
 
 a:visited {
-  color: #6C4F56; /* Color for visited hyperlinks */
+  color: #6C4F56;
 }
 
 a:active {
-  color: #4A2C31; /* Color for active hyperlinks (while clicking) */
+  color: #4A2C31;
+}
+
+/* Hide duplicate title */
+.title {
+  display: none;
 }
 
 </style>
+  <div style="color:#8B5F65;">
+  
+  <div class="row" style="padding-top: 70px;">
 
-Hola  
+  
+ <div style="text-align:center;">
+
+  
+<img src="images/investigadora_pregunta.jpg"
+     style="display:block; margin: 0 auto; max-width:80%; border-radius:10px;">
 
 
-Bienvenidas y bienvenidos a su curso de Consulta de Fuentes de Lectura Numérica del Mundo. 
-
-Disfruta, aprende y envía recomendaciones a este espacio.
-
-
-</div>
-<div class="col-sm-12">
-
-<!-- ### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io) -->
-
-<!-- <a href = "https://crumplab.github.io"> -->
-![](images/investigadora_pregunta.jpg)
 </a>
-</div>
+  
+  
+  <p style="text-align:center; font-size: 12px; color: #8B5F65;">
+  Fuente: internet
+</p>
 
+
+# **BIENVENIDAS TODAS AL CURSO**
+
+Hola estudiantes:  
+
+¡Bienvenidas y bienvenidos a este curso de *Consulta de Fuentes y Lectura Numérica del Mundo*!  
+
+Comienza leyendo la descripción general del curso.  
+Deseamos que el curso contribuya a tu formación.  
+
+**Equipo de CFLNM 0032**
+
+</div>
