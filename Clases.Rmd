@@ -40,8 +40,20 @@ corresponde.
 materiales <- list(
 
   "1" = '
-**Presentación.** Introducción a la metodología en ciencias sociales:
-¿qué y cuáles son las ciencias sociales?
+**Presentación de hoy (3 de septiembre).** ¿Qué es un dato? Manejo de datos,
+RDM, FAIR y habilidades para investigar.
+
+<div class="embed"><iframe src="clase01_que_es_un_dato.html"></iframe></div>
+
+**Lectura.** Torres Vargas, G. A. (2020). [*El manejo de datos: aproximaciones
+desde los estudios de la información*](https://ru.iibi.unam.mx/jspui/bitstream/IIBI_UNAM/L225/1/L230.pdf). IIBI-UNAM.
+
+**Entrega (cierre de clase).** En equipos de 3, media cuartilla: pregunta,
+fuentes, datos, dos decisiones de manejo, un problema de FAIR y una decisión
+ética. Se sube a Classroom.
+
+**Material complementario.** Introducción a la metodología en ciencias
+sociales: ¿qué y cuáles son las ciencias sociales?
 
 <div class="embed"><iframe src="intro_met_ccss.html"></iframe></div>
 

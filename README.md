@@ -1,7 +1,7 @@
 # Consulta de Fuentes y Lectura Numérica del Mundo
 
 Sitio web del curso **clave 2102**, primer semestre, Facultad de Ciencias
-Políticas y Sociales, UNAM. Semestre **2027-1** (24 de agosto – 4 de diciembre
+Políticas y Sociales, UNAM. Semestre **2027-1** (31 de agosto – 4 de diciembre
 de 2026). Profesora: Dra. Daniela Serrano Campos.
 
 **Sitio publicado:**

@@ -1,0 +1,986 @@
+---
+title: "¿Qué es un dato?"
+subtitle: "Manejo de datos, RDM, FAIR y habilidades para investigar"
+author: "Daniela Serrano Campos"
+institute: "FCPyS · CFLNM 2102"
+date: "3 de septiembre de 2026"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - rladies
+      - rladies-fonts
+    seal: false
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "4:3"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi = 300, warning = FALSE, message = FALSE)
+```
+
+class: title-slide, middle, center
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+class: inverse, middle, center
+
+# Semana 1 · Unidad 1
+
+## Datos, información y evidencia
+### ¿Cómo producimos conocimiento sobre la realidad social?
+
+---
+
+# Hoy
+
+| Minutos | Tema |
+|---|---|
+| 0–15 | ¿Qué es un dato? |
+| 15–30 | Research Data Management: el ciclo de vida del dato |
+| 30–45 | FAIR: encontrar, entender, reutilizar |
+| 45–60 | ¿Qué habilidades requiere investigar con datos? |
+| 60–78 | Dos casos: de fuentes a datos, de datos a conocimiento |
+| 78–90 | Actividad de cierre |
+
+**Lectura de hoy:** Torres Vargas, G. A. (2020). *El manejo de datos:
+aproximaciones desde los estudios de la información*. IIBI-UNAM.
+
+---
+class: inverse, middle, center
+
+# 0–15 min
+
+## ¿Qué es un dato?
+
+---
+class: middle, center
+
+# ¿Qué es un dato?
+
+.large[**Denme ejemplos.**]
+
+---
+
+# Probablemente dijeron...
+
+.pull-left[
+- una cifra
+- un porcentaje
+- una encuesta
+- una estadística
+]
+
+.pull-right[
+Todos son números.
+
+**¿Y si un dato no fuera un número?**
+]
+
+--
+
+<br>
+
+> El término *dato* es **impreciso**. En investigación puede referirse a la
+> evidencia primaria que sustenta una investigación y sus resultados, pero
+> existe una gran diversidad de datos: experimentales, observacionales,
+> operacionales, de terceros o del sector público, de monitoreo, procesados
+> o reutilizados.
+
+---
+class: middle
+
+# Definición de trabajo
+
+.large[
+**Dato:** representación o registro de un hecho, fenómeno, observación,
+medición o actividad que puede ser **recopilado, organizado y utilizado como
+evidencia** para responder una pregunta o producir conocimiento.
+]
+
+---
+
+# Un dato no tiene que ser un número
+
+.pull-left[
+- una respuesta de encuesta
+- una entrevista
+- una fotografía
+- una observación de campo
+- un registro administrativo
+]
+
+.pull-right[
+- una publicación en redes
+- la ubicación de un objeto
+- un texto
+- una medición
+- un registro de transacción
+]
+
+---
+class: inverse, middle, center
+
+# Un periódico,
+# ¿es fuente o dato?
+
+---
+
+# Depende de la pregunta
+
+**Investigación A**
+
+> "Quiero conocer la fecha en que ocurrió un acontecimiento político."
+
+Consulto *El Universal* → el periódico funciona como **fuente de información**.
+
+--
+
+<br>
+
+**Investigación B**
+
+> "Quiero estudiar cómo la prensa mexicana representó la migración entre
+> 2015 y 2025."
+
+Reúno 20,000 notas → esas notas son un **corpus de datos de investigación**.
+
+---
+class: middle, center
+
+.large[
+Algo no es "dato" únicamente por sus características.
+
+Su función depende de **la pregunta**, de **cómo se obtiene**
+y de **lo que hacemos con ello**.
+]
+
+---
+class: middle, center
+
+# DATO → INFORMACIÓN → CONOCIMIENTO
+
+---
+
+# Un ejemplo
+
+**Dato:** cada respuesta de 1,000 estudiantes a una pregunta sobre empleo.
+
+--
+
+**Información:** 43 % de las personas encuestadas declaró trabajar.
+
+--
+
+**Conocimiento:** qué significa ese resultado para comprender las condiciones
+en que estudia esa población — considerando *a quiénes* se encuestó, *cuándo*
+y *cómo* se formuló la pregunta.
+
+--
+
+<br>
+
+.large[
+Los datos por sí solos no explican el mundo. Hay que **organizarlos,
+contextualizarlos, analizarlos e interpretarlos**.
+]
+
+---
+
+# ¿Por qué "manejar" datos?
+
+El problema contemporáneo no es solo que haya **muchos** datos, sino que son
+**heterogéneos**.
+
+Por eso el libro menciona: procesamiento del lenguaje, aprendizaje automático,
+redes neuronales, modelos predictivos, análisis de redes sociales,
+visualización y minería de datos.
+
+--
+
+<br>
+
+.large[
+**¿Por qué no puedo analizar igual una entrevista, 10 millones de registros
+administrativos y 50,000 publicaciones de X?**
+]
+
+---
+class: middle, center
+
+# distintos datos
+# ↓
+# distintas formas de organización
+# ↓
+# distintos métodos de análisis
+
+---
+class: middle, center
+
+# ¿Qué es manejo de datos?
+
+## OBTENCIÓN → ALMACENAMIENTO → TRATAMIENTO
+
+---
+
+# Las tres preguntas
+
+**Obtener** — ¿de dónde salen mis datos y cómo los consigo?
+
+**Almacenar** — ¿cómo los organizo, identifico, conservo y protejo?
+
+**Tratar** — ¿qué hago con ellos para que puedan ser analizados?
+
+--
+
+<br>
+
+Matusiak amplía esta idea: ya no solo *qué hacemos con los datos para
+analizarlos*, sino **qué hacemos con ellos durante todo su ciclo de vida**.
+
+---
+class: inverse, middle
+
+# Caso para pensar
+
+Una investigadora realiza **50 entrevistas**. Las graba en su celular y las
+guarda como `audio1`, `audio2`, `audio3`...
+
+Después transcribe algunas, elimina los audios que ya no necesita y seis meses
+después publica un artículo.
+
+## ¿En qué momentos hubo decisiones sobre los datos?
+
+---
+class: middle, center
+
+# producción → identificación → almacenamiento
+# → selección → organización → transformación
+# → análisis → eliminación/preservación
+# → publicación
+
+---
+class: middle, center
+
+.large[
+Manejar datos **no** ocurre al final de una investigación.
+
+Comienza desde que decidimos qué evidencia necesitamos
+y continúa durante todo el proyecto.
+]
+
+---
+class: inverse, middle, center
+
+# 15–30 min
+
+## Research Data Management
+### Pensar el dato a lo largo de todo su ciclo de vida
+
+---
+class: inverse, middle, center
+
+# 30–45 min
+
+## FAIR
+
+### ¿Qué hace que los datos puedan encontrarse, entenderse y reutilizarse?
+
+---
+class: middle, center
+
+.large[
+Si hicimos una investigación y queremos que sus datos **sigan siendo útiles**,
+¿qué características deberían tener?
+]
+
+---
+
+# FAIR
+
+**F** — *Findable* → **localizables**
+
+**A** — *Accessible* → **accesibles**
+
+**I** — *Interoperable* → **interoperables**
+
+**R** — *Reusable* → **reutilizables**
+
+--
+
+<br>
+
+No se trata de memorizar cuatro palabras, sino de entender
+**qué problema resuelve cada una**.
+
+---
+
+# F · Findable | Localizables
+
+> ¿De qué sirve que exista un conjunto de datos si nadie puede encontrarlo?
+
+Necesitamos: un título comprensible, autoría, palabras que permitan
+localizarlos, una descripción, **metadatos** y, idealmente, un identificador
+persistente.
+
+--
+
+<br>
+
+.pull-left[
+`BASE_FINAL2.xlsx`
+
+*¿Alguien que no participó puede saber qué es esto?*
+]
+
+.pull-right[
+*"Encuesta sobre condiciones de estudio de estudiantes de primer ingreso,
+UNAM, 2026"*
+]
+
+--
+
+**Findable responde:** ¿puedo encontrar e identificar los datos que necesito?
+
+---
+
+# A · Accessible | Accesibles
+
+> Ya los encontré. ¿Puedo acceder a ellos? ¿En qué condiciones?
+
+"Accesible" **no** significa "cualquiera puede descargar todo".
+
+Significa que existen **condiciones y procedimientos claros**.
+
+--
+
+- **Datos públicos:** descarga directa.
+- **Datos restringidos:** solicito autorización.
+- **Datos confidenciales:** no accedo a los registros individuales, aunque sí
+  puede existir información que describa el conjunto.
+
+--
+
+**Accessible responde:** encontré los datos; ¿sé cómo puedo acceder a ellos?
+
+---
+
+# I · Interoperable | Interoperables
+
+.pull-left[
+**Base A**
+
+| sexo | valor |
+|---|---|
+| Mujer | M |
+| Hombre | H |
+]
+
+.pull-right[
+**Base B**
+
+| sex | valor |
+|---|---|
+| Female | 1 |
+| Male | 2 |
+]
+
+<br>
+
+.large[**¿Podemos juntar automáticamente las dos bases?**]
+
+---
+
+# I · Interoperable | Interoperables
+
+No necesariamente. Hablan aparentemente de lo mismo, pero usan **nombres,
+códigos y estructuras diferentes**.
+
+--
+
+> **Interoperabilidad:** capacidad de que los datos puedan relacionarse e
+> intercambiarse con otros datos, herramientas o sistemas porque utilizan
+> formatos, estructuras, vocabularios o estándares compatibles.
+
+--
+
+<br>
+
+Para combinar datos no basta con que traten del mismo tema. Hay que saber
+**qué significa cada variable y cómo fue construida**.
+
+---
+
+# R · Reusable | Reutilizables
+
+Encontré la base. Puedo descargarla. Puedo abrirla.
+**¿Eso significa que puedo reutilizarla correctamente?**
+
+| P1 | P2 | NIV | CAT |
+|---|---|---|---|
+| 3 | 1 | 2 | 7 |
+| 4 | 2 | 1 | 4 |
+
+--
+
+¿Qué significa `P1`? ¿Qué significa `3`? ¿Qué es `NIV`?
+¿Quiénes respondieron? ¿Cuándo? ¿Cómo se seleccionaron?
+
+--
+
+.large[**No sabemos.**]
+
+El archivo está *disponible*, pero no es *reutilizable*.
+
+---
+class: inverse, middle
+
+# Actividad · 5 minutos
+
+Una investigadora estudió participación política de jóvenes. Conserva una base
+con **2,000 cuestionarios**.
+
+Está depositada en un repositorio universitario, con título y descripción.
+Se descarga en CSV. Las variables se llaman `P1`, `P2`, `P3`, `P4`.
+No incluye el cuestionario ni un diccionario de variables. No explica cómo se
+seleccionó la muestra.
+
+## En parejas: ¿cumple con FAIR?
+
+---
+
+# ¿Cumple con FAIR?
+
+**F — ¿Localizable?** Probablemente sí.
+
+**A — ¿Accesible?** Sí.
+
+**I — ¿Interoperable?** No podemos determinarlo con la información disponible.
+
+**R — ¿Reutilizable?** Muy poco: no podemos interpretar las variables ni saber
+cómo se produjeron los datos.
+
+--
+
+<br>
+
+.large[
+FAIR no es un interruptor de sí/no. Podemos gestionar **mejor o peor**
+distintos aspectos de nuestros datos.
+]
+
+---
+class: inverse, middle, center
+
+# FAIR ≠ OPEN
+
+---
+
+# ¿FAIR exige abrirlo todo?
+
+Una investigadora entrevista a **30 mujeres víctimas de violencia**. Las
+entrevistas contienen nombres, lugares y experiencias que podrían permitir
+identificarlas.
+
+Los datos pueden estar:
+
+- muy bien organizados ✓
+- perfectamente documentados ✓
+- descritos con metadatos ✓
+- preservados correctamente ✓
+
+--
+
+.large[**Y aun así, NO deberían publicarse íntegramente.**]
+
+---
+class: middle, center
+
+# "As open as possible,
+# as closed as necessary."
+
+## Tan abiertos como sea posible,
+## tan cerrados como sea necesario.
+
+---
+
+# Cuatro conceptos que volverán
+
+.large[
+**privacidad** — **confidencialidad** — **anonimización** — **seguridad**
+]
+
+<br>
+
+Una buena gestión de datos no consiste en abrir todo. Consiste en tomar
+**decisiones responsables** sobre qué puede compartirse, con quién y bajo qué
+condiciones.
+
+---
+
+# FAIR, Open Data y Open Science
+
+**Open Access** — acceso abierto a **publicaciones** científicas.
+
+**Open Data** — acceso abierto a **datos** para consultarlos y reutilizarlos.
+
+**Open Science** — concepto más amplio: abrir y hacer más transparente y
+colaborativo **el proceso científico**.
+
+---
+class: middle, center
+
+# OPEN SCIENCE
+
+### ↳ Open Access
+### ↳ Open Data
+### ↳ Open Source
+### ↳ OER
+### ↳ Open Peer Review
+### ↳ Citizen Science
+
+---
+class: inverse, middle, center
+
+# 45–60 min
+
+## ¿Qué habilidades requiere
+## investigar en un mundo de datos?
+
+---
+
+# ¿Cómo se investigó esto?
+
+El proyecto **IFLA Data Curation** usó un diseño de **métodos mixtos** en tres
+fases:
+
+1. Revisión de literatura y minería de datos para analizar la terminología.
+2. Análisis cuantitativo de anuncios de empleo.
+3. Entrevistas semiestructuradas con *data librarians*, *data curators* y
+   *research data managers*.
+
+--
+
+.large[**¿Cuáles fueron sus fuentes y cuáles sus datos?**]
+
+---
+
+# Fuente ≠ dato ≠ método
+
+| | Caso IFLA |
+|---|---|
+| **Fuentes** | literatura, sitios con ofertas laborales, profesionales |
+| **Datos** | textos, 441 anuncios de trabajo, entrevistas |
+| **Métodos** | minería de datos, análisis de contenido, entrevistas |
+| **Resultado** | roles, responsabilidades y competencias |
+
+---
+
+# ¿Hay una profesión que "sepa de datos"?
+
+De **441 anuncios de empleo**: gran variedad de nombres de puesto, ningún
+título estándar. Aunque muchos puestos estaban ligados a bibliotecas, solo el
+**27 %** exigía un título en bibliotecología o ciencias de la información.
+
+--
+
+.large[**El trabajo con datos no pertenece a una sola disciplina.**]
+
+---
+
+# En esta Facultad
+
+- Una **socióloga** puede necesitar trabajar con bases de datos.
+- Una **comunicóloga** puede analizar miles de textos.
+- Una **politóloga** puede utilizar encuestas.
+- Una **internacionalista** puede integrar datos de distintos países.
+- Una persona en **administración pública** puede trabajar con registros
+  administrativos.
+
+<br>
+
+No necesitan convertirse en científicas de datos. Sí necesitan
+**alfabetización de datos** para investigar.
+
+---
+class: inverse, middle, center
+
+# Actividad · 7 minutos
+
+# UNA BUENA INVESTIGADORA
+# DEBE SABER...
+
+### En parejas, 2 minutos.
+
+---
+
+# Las tareas concretas del RDM
+
+.pull-left[
+- gestión de datos
+- formatos y nombres de archivo
+- limpieza y verificación
+- conversión de datos
+- descripción y documentación
+- creación de metadatos
+]
+
+.pull-right[
+- depósito y publicación
+- identificadores
+- anonimización
+- seguridad
+- archivo y preservación
+]
+
+---
+
+# Un mapa de habilidades
+
+**A · Investigación** — preguntar → diseñar → obtener evidencia → analizar →
+interpretar
+
+**B · Información** — buscar → seleccionar → evaluar → organizar → documentar →
+citar
+
+**C · Datos** — obtener → limpiar → verificar → estructurar → describir →
+preservar
+
+**D · Técnicas** — herramientas digitales, bases de datos, formatos, software,
+*scripting*
+
+**E · Éticas** — proteger → anonimizar → decidir quién accede → compartir
+responsablemente
+
+**F · Comunicación** — explicar → enseñar → documentar para otros → colaborar
+
+---
+class: middle, center
+
+# Investigar con datos
+# ≠
+# saber hacerlo todo
+
+--
+
+.large[
+Investigar también significa saber **qué necesito**, **qué puedo hacer**,
+**qué debo aprender** y **con quién necesito colaborar**.
+]
+
+---
+
+# El RDM es una práctica sociotécnica
+
+Las personas entrevistadas consideraban que con frecuencia era **imposible**
+que una sola persona reuniera todas las competencias de las descripciones de
+puesto. El estudio encuentra modelos interdisciplinarios: bibliotecas, TI,
+áreas jurídicas y oficinas de investigación.
+
+--
+
+.large[**Los datos son técnicos y sociales a la vez.**]
+
+**Técnicos:** necesitamos métodos y herramientas para manejarlos.
+
+**Sociales:** alguien decide qué medir, cómo clasificar, qué conservar, qué
+hacer visible, cómo interpretar y quién puede acceder.
+
+---
+class: inverse, middle, center
+
+# 60–78 min
+
+## Sabemos lo que una investigadora
+## necesita hacer.
+### Veamos a investigadores haciéndolo.
+
+---
+class: middle, center
+
+# PREGUNTA → FUENTE → DATOS
+# → MANEJO/SISTEMATIZACIÓN
+# → MÉTODO/HERRAMIENTA
+# → RESULTADO → INTERPRETACIÓN
+
+---
+
+# No preguntamos
+
+.large[
+~~"¿Qué descubrieron?"~~
+]
+
+# Preguntamos
+
+.large[
+**"¿Cómo construyeron ese conocimiento?"**
+]
+
+---
+class: inverse, middle
+
+# Caso 1 · 8 min
+
+El Colegio de Postgraduados lleva décadas produciendo investigación.
+
+Queremos saber **cuáles han sido sus temas de investigación** y cómo han
+evolucionado.
+
+## ¿Cómo podríamos averiguarlo?
+
+---
+
+# Caso 1 · Cómo lo hicieron
+
+**Pregunta** — identificar y describir las temáticas de investigación en los
+documentos publicados por su personal académico en revistas de corriente
+principal.
+
+**Fuente** — Web of Science (SCIE y SSCI).
+
+**Datos** — los registros bibliográficos: títulos y resúmenes. Desde el primer
+documento localizado (1972) hasta 2017.
+
+--
+
+.large[**¿Los artículos son fuentes o datos?**]
+
+Aquí sus registros y contenidos textuales son **datos para el análisis**.
+
+---
+
+# Caso 1 · Manejo y método
+
+Los documentos no producen solos el resultado. Hubo que:
+
+.large[
+buscar → delimitar → recuperar → descargar → organizar → seleccionar texto →
+procesar
+]
+
+--
+
+<br>
+
+**Método:** minería de texto + VOSviewer.
+
+> **Minería de texto:** uso de procedimientos computacionales para identificar
+> patrones, relaciones o información en grandes conjuntos de textos.
+
+---
+
+# Caso 1 · Resultado
+
+El procesamiento genera *clusters* temáticos. Para 2005–2017 aparecen cinco:
+ganadería, enfermedades y plagas de plantas, genética vegetal, suelos y
+bosques, y ciencias de las plantas.
+
+--
+
+.large[**¿El algoritmo "descubrió" lo que investiga el Colegio?**]
+
+--
+
+No exactamente. Produjo una **representación** de las temáticas identificables
+a partir de determinadas fuentes, datos, periodos, criterios y procedimientos.
+
+---
+class: middle, center
+
+.large[
+**Los resultados dependen también de cómo construimos nuestros datos.**
+]
+
+<br>
+
+¿Qué habría pasado con otra base? ¿Otro periodo?
+¿Palabras clave en vez de títulos y resúmenes? ¿Otra estrategia de búsqueda?
+
+---
+class: inverse, middle
+
+# Caso 2 · 8 min
+
+Queremos conocer **las percepciones de las personas hacia la ciencia y su
+divulgación**.
+
+## ¿Qué datos necesitaríamos?
+
+---
+
+# Caso 2 · No solo encuestas
+
+.pull-left[
+- observación participante
+- notas y diarios de campo
+- fotografías
+- videos y audios
+]
+
+.pull-right[
+- 381 cuestionarios
+- grupos focales
+- entrevistas a profundidad
+]
+
+<br>
+
+.large[**¿Todo eso son datos?** Sí.]
+
+**Los datos de investigación no son solamente números.**
+
+---
+
+# Caso 2 · De lo no estructurado a lo analizable
+
+El proyecto produjo una base de conocimiento con documentos fotográficos,
+informes, entrevistas, conversaciones, notas de campo, transcripciones, cerca
+de **mil fotografías etnográficas**, un diario de campo y cientos de párrafos
+testimoniales.
+
+--
+
+.large[**Tenemos todo esto. ¿Ya podemos analizarlo?**]
+
+No necesariamente. Necesitamos **sistematizarlo**.
+
+---
+class: middle, center
+
+# ENTREVISTAS
+## ↓ transcripción
+## ↓ organización
+## ↓ corpus
+## ↓ procesamiento
+## ↓ patrones y coocurrencias
+## ↓ interpretación
+
+---
+
+# ¿Dónde entra el algoritmo?
+
+La minería de texto combina lingüística, computación y estadística, y permite
+trabajar con grandes cantidades de **texto no estructurado**. En el caso se
+usaron algoritmos para transformar información textual en representaciones
+numéricas e identificar patrones semánticos y coocurrencias de palabras.
+
+--
+
+<br>
+
+Una computadora no "entiende" una entrevista como nosotras. Para procesarla
+hay que convertir ciertos aspectos del texto en una **representación tratable**.
+
+.large[
+dato cualitativo → sistematización → procesamiento → representación → análisis
+]
+
+---
+
+# Comparar los dos casos
+
+| | Caso 1 | Caso 2 |
+|---|---|---|
+| **Qué estudia** | Producción científica | Percepciones y experiencias |
+| **Fuentes** | Bases bibliográficas | Personas, actividades, documentos |
+| **Datos** | Registros y textos científicos | Entrevistas, fotos, notas, cuestionarios |
+| **Estructura inicial** | Relativamente estructurada | Muy heterogénea |
+| **Manejo** | Seleccionar, delimitar, normalizar | Registrar, transcribir, organizar, clasificar |
+| **Análisis** | Minería de texto | Cualitativos + minería de texto |
+| **Resultado** | Patrones/temas | Patrones semánticos y de percepción |
+
+.large[**¿Qué tienen en común dos investigaciones tan distintas?**]
+
+---
+
+# Ambas tuvieron que...
+
+.pull-left[
+1. Formular una pregunta.
+2. Elegir fuentes.
+3. Obtener/producir datos.
+4. Seleccionarlos y organizarlos.
+]
+
+.pull-right[
+5. Documentarlos y procesarlos.
+6. Elegir métodos y herramientas.
+7. Analizar resultados.
+8. Interpretarlos.
+]
+
+<br>
+
+.large[
+Detrás de cualquier resultado de investigación hay un **ciclo de decisiones y
+de manejo de datos** — con millones de registros o con 20 respuestas.
+]
+
+---
+class: inverse, middle, center
+
+# ¿Podríamos reproducir
+# estas investigaciones?
+
+### ¿Qué necesitaríamos que hubieran
+### conservado y documentado?
+
+---
+class: middle, center
+
+.large[
+Acabamos de regresar a **RDM** y a **FAIR**.
+
+Una investigación no es reproducible porque conservamos `base_final.xlsx`.
+
+Necesitamos conservar el **contexto** que permite comprender
+cómo los datos llegaron a ser lo que son.
+]
+
+---
+class: inverse, middle
+
+# 78–90 min · Actividad de cierre
+
+En equipos de 3, diseñen un **mini proyecto de investigación** y entreguen
+media cuartilla con:
+
+1. **Pregunta** de investigación.
+2. **Fuentes** que consultarían.
+3. **Datos** que producirían u obtendrían (¿son números?).
+4. Dos decisiones de **manejo de datos** (nombres de archivo, organización,
+   documentación...).
+5. Un problema de **FAIR** que anticipan.
+6. Una decisión **ética** que tendrían que tomar.
+
+### Se sube a Classroom · CFLNM-2027 · código `woza42ty`
+
+---
+class: middle, center
+
+# Para la próxima sesión
+
+## Lunes 7 de septiembre
+
+**Fuentes primarias, secundarias y terciarias.**
+**Censos, encuestas y registros administrativos.**
+
+Lectura: INEGI, *El proceso de generación de estadísticas básicas* (Manual 3).
+
+---
+class: inverse, middle, center
+
+# Gracias
+
+## danserca.github.io/CFLNM

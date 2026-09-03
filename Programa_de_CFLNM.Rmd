@@ -37,7 +37,7 @@ detalle semana por semana se actualizan solos.
 | **Carreras** | Todas |
 | **Créditos** | 8 |
 | **Horas totales** | 80 (42 teóricas, 38 prácticas) |
-| **Periodo** | Semestre 2027-1: del 24 de agosto al 4 de diciembre de 2026 |
+| **Periodo** | Semestre 2027-1: del 31 de agosto al 4 de diciembre de 2026 |
 | **Sesiones** | Lunes y jueves, 17:00–19:00 h |
 | **Exámenes finales** | 7 al 11 de diciembre de 2026 |
 
@@ -97,7 +97,7 @@ for (i in seq_len(nrow(un))) {
 
 # Cronograma
 
-El semestre tiene 15 semanas de clase y 28 sesiones efectivas. Dos sesiones
+El semestre tiene 14 semanas de clase y 26 sesiones efectivas. Dos sesiones
 caen en días de asueto oficial de la UNAM (**lunes 2 de noviembre** y **lunes
 16 de noviembre de 2026**) y no se imparten; su contenido se cubre en la sesión
 del jueves de esa misma semana.

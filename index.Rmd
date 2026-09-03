@@ -16,7 +16,7 @@ source("_funciones.R")
 <div class="col-sm-7">
 
 Sitio del curso **clave 2102**, primer semestre, Facultad de Ciencias Políticas
-y Sociales de la UNAM. Semestre **2027-1** (24 de agosto al 4 de diciembre de
+y Sociales de la UNAM. Semestre **2027-1** (31 de agosto al 4 de diciembre de
 2026), impartido por la **Dra. Daniela Serrano Campos**.
 
 Aquí encontrarás el [programa completo](Programa_de_CFLNM.html), el
