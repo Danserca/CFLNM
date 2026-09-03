@@ -1,4 +1,10 @@
+# Configuración local de RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# Artefactos de compilación de R Markdown en la raíz.
+# La versión publicada del sitio vive en docs/ y sí se versiona.
+/*_cache/
+/*_files/

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Recursos</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CFLNM 2102 · 2027-1</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Inicio</a>
+</li>
+<li>
+  <a href="Programa_de_CFLNM.html">Programa</a>
+</li>
+<li>
+  <a href="Clases.html">Clases</a>
+</li>
+<li>
+  <a href="Recursos.html">Recursos</a>
+</li>
+<li>
+  <a href="Glosario.html">Glosario</a>
+</li>
+<li>
+  <a href="Profesores.html">Profesores</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="Disclamer.html">Aviso</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Recursos</h1>
+<h3 class="subtitle">Herramientas, fuentes y guías del curso</h3>
+
+</div>
+
+
+<p>Todo lo que usamos en el curso es gratuito y de código abierto. Nada
+de lo que aparece aquí requiere licencia ni pago.</p>
+<div id="software" class="section level1">
+<h1>Software</h1>
+<div id="r-y-rstudio" class="section level3">
+<h3>R y RStudio</h3>
+<p><a href="https://www.r-project.org">R</a> es un lenguaje de
+programación libre para análisis estadístico, manejo de datos y
+gráficos. <a
+href="https://posit.co/download/rstudio-desktop/">RStudio</a> es el
+entorno de trabajo que usaremos encima de R. <strong>Instala primero R y
+después RStudio.</strong> Ambos funcionan en Windows, macOS y Linux.</p>
+<p><a href="https://positron.posit.co/">Positron</a> es el sucesor de
+RStudio; si ya lo tienes instalado, también sirve para el curso.</p>
+</div>
+<div id="zotero" class="section level3">
+<h3>Zotero</h3>
+<p><a href="https://www.zotero.org/download/">Zotero</a> es el gestor
+bibliográfico del curso. Guarda referencias, las organiza y exporta el
+archivo <code>.bib</code> que RMarkdown usa para citar
+automáticamente.</p>
+<ul>
+<li><a href="https://www.zotero.org/support/">Documentación
+oficial</a></li>
+<li><a href="https://www.zotero.org/download/connectors">Conector para
+el navegador</a></li>
+</ul>
+</div>
+</div>
+<div id="búsqueda-de-fuentes" class="section level1">
+<h1>Búsqueda de fuentes</h1>
+<div id="bases-y-repositorios-académicos" class="section level3">
+<h3>Bases y repositorios académicos</h3>
+<ul>
+<li><a href="https://scholar.google.com">Google Scholar</a></li>
+<li><a href="https://www.scielo.org">SciELO</a></li>
+<li><a href="https://www.redalyc.org">Redalyc</a></li>
+<li><a href="https://dialnet.unirioja.es">Dialnet</a></li>
+<li><a href="https://repositorio.unam.mx">Repositorio Universitario
+UNAM</a></li>
+<li><a href="https://www.bidi.unam.mx">Biblioteca Digital UNAM
+(BiDi)</a></li>
+</ul>
+</div>
+<div id="guías-de-búsqueda-de-la-unam" class="section level3">
+<h3>Guías de búsqueda de la UNAM</h3>
+<ul>
+<li><a
+href="https://ceib.dgb.unam.mx/index.php/operadores-booleanos">Operadores
+booleanos, de proximidad y de truncamiento</a></li>
+<li><a
+href="https://ceib.dgb.unam.mx/index.php/busquedas-eficientes-de-informacion">Búsquedas
+eficientes de información</a></li>
+<li><a
+href="https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion">La
+búsqueda de información (LIEC-DGB)</a></li>
+<li><a href="https://docenciadigital.unam.mx/ayuda-busqueda">Ayuda de
+búsqueda — Docencia Digital</a></li>
+<li><a
+href="https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa">Cómo
+hacer citas y referencias en formato APA</a></li>
+<li><a
+href="https://liec.dgb.unam.mx/index.php/integridad-academica/normativa-universitaria-sobre-el-principio-de-etica-e-integridad-academica">Integridad
+académica y normativa universitaria</a></li>
+</ul>
+</div>
+<div id="revisión-sistemática" class="section level3">
+<h3>Revisión sistemática</h3>
+<ul>
+<li><a href="https://doi.org/10.1136/bmj.n71">Declaración PRISMA
+2020</a></li>
+<li><a href="https://www.prisma-statement.org">Sitio oficial
+PRISMA</a></li>
+</ul>
+</div>
+</div>
+<div id="datos" class="section level1">
+<h1>Datos</h1>
+<div id="méxico" class="section level3">
+<h3>México</h3>
+<ul>
+<li><a href="https://www.inegi.org.mx">INEGI</a> — censos, encuestas y
+registros administrativos</li>
+<li><a href="https://datos.gob.mx">Datos Abiertos del Gobierno de
+México</a></li>
+<li><a href="https://www.coneval.org.mx">CONEVAL</a> — medición de la
+pobreza</li>
+<li><a href="https://www.gob.mx/sesnsp">Secretariado Ejecutivo del
+SNSP</a> — incidencia delictiva</li>
+<li><a href="https://www.ine.mx">INE</a> — resultados electorales</li>
+</ul>
+</div>
+<div id="internacionales" class="section level3">
+<h3>Internacionales</h3>
+<ul>
+<li><a href="https://datos.bancomundial.org">Banco Mundial — Datos
+abiertos</a></li>
+<li><a
+href="https://statistics.cepal.org/portal/cepalstat/">CEPALSTAT</a></li>
+<li><a href="https://ourworldindata.org">Our World in Data</a></li>
+<li><a href="https://dataverse.harvard.edu">Harvard Dataverse</a></li>
+<li><a href="https://www.latinobarometro.org">Latinobarómetro</a></li>
+<li><a href="https://www.vanderbilt.edu/lapop/">LAPOP /
+AmericasBarometer</a></li>
+</ul>
+</div>
+</div>
+<div id="aprender-r-y-rmarkdown" class="section level1">
+<h1>Aprender R y RMarkdown</h1>
+<p>Estos libros son gratuitos en línea.</p>
+<ul>
+<li><a href="https://bookdown.org/jboscomendoza/r-principiantes4/"><em>R
+para principiantes</em> — J. Boscó Mendoza</a> (en español, el mejor
+punto de partida)</li>
+<li><a href="https://r4ds.hadley.nz/"><em>R for Data Science</em> —
+Wickham, Çetinkaya-Rundel y Grolemund</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/"><em>R Markdown: The
+Definitive Guide</em> — Xie, Allaire y Grolemund</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/"><em>R
+Markdown Cookbook</em></a></li>
+<li><a href="https://posit.co/resources/cheatsheets/">Hojas de
+referencia (cheatsheets) de Posit</a></li>
+</ul>
+<div id="cuando-algo-no-funciona" class="section level3">
+<h3>Cuando algo no funciona</h3>
+<ol style="list-style-type: decimal">
+<li>Copia el mensaje de error completo y búscalo. Casi siempre alguien
+ya lo tuvo.</li>
+<li><a href="https://es.stackoverflow.com/questions/tagged/r">Stack
+Overflow en español</a> y <a
+href="https://stackoverflow.com/questions/tagged/r">en inglés</a>.</li>
+<li><a href="https://forum.posit.co">Posit Community</a>.</li>
+<li>En clase: trae el error, no solo la descripción de que “no
+jala”.</li>
+</ol>
+</div>
+</div>
+<div id="ética-y-datos" class="section level1">
+<h1>Ética y datos</h1>
+<ul>
+<li><a
+href="http://www.abogadogeneral.unam.mx:6060/legislacion/view/84">Código
+de Ética de la UNAM</a></li>
+<li><a href="https://unstats.un.org">Principios Fundamentales de las
+Estadísticas Oficiales (ONU)</a></li>
+<li><a href="https://oecd.ai/en/ai-principles">Principios de la OCDE
+sobre inteligencia artificial</a></li>
+<li><a href="https://unece.org/statistics">UNECE — Uso de IA en
+estadísticas oficiales</a></li>
+<li><a
+href="https://unece.org/statistics/publications/making-data-meaningful-part-1">UNECE
+— <em>Making Data Meaningful</em></a></li>
+</ul>
+<hr />
+<p style="font-size:.9em;">
+Última actualización: 3 de septiembre de 2026.
+</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

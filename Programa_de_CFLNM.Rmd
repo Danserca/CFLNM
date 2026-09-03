@@ -1,436 +1,274 @@
 ---
-title: "Programa"
-subtitle: "Consulta de fuentes y lectura numérica del mundo"
+title: "Programa del curso"
+subtitle: "Consulta de Fuentes y Lectura Numérica del Mundo · Clave 2102 · Semestre 2027-1"
 author: "Dra. Daniela Serrano Campos"
-date: "`r format(Sys.Date(), '%d de %B de %Y')`"
 output:
   html_document:
+    theme: spacelab
+    css: styles.css
     toc: true
-    toc_float: true
-    collapsed: false
+    toc_float:
+      collapsed: false
     number_sections: false
     toc_depth: 1
-    theme: spacelab
-    #code_folding: hide
 ---
-<style type="text/css">
-
-/* Navbar Styles */
-.navbar {
-  background-color: #CD8C95 !important; /* Background color of the navbar */
-  border-color: #8B5F65 !important; /* Border color of the navbar */
-  background-image: none !important; /* Removes any background image */
-  height: 65px; /* Sets navbar height */
-}
-
-/* Navbar Link Styles */
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;  /* Text color for links */
-  font-weight: bold !important; /* Bold text */
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #8B5F65 !important; /* Hover and focus text color */
-  font-weight: bold; /* Keeps text bold on hover/focus */
-}
-
-/* Navbar Collapse Menu Styles */
-.navbar-collapse {
-  background-color: #CD8C95 !important; /* Background color for the collapsed navbar */
-}
-
-/* Dropdown Menu Link Styles */
-.navbar-nav > li > a {
-  color: #FFFFFF; /* Text color for dropdown links */
-  font-weight: bold;
-  padding: 10px 15px; /* Padding for dropdown links */
-}
-
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > .active > a {
-  background-color: #005a9c; /* Background color on hover/active */
-  color: #FFFFFF; /* Text color on hover/active */
-}
-
-/* Active List Group Item Styles */
-.list-group-item.active,
-.list-group-item.active:focus,
-.list-group-item.active:hover {
-  z-index: 2;
-  color: #8B5F65; /* Text color for active list item */
-  background-color: #EEDFCC; /* Background color for active list item */
-  border-color: #8B5F65; /* Border color for active list item */
-}
-
-/* Title, Subtitle, Author, and Date Styles */
-h1.title {
-  color: #8B5F65; /* Color for title */
-}
-
-h4.subtitle {
-  color: #8B5F65; /* Color for subtitle */
-}
-
-h5.author {
-  color: #8B5F65; /* Color for author */
-}
-
-h5.date {
-  color: #8B5F65; /* Color for date */
-}
-
-/* Hyperlink Styles */
-a {
-  color: #582C35; /* Text color for hyperlinks */
-  text-decoration: none; /* Removes underline from hyperlinks */
-}
-
-a:hover {
-  color: #005a9c; /* Color when hovering over hyperlinks */
-  text-decoration: underline; /* Underlines text when hovering over hyperlinks */
-}
-
-a:visited {
-  color: #6C4F56; /* Color for visited hyperlinks */
-}
-
-a:active {
-  color: #4A2C31; /* Color for active hyperlinks (while clicking) */
-}
-
-</style>
-
-
-
-<div style="color:#8B5F65;">
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+source("_funciones.R")
+cal <- cargar_calendario()
+un  <- cargar_unidades()
 ```
-**Nota:** Este programa de estudios estará en construcción.
 
-### Información sobre el curso
+<div class="aviso">
+**Cómo se mantiene este programa.** El cronograma se genera a partir de
+`datos/calendario.csv` y `datos/unidades.csv`. Para mover una fecha o cambiar
+una lectura basta editar el CSV y reconstruir el sitio: la tabla resumen y el
+detalle semana por semana se actualizan solos.
+</div>
 
-- **Sección:** BÁSICA 2102
-- **Horario:** 5:00pm - 7:15pm, lunes y jueves
-- **Salón:** Aula de cómputo, edificio "D"
+# Información del curso
+
+| | |
+|---|---|
+| **Asignatura** | Consulta de Fuentes y Lectura Numérica del Mundo |
+| **Clave** | 2102 |
+| **Semestre de la carrera** | 1.º |
+| **Carreras** | Todas |
+| **Créditos** | 8 |
+| **Horas totales** | 80 (42 teóricas, 38 prácticas) |
+| **Periodo** | Semestre 2027-1: del 24 de agosto al 4 de diciembre de 2026 |
+| **Sesiones** | Lunes y jueves, 17:00–19:00 h |
+| **Exámenes finales** | 7 al 11 de diciembre de 2026 |
+
+### Docente
+
+- **Profesora:** Dra. Daniela Serrano Campos — Centro de Estudios Sociológicos (CES)
+- **Correo:** [daniela.campos@politicas.unam.mx](mailto:daniela.campos@politicas.unam.mx)
+  — por favor escribe **`CFLNM 2102`** en el asunto.
+
+# Objetivo general
+
+Al finalizar el curso, el estudiantado será capaz de **localizar, evaluar,
+organizar, documentar, analizar y comunicar evidencia** proveniente de fuentes
+documentales y bases de datos mediante herramientas reproducibles para el
+estudio de fenómenos sociales.
+
+La investigación social contemporánea requiere procesos transparentes y
+reproducibles de búsqueda, organización, análisis y comunicación de
+información. Este curso construye esa cadena completa, paso a paso, sin dar por
+supuesto ningún conocimiento previo de programación.
+
+**Requisitos previos:** ninguno.
+
+# Metodología de enseñanza y aprendizaje
 
-### Información de los docentes
+### Estrategias
 
-- **Profesora titular:** Daniela Serrano Campos
-- **Email:** [daniela.campos@politicas.unam.mx](mailto:daniela.campos@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
-- **Profesora adjunta:** Ximena Gloria Casillas
-- **Email:** [ximena.gloria@politicas.unam.mx](mailto:ximena.gloria@politicas.unam.mx)
-- **Profesor adjunto:** Rodrigo Nieves
-- **Email:** [rodrigo.nieves@politicas.unam.mx](mailto:modrigo.nieves@politicas.unam.mx) (por favor pon ‘CFLNM 0032’ en el asunto)
+- Aprendizaje por proyectos
+- Aprendizaje por investigación
+- Aprendizaje por discusión o debate
+- Aprendizaje basado en problemas
 
+### Técnicas
 
-# Descripción general y objetivos del curso
+- **Grupales:** lluvia de ideas, mesas redondas, foros, paneles.
+- **Individuales:** lecturas dirigidas, ensayos, controles de lectura.
+- **Magistrales:** exposiciones, personas invitadas especialistas.
 
-2025 | 8 | 23 Última actualización: `r Sys.Date()`
+### Recursos didácticos
 
-Introducción práctica y centrada en las habilidades para utilizar software de programación de código abierto (R, R-studio y R Markdown) en varios aspectos de la investigación en ciencias sociales. El curso cubre la programación básica en R, la manipulación de datos, la creación de gráficos y el uso de R para crear manuscritos correctamente citados y gestionando las referencias y fuentes utilizadas.
+Computadora, proyector, **RStudio**, **Zotero**, bases de datos del **INEGI**,
+**Google Scholar**, **Scielo**, **Redalyc**, Google Classroom y este sitio.
 
+# Unidades del curso
 
-Requisitos especiales: NINGUNO
+```{r unidades, results='asis'}
+for (i in seq_len(nrow(un))) {
+  sem <- cal$semana[cal$unidad == un$unidad[i]]
+  cat("::: {.semana}\n")
+  cat(sprintf('<span class="etiqueta">Unidad %s &middot; semanas %s a %s</span>\n\n',
+              un$unidad[i], min(sem), max(sem)))
+  cat(sprintf("### %s\n\n", un$nombre[i]))
+  cat(sprintf("**Objetivo.** %s\n\n", un$objetivo[i]))
+  cat(":::\n\n")
+}
+```
 
-# Objetivos
+# Cronograma
 
-- Programación básica en R: uso de variables, paquetes, espacios de trabajo...  
-- Transformación de datos: procesamiento de archivos de datos para un análisis deseado.  
-- Visualización de datos: representación gráfica.  
-- Comunicación de la investigación: cómo utilizar los scripts de R Markdown para crear manuscritos correctamente referenciados para comunicar la investigación.  
-- Investigación reproducible: principios de la ciencia abierta, incluidas herramientas para compartir datos, compartir manuscritos, diseños de investigación, compartir métodos.  
+El semestre tiene 15 semanas de clase y 28 sesiones efectivas. Dos sesiones
+caen en días de asueto oficial de la UNAM (**lunes 2 de noviembre** y **lunes
+16 de noviembre de 2026**) y no se imparten; su contenido se cubre en la sesión
+del jueves de esa misma semana.
 
- 
-🎯 Metodología general  
+```{r tabla-cronograma, results='asis'}
+tabla_calendario(cal, un)
+```
 
-El curso se desarrolla bajo el enfoque learning by doing, donde cada sesión combina explicación y práctica inmediata.
+# Cronograma detallado
 
-Talleres de búsqueda en catálogos, bases de datos y gestores bibliográficos.
+```{r detalle-cronograma, results='asis'}
+tarjetas_calendario(cal, un)
+```
 
-Ejercicios de citación en distintos estilos, incluyendo citación automatizada en RMarkdown.
+<div class="aviso">
+**Exámenes finales:** del 7 al 11 de diciembre de 2026, conforme al calendario
+de la Facultad.
+</div>
 
-Uso directo de bases de datos reales (INEGI, ONU, Banco Mundial).
+# Proyecto integrador
 
-Manipulación, transformación y análisis de variables en R.
+A lo largo del semestre desarrollarás un proyecto de investigación que integra
+todo lo visto en el curso. No se entrega al final: se construye por partes,
+y cada parte corresponde a una unidad.
 
-Elaboración de reportes reproducibles en RMarkdown.  
+| Parte | Entregable | Se trabaja en |
+|---|---|---|
+| 1 | Formulación de una pregunta de investigación | Unidad 1 |
+| 2 | Búsqueda sistemática de literatura (protocolo PRISMA básico) | Unidad 2 |
+| 3 | Gestión bibliográfica en Zotero con archivo `.bib` | Unidad 2 |
+| 4 | Construcción o recuperación de una base de datos | Unidad 3 |
+| 5 | Documentación mediante metadatos y diccionario de variables | Unidad 3 |
+| 6 | Análisis descriptivo básico en R | Unidades 4 y 5 |
+| 7 | Reporte final reproducible en RMarkdown | Unidad 6 |
 
+La presentación oral y la entrega del reporte final ocurren en la **semana 16
+(jueves 3 de diciembre de 2026)**.
 
-# Estructura del curso
+# Evaluación y acreditación
 
-Nos reunimos dos veces por semana en el laboratorio de computación. Cada clase implicará una exposición sobre conceptos de la lógica y metodología de la investigación y casos prácticos tipo taller. Al completar las tareas, las y los estudiantes crearán un portafolio de scripts de codificación de R que demuestre una variedad de habilidades de comunicación y análisis de fuentes y datos. El proceso de aprender a codificar requiere paciencia, tiempo y práctica. Se espera que las y los estudiantes practiquen la codificación fuera del horario de clase cada semana.
+| Criterio | Porcentaje |
+|---|---:|
+| Prácticas y ejercicios de laboratorio | 25 % |
+| Tareas y reportes de lectura | 25 % |
+| Proyecto integrador reproducible | 40 % |
+| Participación y actividades en clase | 10 % |
+| **Total** | **100 %** |
 
-El curso se divide en dos grandes unidades.  
+Las tareas y prácticas se entregan en **Google Classroom**.
 
+<div class="aviso">
+**Cómo entrar al Classroom del curso**
 
-📚 Unidad 1. Consulta de fuentes académicas, científicas y hemerográficas
+1. Entra a [classroom.google.com](https://classroom.google.com) con tu cuenta.
+2. Botón **+** (arriba a la derecha) → **Apuntarse a una clase**.
+3. Escribe el código: **`woza42ty`**
 
-Objetivo de la unidad: Que las y los estudiantes desarrollen habilidades para localizar, seleccionar, evaluar, organizar y citar fuentes de manera ética y rigurosa, utilizando herramientas digitales y gestores bibliográficos, y que aprendan a citar de manera automatizada en RMarkdown para elaborar reportes y trabajos académicos reproducibles.
+Curso: **CFLNM-2027**. Si el código no funciona, escríbeme antes de la
+siguiente sesión.
+</div>
 
-📊 Unidad 2. Lectura numérica del mundo: consulta, manipulación y análisis de datos
+# Políticas del curso
 
-Objetivo de la unidad: Que las y los estudiantes adquieran competencias para comprender, manipular, transformar y analizar datos provenientes de encuestas, censos y registros administrativos, utilizando R y RMarkdown para la generación de reportes reproducibles con análisis de variables que integren fuentes y citas automatizadas.
+### Asistencia y participación
 
-<!-- ## Calendario de lecturas -->
+Se espera que asistas y participes en todas las sesiones. El 10 % de
+participación se evalúa sobre las actividades hechas en clase, no solo sobre la
+asistencia.
 
+### Fechas de entrega
 
-# Evaluación
+Es importante entregar en tiempo y forma. No se aceptan trabajos atrasados,
+salvo justificación por enfermedad o por una circunstancia personal comunicada
+a tiempo. Puedes trabajar con anticipación; no se recomienda quedarse atrás,
+porque cada entrega del proyecto integrador es insumo de la siguiente.
 
- La rúbrica de calificación se encuentra a continuación:
+Si tienes una circunstancia excepcional que te impida realizar un trabajo,
+tarea o presentación, escribe a la profesora **antes** de la fecha de entrega.
 
+### Trabajo fuera del aula
 
-|| Tarea                | Puntos | Total |
-|----------------------|--------|-------|
-| 3 exámenes parciales | 20     | 60    |
-| N tareas             | 25     | 25    |
-| Exposición           | 15     | 15    |
-| **Total**            |        | 100   |
+El curso incluye programación en R. Aprender a programar requiere paciencia,
+tiempo y práctica: se espera que practiques fuera del horario de clase cada
+semana.
 
+### Cambios en el programa
 
+Este programa puede actualizarse para mayor claridad o para hacer ajustes
+pedagógicos. La versión más reciente siempre está disponible en este sitio.
 
+# Ética e integridad académica
 
-# Tareas y exámenes
-Se deberán entregar y realizar en tiempo y forma en la plataforma [classroom CFLNM-0032-2026](https://classroom.google.com/c/Nzc0Mjk0Mzc0MzE5?cjc=2sin7ehh) (**Solicita acceso**)
+De acuerdo con el sitio de la
+[UNAM](https://liec.dgb.unam.mx/index.php/integridad-academica/normativa-universitaria-sobre-el-principio-de-etica-e-integridad-academica),
+en la Legislación Universitaria no aparece expresamente el tema del plagio
+académico; sin embargo, el Estatuto General de la UNAM, el Reglamento del
+Tribunal Universitario y de la Comisión de Honor y otros reglamentos incluyen
+artículos que hacen referencia a un comportamiento ético, profesional y
+honorable, que garantice la integridad y honestidad académica.
 
-
-
-
-# Cronograma del Curso
-
-El curso tiene una duración de 15 semanas. Es una clase presencial y se espera que las y los estudiantes participen en todos los aspectos de la clase. Esta clase implica el aprendizaje de habilidades de programación en R para la visualización y análisis de datos. Se asume que las y los estudiantes pueden no poseer habilidades previas en esta área, por lo que el curso tiene un componente de formación aplicada. El tiempo de clase involucrará una mezcla de actividades, incluyendo conferencias, trabajo en grupo, actividades de codificación aplicadas, presentaciones y discusiones.
-
-
-
-# Lecturas por clase
-
-
-# Lecturas por clase – Unidad 1
-
-| Semana | Fecha        | Tema                                                                                              | Lecturas                                                                                                                                      |
-| ------ | ------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| S0 L:  | 18 de agosto | **Clase 1. Presentación del curso.**<br>🔹 *Actividad práctica:* dinámica rompehielo: cada alumna menciona qué entiende por “fuente” y un ejemplo cotidiano.<br>🔹 *Ejemplo:* contrastar opiniones de redes sociales vs. un artículo científico.<br>🔹 *Tarea:* escribir una breve reflexión: ¿qué espero aprender y cómo lo aplicaré en mi carrera? | Ninguna |
-| S0 J:  | 21 de agosto | **Clase 2. Ciencias sociales y la consulta de fuentes como soporte de argumentos.**<br>🔹 *Ejemplo práctico:* comparar un argumento basado en sentido común vs. uno sustentado en datos de encuesta (INEGI).<br>🔹 *Taller:* identificar en un artículo académico qué fuentes sostienen sus conclusiones.<br>🔹 *Tarea:* traer un ejemplo de argumento en redes/noticias y contrastarlo con evidencia científica. | [Bunge 2000, pp.3-13](https://archive.org/details/BungeMarioLaInvestigacionCientificaSuEstrategiaYSuFilosofia/page/n27/mode/2up) |
-| S1 L:  | 25 de agosto | **Clase 3. Tipos de fuentes y metabuscadores.**<br>🔹 *Ejercicio práctico:* clasificar un set de documentos (ley, encuesta, paper, noticia, blog, tesis) en primarias, secundarias y terciarias.<br>🔹 *Taller:* búsqueda en metabuscadores (Google Scholar, Scielo, JSTOR).<br>🔹 *Tarea:* localizar un artículo académico en JSTOR y guardarlo en PDF. | Cap. 1 [Martínez Valdés, Huerta Silva, Lara Escalante 2024, pp.11-59](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf) |
-| S1 J:  | 28 de agosto | **Clase 4. Tipos de búsqueda + teoría de conjuntos (diagramas de Venn) para algoritmos de búsqueda y parámetros.**<br>🔹 *Ejemplo práctico:* diseñar diagramas de Venn para búsquedas de “violencia contra las mujeres” en diferentes bases de datos.<br>🔹 *Taller:* crear ecuaciones de búsqueda con AND, OR, NOT.<br>🔹 *Tarea:* elaborar 3 ecuaciones de búsqueda distintas sobre un mismo tema. | [Rendón 2017](https://ru.iibi.unam.mx/jspui/bitstream/IIBI_UNAM/L140/2/introduccion_conjuntos_s.pdf);[UNAM](https://docenciadigital.unam.mx/ayuda-busqueda#tip8) |
-| S2 L:  | 1 de septiembre | **Clase 5. Introducción a búsquedas sistemáticas y revisiones sistemáticas de literatura.**<br>🔹 *Ejemplo práctico:* diferencias entre revisión narrativa, revisión sistemática y meta-análisis.<br>🔹 *Taller en R:* diseñar un protocolo simple de revisión (palabras clave + criterios de inclusión/exclusión).<br>🔹 *Tarea:* elaborar un cuadro con una estrategia de búsqueda sistemática sobre un tema elegido. | [Escoto 2021](https://ciid.politicas.unam.mx/www/libros/como_empezar_estudiar_mercadotrabajo_mexico.pdf); [Universidad de Navarra](https://biblioguias.unav.edu/revisionessistematicas/visiongeneral);[UNAM 2022](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion) |
-| S2 J:  | 4 de septiembre | **Clase 6. Construcción de base de datos a partir de revisión sistemática de artículos y noticias.**<br>🔹 *Ejemplo práctico:* búsqueda de noticias sobre migración/violencia en El Universal, Infolatina o Google News.<br>🔹 *Taller en R:* crear un `data.frame` con artículos de prensa (título, autor, fecha, medio, tema).<br>🔹 *Actividad:* marcar relevancia de cada nota (alta, media, baja).<br>🔹 *Tarea:* entregar una base de 5–10 noticias sobre un tema de interés personal. | Ninguna |
-| S3 L:  | 8 de septiembre | **Clase 7. Qué hacer con las fuentes: selección, organización y fichado.**<br>🔹 *Ejemplo práctico:* fichar un artículo académico (tema, autor, conclusión, cita).<br>🔹 *Taller:* crear una base de datos de referencias en R con `tibble` o `data.frame`.<br>🔹 *Actividad:* uso básico de Zotero/Mendeley para guardar las fuentes.<br>🔹 *Tarea:* crear una mini-base con 5 fichas en R + 5 referencias en Zotero. | Ninguna |
-| S3 J:  | 11 de septiembre | **Clase 8. Ética académica, plagio, tipos de citas, estilos de citación.**<br>🔹 *Ejemplo práctico:* transformar un párrafo en cita directa, indirecta y paráfrasis, en APA y Chicago.<br>🔹 *Taller:* detectar y corregir plagio en un texto dado.<br>🔹 *Actividad creativa:* trivia rápida de citas correctas e incorrectas.<br>🔹 *Tarea:* citar correctamente 3 artículos en Zotero en dos estilos distintos. | [UNAM: Ética académica](https://bibliotecentral.unam.mx/index.php/dcide/etica-academica); [UNAM: Citas APA](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa?authuser=1) |
-| S4 L:  | 15 de septiembre | **FERIADO (No hay clase)** | Ninguna |
-| S4 J:  | 18 de septiembre | **Examen parcial 1 (Fuentes, búsqueda, ética y citación)** | Material de clases previas |
-| S5 L:  | 22 de septiembre | **Clase 9. Citación en RMarkdown.**<br>🔹 *Ejemplo práctico:* insertar citas con `.bib` y generar bibliografía automática.<br>🔹 *Taller:* redactar un mini-ensayo en RMarkdown con al menos 3 citas automatizadas.<br>🔹
-
-
-
-# Lecturas por clase – Unidad 2
-
-| Semana | Fecha        | Tema                                                                                              | Lecturas                                                                                                                                      |
-| ------ | ------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| S5 L:  | 22 de septiembre | **Clase 10. Introducción a la estadística: población, muestra y representatividad.**<br>🔹 *Ejemplo práctico:* urna con canicas para simular muestra aleatoria.<br>🔹 *Taller:* diferenciar población vs muestra en encuestas de INEGI.<br>🔹 *Tarea:* redactar ejemplo propio de población/muestra. | Cap. 9 [Gerring 2014] |
-| S5 J:  | 25 de septiembre | **Clase 11. Fuentes de datos: encuestas, censos y registros administrativos.**<br>🔹 *Ejemplo práctico:* revisar ENVIPE, Censo de Población y registros penitenciarios.<br>🔹 *Actividad:* comparar ventajas y limitaciones de cada fuente.<br>🔹 *Tarea:* elegir un tema y señalar qué fuente lo mide mejor. | Ninguna |
-| S6 L:  | 29 de septiembre | **Clase 12. De los conceptos a las variables en ciencias sociales.**<br>🔹 *Ejemplo práctico:* de la teoría a la variable (violencia → hipótesis → concepto → variables).<br>🔹 *Taller:* tabla “teoría → hipótesis → concepto → variable”.<br>🔹 *Actividad creativa:* cada equipo transforma un concepto de interés en al menos 2 variables medibles.<br>🔹 *Tarea:* armar 3 variables a partir de un concepto propio. | Cap. 6-7 [Gerring 2014] |
-| S6 J:  | 2 de octubre | **Clase 13. Tipos de variables: cualitativas y cuantitativas.**<br>🔹 *Ejemplo práctico:* variables de ENSU (percepción de inseguridad vs. edad).<br>🔹 *Actividad creativa:* juego “clasifica la variable”.<br>🔹 *Tarea:* clasificar 10 variables de un dataset público. | Cap. 6-7 [Gerring 2014] |
-| S7 L:  | 6 de octubre | **Clase 14. Variables en R: vectores, data frames y factores.**<br>🔹 *Ejemplo práctico:* crear `data.frame` con características del grupo.<br>🔹 *Taller en R:* manipular con `mutate`, `filter` y `select`.<br>🔹 *Tarea:* crear una base en R con 10 observaciones. | Cap. 1-3 [Mendoza 2024] |
-| S7 J:  | 9 de octubre | **Examen parcial 2 (población, muestra, fuentes de datos y variables).** | Material de clases previas |
-| S8 L:  | 13 de octubre | **Clase 15. Creación de variables derivadas en R.**<br>🔹 *Ejemplo práctico:* generar variable “juega tenis sí/no”.<br>🔹 *Taller:* `if_else` y `case_when`.<br>🔹 *Tarea:* crear 3 variables derivadas en R. | Cap. 6-7 [Mendoza 2024] |
-| S8 J:  | 16 de octubre | **Clase 16. Indicadores sociales: tasas, razones y proporciones.**<br>🔹 *Ejemplo práctico:* calcular tasa de desempleo con datos de INEGI.<br>🔹 *Taller en R:* tasas simples con `dplyr`.<br>🔹 *Tarea:* entregar tabla con 3 tasas en R. | Cap. 9 [Gerring 2014] |
-| S9 L:  | 20 de octubre | **Clase 17. Teoría de la medición en ciencias sociales.**<br>🔹 *Ejemplo práctico:* analizar escala Likert.<br>🔹 *Taller:* validez y confiabilidad.<br>🔹 *Tarea:* proponer un indicador y justificar cómo medirlo. | Cap. 10 [Gerring 2014] |
-| S9 J:  | 23 de octubre | **Clase 18. Construcción de indicadores e índices.**<br>🔹 *Ejemplo práctico:* índice de bienestar con 3 variables.<br>🔹 *Taller en R:* estandarizar y sumar.<br>🔹 *Tarea:* entregar índice en R. | Cap. 10 [Gerring 2014]; Cap. 11 [Mendoza 2024] |
-| S10 L: | 27 de octubre | **Clase 19. Visualización de datos: tablas y gráficos.**<br>🔹 *Ejemplo práctico:* interpretar tabla de violencia de género.<br>🔹 *Taller en R:* gráficos básicos con `ggplot2`.<br>🔹 *Tarea:* entregar un gráfico sencillo. | Cap. 11 [Mendoza 2024] |
-| S10 J: | 30 de octubre | **Clase 20. Reportes reproducibles en RMarkdown.**<br>🔹 *Ejemplo práctico:* generar reporte con texto + tabla + gráfico.<br>🔹 *Taller:* armar documento en RMarkdown.<br>🔹 *Tarea:* mini-reporte con indicador y cita automatizada. | Cap. 13 [Mendoza 2024] |
-| S11 L: | 3 de noviembre | **Clase 21. Taller aplicado: integrar citas, indicadores y visualizaciones en RMarkdown.**<br>🔹 *Ejemplo práctico:* reproducir un reporte corto.<br>🔹 *Actividad grupal:* checklist de reproducibilidad.<br>🔹 *Tarea:* entregar borrador de reporte final. | Cap. 13 [Mendoza 2024] |
-| S11 J: | 6 de noviembre | **Examen parcial 3 (estadística básica, indicadores y reportes reproducibles).** | Material de clases previas |
-| S12 L: | 10 de noviembre | **Clase 22. Exposiciones estudiantiles I.**<br>🔹 Presentación de variables e indicadores con RMarkdown preliminar.<br>🔹 *Actividad:* retroalimentación colectiva. | Ninguna |
-| S12 J: | 13 de noviembre | **Clase 23. Exposiciones estudiantiles II.**<br>🔹 Continuación de presentaciones.<br>🔹 *Tarea:* entregar versión preliminar de reporte final. | Ninguna |
-| S13 L: | 17 de noviembre | **FERIADO (No hay clase)** | Ninguna |
-| S13 J: | 20 de noviembre | **Clase 24. Política pública basada en evidencia.**<br>🔹 *Ejemplo práctico:* caso de política mal diseñada sin evidencia.<br>🔹 *Debate:* ¿qué pasa sin estadísticas confiables?<br>🔹 *Tarea:* reflexión sobre un indicador que guíe política pública. | Lecturas del curso |
-| S14 L: | 24 de noviembre | **Clase 25. Síntesis aplicada: del dato al argumento.**<br>🔹 *Ejemplo práctico:* transformar un análisis de R en argumento académico.<br>🔹 *Taller:* cómo redactar hallazgos cuantitativos.<br>🔹 *Tarea:* redactar 1 cuartilla con hallazgos de su dataset. | Ninguna |
-| S14 J: | 27 de noviembre | **Clase 26. Proyecto integrador – trabajo en clase.**<br>🔹 *Actividad:* preparar reporte final en RMarkdown (citas + variables + indicadores + visualizaciones).<br>🔹 *Tarea:* subir borrador de entrega final. | Ninguna |
-| S15 L: | 1 de diciembre | **Clase 27. Exposiciones finales de proyectos I.**<br>🔹 *Actividad:* presentación de equipos.<br>🔹 *Retroalimentación:* discusión grupal. | Ninguna |
-| S15 J: | 4 de diciembre | **Clase 28. Exposiciones finales de proyectos II y cierre del curso.**<br>🔹 *Actividad:* conclusiones colectivas sobre consulta de fuentes y lectura numérica.<br>🔹 *Tarea final:* entregar reporte definitivo en RMarkdown. | Ninguna |
-                        
-
-
-### Asistencia
-Se espera que las y los estudiantes asistan y participen en cada clase.  
-Para tener derecho a evaluación es necesario tener un 80% de asistencia.
-
-### Políticas del curso
-Fechas de entrega
-Es muy importante entregar en tiempo y forma. No se aceptan trabajos atrasados, salvo justificación por enfermedad o problemas personales comunicados a tiempo. Es posible que puedas trabajar con anticipación, pero no se recomienda que te quedes atrás.
-
-Debes enviar al profesor adjunto un correo electrónico si tienes una circunstancia excepcional que te impida realizar algún trabajo, tarea o examen.
-
-### Cambios en el programa de estudios
-El programa de estudios puede actualizarse para mayor claridad o para realizar ajustes con fines pedagógicos. La versión más actualizada del programa de estudios siempre está disponible en el sitio web del curso.
-
-### Pérdida de un examen
-
-En caso de emergencia, comunícate con el profesor adjunto lo antes posible.
-
-# Normativa universitaria sobre el principio de ética e integridad académica
-
-De acuerdo con el sitio de la [UNAM](https://liec.dgb.unam.mx/index.php/integridad-academica/normativa-universitaria-sobre-el-principio-de-etica-e-integridad-academica):
-
-
-En la Legislación Universitaria no aparece expresamente el tema del plagio académico, sin embargo, en el Estatuto General de la UNAM y en el Reglamento del Tribunal Universitario y de la Comisión de Honor, así como en otros Reglamentos, se incluyen artículos que hacen referencia a un comportamiento ético, profesional y honorable, que garantice la integridad y honestidad académica, y prevenir o proceder, con medidas preventivas y mecanismos sancionatorios, en contra de faltas a este principio universitario.
-
-# El Código de ética de la UNAM
-El [Código de Ética de la Universidad Nacional Autónoma de México](http://www.abogadogeneral.unam.mx:6060/legislacion/view/84) establece principios y valores que pretender ser una guía de las acciones y conductas de los universitarios, entiéndase por éstos a los alumnos, académicos, investigadores y trabajadores, así como de todos aquellos que realizan alguna actividad, al interior y exterior, relacionada con la Universidad, dentro de los ámbitos académicos, científicos, culturales, artísticos, sociales, administrativos, políticos, económicos, deportivos, entre otros.
-
-De acuerdo con dicho Código, los principios éticos que rigen a la UNAM son:
-
-- Convivencia pacífica y respeto a la diversidad cultural, étnica y personal.
-
-- Igualdad
-
-- Libertad de pensamiento y de expresión.
-
-- Respeto y tolerancia.
-
-- Laicidad en las actividades universitarias.
+El [Código de Ética de la UNAM](http://www.abogadogeneral.unam.mx:6060/legislacion/view/84)
+establece los principios que rigen a la Universidad. Los que atañen
+directamente a este curso son:
 
 - **Integridad y honestidad académica.**
-
 - **Reconocimiento y protección de la autoría intelectual.**
-
-- Responsabilidad social y ambiental en el quehacer universitario.
-
 - Objetividad, honestidad e imparcialidad en las evaluaciones académicas.
-
-- Cuidado, uso honesto y responsable del patrimonio universitario.
-
-- Transparencia en el uso de la información y de los recursos públicos de la Universidad.
-
+- Transparencia en el uso de la información.
 - Privacidad y protección de la información personal.
- 
-# Fuentes de información
 
-- Bunge, M. (2000). La Investigación científica su estrategia y su filosofía. Barcelona: S.XXI.  
-- [Martínez Valdes, Gustavo AND Huerta Silva, José Luis AND Lara Escalante, Mónica (2024). Gestión de la información para el análisis político. México: UNAM-FCPyS.](http://ciid.politicas.unam.mx/www/libros/9786073089791.pdf)  
-- [Gerring, J. (2014). Metodología de las ciencias sociales. Madrid: Alianza](https://drive.google.com/file/d/1aUmK4HqTD43-4TtpYcxLaQVdkULHtZeB/view?usp=sharing).  
-- Guía definitiva para todo lo relacionado con R Markdown (la encontrarás muy útil a medida que mejores en esta habilidad):[links page](https://bookdown.org/yihui/rmarkdown/).    
+Los demás principios del Código —convivencia pacífica y respeto a la diversidad,
+igualdad, libertad de pensamiento y de expresión, respeto y tolerancia,
+laicidad, responsabilidad social y ambiental, y cuidado del patrimonio
+universitario— aplican a toda actividad universitaria.
 
-<!-- ### third level header -->
+### Uso de inteligencia artificial
 
-<!-- Here's an even lower level header -->
+El uso de herramientas de IA se aborda de manera explícita en la **Unidad 6**.
+En este curso puedes usarlas como apoyo siempre que lo declares y que el
+resultado sea verificable y reproducible: si no puedes explicar y reproducir lo
+que entregas, no es tuyo. Citar la fuente de un dato y documentar cómo lo
+obtuviste no es un trámite, es el contenido del curso.
 
-<!-- # My second post (note the order) -->
+# Bibliografía básica
 
-<!-- 2018 | 7 | 23 Last compiled: `r Sys.Date()` -->
+Las lecturas obligatorias sesión por sesión están en el
+[cronograma detallado](#cronograma-detallado). Las referencias completas son:
 
-<!-- I'm writing this tutorial going from the top down. And, this is how it will be printed. So, notice the second post is second in the list. If you want your most recent post to be at the top, then make a new post starting at the top. If you want the oldest first, do, then keep adding to the bottom -->
+- Booth, W. C., Colomb, G. G., Williams, J. M., Bizup, J., & Fitzgerald, W. T. (2016). *The craft of research* (4a ed.). University of Chicago Press.
+- Carmines, E. G., & Zeller, R. A. (1979). *Reliability and validity assessment*. Sage.
+- Chenoweth, E., & Shay, C. W. (2019). [*NAVCO 2.1 dataset*](https://doi.org/10.7910/DVN/MHOXDV). Harvard Dataverse.
+- Corporation for Digital Scholarship (2025). [*Zotero documentation*](https://www.zotero.org/support/).
+- Gerring, J. (2014). *Metodología de las ciencias sociales: un marco unificado*. Alianza Editorial; UNAM.
+- IBM (s. f.). [*Datos estructurados frente a datos no estructurados*](https://www.ibm.com/mx-es/think/topics/structured-vs-unstructured-data).
+- IBM (s. f.). [*¿Qué son los metadatos?*](https://www.ibm.com/think/topics/metadata).
+- INEGI (s. f.). [*El proceso de generación de estadísticas básicas*](https://www.inegi.org.mx/contenidos/inegi/spc/doc/INTERNET/2-GeneracionInfoEestadistica/manual3.pdf).
+- Knaflic, C. N. (2025). *Storytelling with data* (2a ed.). Wiley.
+- Koopmans, R., & Rucht, D. (2002). Protest event analysis. En B. Klandermans & S. Staggenborg (Eds.), *Methods of social movement research* (pp. 231-259). University of Minnesota Press.
+- Loukides, M., Mason, H., & Patil, D. J. (2018). *Ethics and data science*. O'Reilly Media.
+- OECD (2019). [*OECD principles on artificial intelligence*](https://oecd.ai/en/ai-principles).
+- O'Neil, C. (2018). *Armas de destrucción matemática*. Capitán Swing.
+- Page, M. J., McKenzie, J. E., Bossuyt, P. M., et al. (2021). The PRISMA 2020 statement. *BMJ*, 372, n71. [doi:10.1136/bmj.n71](https://doi.org/10.1136/bmj.n71)
+- Saltz, J., & Dewar, N. (2019). Data science ethical framework. *Information Systems Management*, 36(1), 39-49.
+- Singer, J. D. (1982). Variables, indicators, and data. *Social Science History*, 6(2), 181-217. [doi:10.1017/S0145553200026729](https://doi.org/10.1017/S0145553200026729)
+- Torres Vargas, G. A. (2020). [*El manejo de datos: aproximaciones desde los estudios de la información*](https://ru.iibi.unam.mx/jspui/bitstream/IIBI_UNAM/L225/1/L230.pdf). IIBI-UNAM.
+- UNECE (2009). [*Making data meaningful. Part 1*](https://unece.org/statistics/publications/making-data-meaningful-part-1). United Nations.
+- UNECE (2024). [*Guidelines for the use of artificial intelligence in official statistics*](https://unece.org/statistics). United Nations.
+- UNESCO (2021). *Recommendation on the ethics of artificial intelligence*.
+- United Nations Statistics Division (2017). [*Fundamental principles of official statistics*](https://unstats.un.org).
+- Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). [*R for Data Science*](https://r4ds.hadley.nz/) (2a ed.). O'Reilly Media.
+- Xie, Y., Allaire, J. J., & Grolemund, G. (2018). [*R Markdown: The definitive guide*](https://bookdown.org/yihui/rmarkdown/). Chapman and Hall/CRC.
 
-# Iremos agregando material de R, como el que se muestra:
+# Bibliografía complementaria
 
-Tal vez quieras tomar una muestra de 100 números de una distribución normal con media = 0 y desviación estándar = 1, y luego quieres trazar un histograma. Puedes hacer esto aquí mismo usando un bloque de código r, como este:
+- Cortez Salinas, J. (2014). Análisis cualitativo comparado: las decisiones de la Suprema Corte contra el Ejecutivo en México. *Revista Mexicana de Sociología*, 76(3), 413-439.
+- Goertz, G., & Mahoney, J. (2012). *A tale of two cultures: contrasting qualitative and quantitative research*. Princeton University Press.
+- King, G., Keohane, R. O., & Verba, S. (1994). *Designing social inquiry*. Princeton University Press.
+- Mahoney, J. (2010). After KKV: the new methodology of qualitative research. *World Politics*, 62(1), 120-147.
+- Mills, C. W. (1961). *La imaginación sociológica*. Fondo de Cultura Económica.
+- Pérez-Liñán, A. (2015). El método comparativo y el estudio de causas complejas. En R. Castiglioni & C. Fuentes (Eds.), *Política comparada sobre América Latina* (pp. 47-78). Universidad Diego Portales.
+- Puente, K. (Ed.). (2019). *La investigación en ciencias sociales: una introducción*. UNAM; COMECSO.
+- Ragin, C. C. (1994). *Constructing social research*. Pine Forge Press.
+- Seawright, J. (2016). *Multi-method social science*. Cambridge University Press.
+- Seawright, J., & Gerring, J. (2008). Case selection techniques in case study research. *Political Research Quarterly*, 61(2), 294-308. [doi:10.1177/1065912907313077](https://doi.org/10.1177/1065912907313077)
+- Shively, W. P. (2013). *The craft of political research* (9a ed.). Pearson.
+- Singleton, R. A., Jr., & Straits, B. C. (1993). *Approaches to social research* (2a ed.). Oxford University Press.
+- Van Dyke, N., & Soule, S. A. (2002). Structural social change and the mobilizing effect of threat. *Social Problems*, 49(4), 497-520.
+- Van Evera, S. (1997). *Guide to methods for students of political science*. Cornell University Press.
+- Zizumbo-Colunga, D. (2017). Community, authorities, and support for vigilantism. *Political Behavior*, 39(4), 989-1015. [doi:10.1007/s11109-017-9388-6](https://doi.org/10.1007/s11109-017-9388-6)
 
+---
 
-```{r}
-muestras <- rnorm(100, mean=0, sd=1)
-hist(muestras)
-```
-
-<!-- When you knit this R Markdown document, you will see that the histogram is printed to the page, along with the R code. This document can be set up to hide the R code in the webpage, just delete the comment (hashtag), from the cold folding option in the yaml header up top. For purposes of letting yourself see the code, and me see the code, best to keep it the way that it is. You learn all of these things and more can be customized in each R code block. -->
-
-<!-- # The big idea -->
-
-<!-- Use this lab journal to record what you do in R. This way I will be able to see what you are doing and help you along the way. You will also be creating a repository of all the things you do. You can make posts about everything. Learning specific things in R (project unrelated), and doing things for the project that we will discuss at the beginning of the Fall semester. You can get started now by fiddling around with googling things, and trying stuff out in R. I've placed some helpful starting links in the links page on this website -->
-
-<!-- # What can you do right now by yourself? -->
-
-<!-- It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract. -->
-
-<!-- I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html).  -->
-
-<!-- To get the hang of journaling and solving the problems to learn programming, my suggestion is that you use this .Rmd file to solve the problems. It would look like this: -->
-
-<!-- # Problem 1 -->
-
-<!-- Do simple math with numbers, addition, subtraction, multiplication, division -->
-
-<!-- ```{r} -->
-<!-- 1+2 -->
-<!-- 2*5 -->
-<!-- 5/3 -->
-<!-- (1+6+4)/5 -->
-
-<!-- ``` -->
-
-<!-- # Problem 2 -->
-
-<!-- Put numbers into variables, do simple math on the variables -->
-
-<!-- ```{r} -->
-<!-- a<-1 -->
-<!-- b<-2 -->
-<!-- a+b -->
-
-<!-- d<-c(1,2,3) -->
-<!-- e<-c(5,6,7) -->
-<!-- d+e -->
-<!-- d*e -->
-<!-- d/e -->
-
-<!-- ``` -->
-
-<!-- # Problem 3 -->
-
-<!-- Write code that will place the numbers 1 to 100 separately into a variable using for loop. Then, again using the seq function. -->
-
-<!-- ```{r} -->
-<!-- # for loop solution -->
-<!-- # i becomes the number 1 to 100 at each step of the loop -->
-
-
-<!-- a <- length(100) # make empty variable, set length to 100 -->
-<!-- for (i in 1:100){ -->
-<!--   a[i] <-i #assigns the number in i, to the ith index of a -->
-<!-- } -->
-
-<!-- print(a) -->
-
-<!-- # for loop solution #2 -->
-
-<!-- a<-c() #create empty variable using combine command -->
-<!-- for (i in 1:100){ -->
-<!--   a<-c(a,i) # keeps combining a with itself and the new number in i -->
-<!-- } -->
-<!-- print(a) -->
-
-<!-- # seq solution -->
-<!-- a <- seq(1,100,1) # look up help for seq using ?seq() in console -->
-<!-- print(a) -->
-
-<!-- ``` -->
-
-<!-- # Replace this with problem 4 -->
-
-<!-- And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding. -->
-
-# Comentarios y dudas:
-
-
-<div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = https://danserca.github.io/Consulta-de-Fuentes-y-Lectura-Numerica-del-Mundo-con-R/index.html;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = CFLNM_0032_2025; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://cflnm2024-0032-disqus-com.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<p style="font-size:.9em;">Última actualización:
+`r fecha_larga(Sys.Date(), con_anio = TRUE)`.</p>

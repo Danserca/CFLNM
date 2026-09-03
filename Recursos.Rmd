@@ -1,0 +1,117 @@
+---
+title: "Recursos"
+subtitle: "Herramientas, fuentes y guías del curso"
+output:
+  html_document:
+    theme: spacelab
+    css: styles.css
+    toc: true
+    toc_float:
+      collapsed: false
+    number_sections: false
+    toc_depth: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
+source("_funciones.R")
+```
+
+Todo lo que usamos en el curso es gratuito y de código abierto. Nada de lo que
+aparece aquí requiere licencia ni pago.
+
+# Software
+
+### R y RStudio
+
+[R](https://www.r-project.org) es un lenguaje de programación libre para
+análisis estadístico, manejo de datos y gráficos.
+[RStudio](https://posit.co/download/rstudio-desktop/) es el entorno de trabajo
+que usaremos encima de R. **Instala primero R y después RStudio.** Ambos
+funcionan en Windows, macOS y Linux.
+
+[Positron](https://positron.posit.co/) es el sucesor de RStudio; si ya lo tienes
+instalado, también sirve para el curso.
+
+### Zotero
+
+[Zotero](https://www.zotero.org/download/) es el gestor bibliográfico del curso.
+Guarda referencias, las organiza y exporta el archivo `.bib` que RMarkdown usa
+para citar automáticamente.
+
+- [Documentación oficial](https://www.zotero.org/support/)
+- [Conector para el navegador](https://www.zotero.org/download/connectors)
+
+# Búsqueda de fuentes
+
+### Bases y repositorios académicos
+
+- [Google Scholar](https://scholar.google.com)
+- [SciELO](https://www.scielo.org)
+- [Redalyc](https://www.redalyc.org)
+- [Dialnet](https://dialnet.unirioja.es)
+- [Repositorio Universitario UNAM](https://repositorio.unam.mx)
+- [Biblioteca Digital UNAM (BiDi)](https://www.bidi.unam.mx)
+
+### Guías de búsqueda de la UNAM
+
+- [Operadores booleanos, de proximidad y de truncamiento](https://ceib.dgb.unam.mx/index.php/operadores-booleanos)
+- [Búsquedas eficientes de información](https://ceib.dgb.unam.mx/index.php/busquedas-eficientes-de-informacion)
+- [La búsqueda de información (LIEC-DGB)](https://liec.dgb.unam.mx/index.php/investiga/la-busqueda-de-informacion)
+- [Ayuda de búsqueda — Docencia Digital](https://docenciadigital.unam.mx/ayuda-busqueda)
+- [Cómo hacer citas y referencias en formato APA](https://bibliotecas.unam.mx/index.php/desarrollo-de-habilidades-informativas/como-hacer-citas-y-referencias-en-formato-apa)
+- [Integridad académica y normativa universitaria](https://liec.dgb.unam.mx/index.php/integridad-academica/normativa-universitaria-sobre-el-principio-de-etica-e-integridad-academica)
+
+### Revisión sistemática
+
+- [Declaración PRISMA 2020](https://doi.org/10.1136/bmj.n71)
+- [Sitio oficial PRISMA](https://www.prisma-statement.org)
+
+# Datos
+
+### México
+
+- [INEGI](https://www.inegi.org.mx) — censos, encuestas y registros administrativos
+- [Datos Abiertos del Gobierno de México](https://datos.gob.mx)
+- [CONEVAL](https://www.coneval.org.mx) — medición de la pobreza
+- [Secretariado Ejecutivo del SNSP](https://www.gob.mx/sesnsp) — incidencia delictiva
+- [INE](https://www.ine.mx) — resultados electorales
+
+### Internacionales
+
+- [Banco Mundial — Datos abiertos](https://datos.bancomundial.org)
+- [CEPALSTAT](https://statistics.cepal.org/portal/cepalstat/)
+- [Our World in Data](https://ourworldindata.org)
+- [Harvard Dataverse](https://dataverse.harvard.edu)
+- [Latinobarómetro](https://www.latinobarometro.org)
+- [LAPOP / AmericasBarometer](https://www.vanderbilt.edu/lapop/)
+
+# Aprender R y RMarkdown
+
+Estos libros son gratuitos en línea.
+
+- [*R para principiantes* — J. Boscó Mendoza](https://bookdown.org/jboscomendoza/r-principiantes4/) (en español, el mejor punto de partida)
+- [*R for Data Science* — Wickham, Çetinkaya-Rundel y Grolemund](https://r4ds.hadley.nz/)
+- [*R Markdown: The Definitive Guide* — Xie, Allaire y Grolemund](https://bookdown.org/yihui/rmarkdown/)
+- [*R Markdown Cookbook*](https://bookdown.org/yihui/rmarkdown-cookbook/)
+- [Hojas de referencia (cheatsheets) de Posit](https://posit.co/resources/cheatsheets/)
+
+### Cuando algo no funciona
+
+1. Copia el mensaje de error completo y búscalo. Casi siempre alguien ya lo tuvo.
+2. [Stack Overflow en español](https://es.stackoverflow.com/questions/tagged/r) y [en inglés](https://stackoverflow.com/questions/tagged/r).
+3. [Posit Community](https://forum.posit.co).
+4. En clase: trae el error, no solo la descripción de que "no jala".
+
+# Ética y datos
+
+- [Código de Ética de la UNAM](http://www.abogadogeneral.unam.mx:6060/legislacion/view/84)
+- [Principios Fundamentales de las Estadísticas Oficiales (ONU)](https://unstats.un.org)
+- [Principios de la OCDE sobre inteligencia artificial](https://oecd.ai/en/ai-principles)
+- [UNECE — Uso de IA en estadísticas oficiales](https://unece.org/statistics)
+- [UNECE — *Making Data Meaningful*](https://unece.org/statistics/publications/making-data-meaningful-part-1)
+
+---
+
+<p style="font-size:.9em;">Última actualización:
+`r fecha_larga(Sys.Date(), con_anio = TRUE)`.</p>

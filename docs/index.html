@@ -11,12 +11,12 @@
 
 
 
-<title>index.knit</title>
+<title>Consulta de Fuentes y Lectura Numérica del Mundo</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -58,6 +58,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="styles.css" type="text/css" />
 
 
 
@@ -238,7 +239,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">CFLNM-2026-0032</a>
+      <a class="navbar-brand" href="index.html">CFLNM 2102 · 2027-1</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -252,11 +253,19 @@ $(document).ready(function () {
   <a href="Clases.html">Clases</a>
 </li>
 <li>
+  <a href="Recursos.html">Recursos</a>
+</li>
+<li>
+  <a href="Glosario.html">Glosario</a>
+</li>
+<li>
   <a href="Profesores.html">Profesores</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="Disclamer.html">Aviso</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -266,117 +275,182 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Consulta de Fuentes y Lectura Numérica del
+Mundo</h1>
 
 </div>
 
 
-<style type="text/css">
-
-/* Navbar Styles */
-.navbar {
-  background-color: #CD8C95 !important; /* Fondo rosado */
-  border-color: #8B5F65 !important;     /* Borde vino */
-  background-image: none !important;
-  height: 65px;
-}
-
-/* Navbar Link Styles */
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;
-  font-weight: bold !important;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #8B5F65 !important;
-  font-weight: bold;
-}
-
-/* Navbar Collapse Menu Styles */
-.navbar-collapse {
-  background-color: #CD8C95 !important;
-}
-
-/* Dropdown Menu Link Styles */
-.navbar-nav > li > a {
-  color: #FFFFFF;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > .active > a {
-  background-color: #005a9c;
-  color: #FFFFFF;
-}
-
-/* Active List Group Item Styles */
-.list-group-item.active,
-.list-group-item.active:focus,
-.list-group-item.active:hover {
-  z-index: 2;
-  color: #8B5F65;
-  background-color: #EEDFCC;
-  border-color: #8B5F65;
-}
-
-/* Title, Subtitle, Author, and Date Styles */
-h1.title {
-  color: #8B5F65;
-}
-
-h4.subtitle,
-h5.author,
-h5.date {
-  color: #8B5F65;
-}
-
-/* Hyperlink Styles */
-a {
-  color:#582C35;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #005a9c;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #6C4F56;
-}
-
-a:active {
-  color: #4A2C31;
-}
-
-/* Hide duplicate title */
-.title {
-  display: none;
-}
-
-</style>
-<div style="color:#8B5F65;">
-<div class="row" style="padding-top: 70px;">
-<div style="text-align:center;">
-<p><img src="images/investigadora_pregunta.jpg"
-     style="display:block; margin: 0 auto; max-width:80%; border-radius:10px;"></p>
-<p></a></p>
-<p style="text-align:center; font-size: 12px; color: #8B5F65;">
-Fuente: internet
+<div class="row" style="padding-top: 20px;">
+<div class="col-sm-7">
+<p>Sitio del curso <strong>clave 2102</strong>, primer semestre,
+Facultad de Ciencias Políticas y Sociales de la UNAM. Semestre
+<strong>2027-1</strong> (24 de agosto al 4 de diciembre de 2026),
+impartido por la <strong>Dra. Daniela Serrano Campos</strong>.</p>
+<p>Aquí encontrarás el <a href="Programa_de_CFLNM.html">programa
+completo</a>, el <a href="Clases.html">material de cada clase</a> y los
+<a href="Recursos.html">recursos</a> que usaremos durante el
+semestre.</p>
+<div id="descripción-del-curso" class="section level2">
+<h2>Descripción del curso</h2>
+<p>La investigación social contemporánea requiere procesos transparentes
+y reproducibles de búsqueda, organización, análisis y comunicación de
+información. Este curso es una introducción práctica a ese ciclo
+completo: de la pregunta a la fuente, de la fuente a la base de datos, y
+de la base de datos a un reporte que cualquier persona pueda verificar y
+volver a ejecutar.</p>
+<p>Trabajaremos con herramientas de código abierto —<strong>R</strong>,
+<strong>RStudio/Positron</strong>, <strong>RMarkdown</strong> y
+<strong>Zotero</strong>— y con fuentes reales: INEGI, repositorios
+académicos, prensa y bases de datos abiertas.</p>
+</div>
+<div id="objetivo-general" class="section level2">
+<h2>Objetivo general</h2>
+<p>Al finalizar el curso, el estudiantado será capaz de
+<strong>localizar, evaluar, organizar, documentar, analizar y comunicar
+evidencia</strong> proveniente de fuentes documentales y bases de datos
+mediante herramientas reproducibles para el estudio de fenómenos
+sociales.</p>
+</div>
+</div>
+<div class="col-sm-5">
+<p><img src="images/logo.png" /></p>
+<div class="aviso">
+<p><strong>Datos del curso</strong></p>
+<ul>
+<li><strong>Asignatura:</strong> Consulta de Fuentes y Lectura Numérica
+del Mundo</li>
+<li><strong>Clave:</strong> 2102  ·  <strong>Créditos:</strong> 8</li>
+<li><strong>Horas:</strong> 80 (42 teóricas, 38 prácticas)</li>
+<li><strong>Sesiones:</strong> lunes y jueves, 17:00–19:00 h</li>
+<li><strong>Semestre:</strong> 2027-1</li>
+<li><strong>Profesora:</strong> Dra. Daniela Serrano Campos</li>
+<li><strong>Correo:</strong> <a
+href="mailto:daniela.campos@politicas.unam.mx">daniela.campos@politicas.unam.mx</a>
+(asunto: <code>CFLNM 2102</code>)</li>
+<li><strong>Classroom:</strong> curso <code>CFLNM-2027</code>, código
+<strong><code>woza42ty</code></strong></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="las-seis-unidades" class="section level1">
+<h1>Las seis unidades</h1>
+<div class="semana">
+<p><span class="etiqueta">Unidad 1 · semanas 1 a 3</span></p>
+<div id="producción-de-información-y-evidencia-en-las-ciencias-sociales"
+class="section level3">
+<h3>Producción de información y evidencia en las ciencias sociales</h3>
+<p>Reconocer cómo se produce la información utilizada en las ciencias
+sociales, distinguiendo tipos de fuentes, métodos de generación de datos
+y conceptos fundamentales de la investigación empírica.</p>
+</div>
+</div>
+<div class="semana">
+<p><span class="etiqueta">Unidad 2 · semanas 4 a 6</span></p>
+<div id="búsqueda-evaluación-y-gestión-de-fuentes"
+class="section level3">
+<h3>Búsqueda, evaluación y gestión de fuentes</h3>
+<p>Desarrollar estrategias sistemáticas para localizar, evaluar y
+organizar literatura académica y fuentes de información relevantes para
+la investigación social.</p>
+</div>
+</div>
+<div class="semana">
+<p><span class="etiqueta">Unidad 3 · semanas 7 a 9</span></p>
+<div id="organización-construcción-y-documentación-de-bases-de-datos"
+class="section level3">
+<h3>Organización, construcción y documentación de bases de datos</h3>
+<p>Construir y documentar bases de datos provenientes de distintas
+fuentes, aplicando criterios de calidad y organización de la
+información.</p>
+</div>
+</div>
+<div class="semana">
+<p><span class="etiqueta">Unidad 4 · semanas 10 a 12</span></p>
+<div id="herramientas-reproducibles-para-la-gestión-de-datos"
+class="section level3">
+<h3>Herramientas reproducibles para la gestión de datos</h3>
+<p>Utilizar R y RMarkdown como herramientas para organizar, documentar y
+reproducir procesos de trabajo con información social.</p>
+</div>
+</div>
+<div class="semana">
+<p><span class="etiqueta">Unidad 5 · semanas 13 a 14</span></p>
+<div id="introducción-al-análisis-y-la-medición-en-ciencias-sociales"
+class="section level3">
+<h3>Introducción al análisis y la medición en ciencias sociales</h3>
+<p>Comprender los principios básicos del análisis descriptivo y la
+medición de fenómenos sociales.</p>
+</div>
+</div>
+<div class="semana">
+<p><span class="etiqueta">Unidad 6 · semanas 15 a 16</span></p>
+<div id="ética-confidencialidad-y-comunicación-de-resultados"
+class="section level3">
+<h3>Ética, confidencialidad y comunicación de resultados</h3>
+<p>Aplicar principios éticos y de protección de datos en la producción y
+comunicación de evidencia social.</p>
+</div>
+</div>
+</div>
+<div id="proyecto-integrador" class="section level1">
+<h1>Proyecto integrador</h1>
+<p>El eje del curso es un proyecto que se construye por partes a lo
+largo del semestre y que vale el <strong>40 %</strong> de la
+calificación. Al final tendrás un reporte reproducible en RMarkdown que
+integra:</p>
+<ol style="list-style-type: decimal">
+<li>La formulación de una pregunta de investigación.</li>
+<li>Una búsqueda sistemática de literatura (protocolo PRISMA
+básico).</li>
+<li>La gestión bibliográfica en Zotero, con archivo
+<code>.bib</code>.</li>
+<li>La construcción o recuperación de una base de datos.</li>
+<li>La documentación mediante metadatos y diccionario de variables.</li>
+<li>Un análisis descriptivo básico en R.</li>
+<li>El reporte final reproducible en RMarkdown.</li>
+</ol>
+</div>
+<div id="evaluación" class="section level1">
+<h1>Evaluación</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Criterio</th>
+<th align="right">Porcentaje</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Prácticas y ejercicios de laboratorio</td>
+<td align="right">25 %</td>
+</tr>
+<tr class="even">
+<td>Tareas y reportes de lectura</td>
+<td align="right">25 %</td>
+</tr>
+<tr class="odd">
+<td>Proyecto integrador reproducible</td>
+<td align="right">40 %</td>
+</tr>
+<tr class="even">
+<td>Participación y actividades en clase</td>
+<td align="right">10 %</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td align="right"><strong>100 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El detalle de cada rubro, el cronograma sesión por sesión y las
+políticas del curso están en el <a
+href="Programa_de_CFLNM.html">programa</a>.</p>
+<hr />
+<p style="font-size:.9em;">
+Última actualización del sitio: 3 de septiembre de 2026.
 </p>
-<div id="bienvenidas-todas-al-curso" class="section level1">
-<h1><strong>BIENVENIDAS TODAS AL CURSO</strong></h1>
-<p>Hola estudiantes:</p>
-<p>¡Bienvenidas y bienvenidos a este curso de <em>Consulta de Fuentes y
-Lectura Numérica del Mundo</em>!</p>
-<p>Comienza leyendo la descripción general del curso.<br />
-Deseamos que el curso contribuya a tu formación.</p>
-<p><strong>Equipo de CFLNM 0032</strong></p>
-</div>
-</div>
-</div>
 </div>
 
 

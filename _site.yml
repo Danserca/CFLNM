@@ -1,6 +1,8 @@
-name: "CFLNM"
+name: "CFLNM-2027-1"
+output_dir: "docs"
+
 navbar:
-  title: "CFLNM-2026-0032"
+  title: "CFLNM 2102 · 2027-1"
   left:
     - text: "Inicio"
       href: index.html
@@ -8,10 +10,18 @@ navbar:
       href: Programa_de_CFLNM.html
     - text: "Clases"
       href: Clases.html
+    - text: "Recursos"
+      href: Recursos.html
+    - text: "Glosario"
+      href: Glosario.html
     - text: "Profesores"
       href: Profesores.html
-    # - text: "Links"
-    #   href: Links.html
-    # - text: "Primera unidad"
-    #   href: Journal2.html
-output_dir: "docs"
+  right:
+    - text: "Aviso"
+      href: Disclamer.html
+
+# Nota: el bloque `output:` se deja fuera de este archivo a propósito.
+# Las diapositivas (Gerring_2014_cap*.Rmd, intro_met_ccss.Rmd) usan
+# xaringan::moon_reader y un `output:` global aquí interferiría con ellas.
+# El estilo compartido se aplica con `css: styles.css` en el YAML de cada
+# página HTML.

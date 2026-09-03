@@ -1,119 +1,113 @@
-<style type="text/css">
+---
+title: "Consulta de Fuentes y Lectura Numérica del Mundo"
+output:
+  html_document:
+    theme: spacelab
+    css: styles.css
+    toc: false
+---
 
-/* Navbar Styles */
-.navbar {
-  background-color: #CD8C95 !important; /* Fondo rosado */
-  border-color: #8B5F65 !important;     /* Borde vino */
-  background-image: none !important;
-  height: 65px;
-}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+source("_funciones.R")
+```
 
-/* Navbar Link Styles */
-.navbar-default .navbar-nav > li > a {
-  color: #FFFFFF !important;
-  font-weight: bold !important;
-}
+<div class="row" style="padding-top: 20px;">
+<div class="col-sm-7">
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #8B5F65 !important;
-  font-weight: bold;
-}
+Sitio del curso **clave 2102**, primer semestre, Facultad de Ciencias Políticas
+y Sociales de la UNAM. Semestre **2027-1** (24 de agosto al 4 de diciembre de
+2026), impartido por la **Dra. Daniela Serrano Campos**.
 
-/* Navbar Collapse Menu Styles */
-.navbar-collapse {
-  background-color: #CD8C95 !important;
-}
+Aquí encontrarás el [programa completo](Programa_de_CFLNM.html), el
+[material de cada clase](Clases.html) y los [recursos](Recursos.html) que
+usaremos durante el semestre.
 
-/* Dropdown Menu Link Styles */
-.navbar-nav > li > a {
-  color: #FFFFFF;
-  font-weight: bold;
-  padding: 10px 15px;
-}
+## Descripción del curso
 
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus,
-.navbar-nav > .active > a {
-  background-color: #005a9c;
-  color: #FFFFFF;
-}
+La investigación social contemporánea requiere procesos transparentes y
+reproducibles de búsqueda, organización, análisis y comunicación de
+información. Este curso es una introducción práctica a ese ciclo completo:
+de la pregunta a la fuente, de la fuente a la base de datos, y de la base de
+datos a un reporte que cualquier persona pueda verificar y volver a ejecutar.
 
-/* Active List Group Item Styles */
-.list-group-item.active,
-.list-group-item.active:focus,
-.list-group-item.active:hover {
-  z-index: 2;
-  color: #8B5F65;
-  background-color: #EEDFCC;
-  border-color: #8B5F65;
-}
+Trabajaremos con herramientas de código abierto —**R**, **RStudio/Positron**,
+**RMarkdown** y **Zotero**— y con fuentes reales: INEGI, repositorios
+académicos, prensa y bases de datos abiertas.
 
-/* Title, Subtitle, Author, and Date Styles */
-h1.title {
-  color: #8B5F65;
-}
+## Objetivo general
 
-h4.subtitle,
-h5.author,
-h5.date {
-  color: #8B5F65;
-}
-
-/* Hyperlink Styles */
-a {
-  color:#582C35;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #005a9c;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #6C4F56;
-}
-
-a:active {
-  color: #4A2C31;
-}
-
-/* Hide duplicate title */
-.title {
-  display: none;
-}
-
-</style>
-  <div style="color:#8B5F65;">
-  
-  <div class="row" style="padding-top: 70px;">
-
-  
- <div style="text-align:center;">
-
-  
-<img src="images/investigadora_pregunta.jpg"
-     style="display:block; margin: 0 auto; max-width:80%; border-radius:10px;">
-
-
-</a>
-  
-  
-  <p style="text-align:center; font-size: 12px; color: #8B5F65;">
-  Fuente: internet
-</p>
-
-
-# **BIENVENIDAS TODAS AL CURSO**
-
-Hola estudiantes:  
-
-¡Bienvenidas y bienvenidos a este curso de *Consulta de Fuentes y Lectura Numérica del Mundo*!  
-
-Comienza leyendo la descripción general del curso.  
-Deseamos que el curso contribuya a tu formación.  
-
-**Equipo de CFLNM 0032**
+Al finalizar el curso, el estudiantado será capaz de **localizar, evaluar,
+organizar, documentar, analizar y comunicar evidencia** proveniente de fuentes
+documentales y bases de datos mediante herramientas reproducibles para el
+estudio de fenómenos sociales.
 
 </div>
+<div class="col-sm-5">
+
+![](images/logo.png)
+
+<div class="aviso">
+**Datos del curso**
+
+- **Asignatura:** Consulta de Fuentes y Lectura Numérica del Mundo
+- **Clave:** 2102 &nbsp;·&nbsp; **Créditos:** 8
+- **Horas:** 80 (42 teóricas, 38 prácticas)
+- **Sesiones:** lunes y jueves, 17:00–19:00 h
+- **Semestre:** 2027-1
+- **Profesora:** Dra. Daniela Serrano Campos
+- **Correo:** [daniela.campos@politicas.unam.mx](mailto:daniela.campos@politicas.unam.mx)
+  (asunto: `CFLNM 2102`)
+- **Classroom:** curso `CFLNM-2027`, código **`woza42ty`**
+</div>
+
+</div>
+</div>
+
+# Las seis unidades
+
+```{r unidades, echo=FALSE, results='asis'}
+un <- cargar_unidades()
+cal <- cargar_calendario()
+for (i in seq_len(nrow(un))) {
+  sem <- cal$semana[cal$unidad == un$unidad[i]]
+  cat("::: {.semana}\n")
+  cat(sprintf('<span class="etiqueta">Unidad %s &middot; semanas %s a %s</span>\n\n',
+              un$unidad[i], min(sem), max(sem)))
+  cat(sprintf("### %s\n\n", un$nombre[i]))
+  cat(sprintf("%s\n\n", un$objetivo[i]))
+  cat(":::\n\n")
+}
+```
+
+# Proyecto integrador
+
+El eje del curso es un proyecto que se construye por partes a lo largo del
+semestre y que vale el **40 %** de la calificación. Al final tendrás un reporte
+reproducible en RMarkdown que integra:
+
+1. La formulación de una pregunta de investigación.
+2. Una búsqueda sistemática de literatura (protocolo PRISMA básico).
+3. La gestión bibliográfica en Zotero, con archivo `.bib`.
+4. La construcción o recuperación de una base de datos.
+5. La documentación mediante metadatos y diccionario de variables.
+6. Un análisis descriptivo básico en R.
+7. El reporte final reproducible en RMarkdown.
+
+# Evaluación
+
+| Criterio                              | Porcentaje |
+|---------------------------------------|-----------:|
+| Prácticas y ejercicios de laboratorio |       25 % |
+| Tareas y reportes de lectura          |       25 % |
+| Proyecto integrador reproducible      |       40 % |
+| Participación y actividades en clase  |       10 % |
+| **Total**                             |  **100 %** |
+
+El detalle de cada rubro, el cronograma sesión por sesión y las políticas del
+curso están en el [programa](Programa_de_CFLNM.html).
+
+---
+
+<p style="font-size:.9em;">Última actualización del sitio:
+`r fecha_larga(Sys.Date(), con_anio = TRUE)`.</p>

@@ -1,0 +1,207 @@
+/* ============================================================
+   Consulta de Fuentes y Lectura Numérica del Mundo
+   Hoja de estilos única del sitio. Antes este bloque estaba
+   copiado dentro de cada .Rmd; ahora se edita solo aquí.
+   Se aplica a todas las páginas vía _site.yml.
+   ============================================================ */
+
+:root {
+  --vino:        #8B5F65;  /* títulos y texto principal    */
+  --vino-osc:    #582C35;  /* enlaces                      */
+  --rosa:        #CD8C95;  /* navbar                       */
+  --rosa-claro:  #F3E3E5;  /* fondos suaves                */
+  --arena:       #EEDFCC;  /* acentos                      */
+  --azul:        #005a9c;  /* hover                        */
+  --gris-borde:  #E3D5D7;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  background-color: var(--rosa) !important;
+  border-color: var(--vino) !important;
+  background-image: none !important;
+  min-height: 65px;              /* min-height, no height fija:
+                                    permite que el menú colapsado crezca */
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  padding: 10px 15px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a {
+  background-color: var(--azul) !important;
+  color: #FFFFFF !important;
+}
+
+.navbar-default .navbar-brand {
+  color: #FFFFFF !important;
+  font-weight: bold;
+}
+
+.navbar-collapse {
+  background-color: var(--rosa) !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar { background-color: #FFFFFF; }
+.navbar-default .navbar-toggle { border-color: #FFFFFF; }
+
+/* ---------- Tipografía y encabezados ---------- */
+
+body { color: var(--vino); }
+
+h1.title  { color: var(--vino); }
+h4.subtitle,
+h5.author,
+h5.date   { color: var(--vino); }
+
+h1, h2, h3, h4 { color: var(--vino); }
+
+h1 {
+  border-bottom: 2px solid var(--arena);
+  padding-bottom: .3em;
+  margin-top: 1.6em;
+}
+
+/* ---------- Enlaces ---------- */
+
+a          { color: var(--vino-osc); text-decoration: none; }
+a:hover    { color: var(--azul); text-decoration: underline; }
+a:visited  { color: #6C4F56; }
+a:active   { color: #4A2C31; }
+
+/* ---------- Índice lateral (toc_float) ---------- */
+
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover {
+  z-index: 2;
+  color: var(--vino);
+  background-color: var(--arena);
+  border-color: var(--vino);
+}
+
+/* ---------- Tablas ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: .93em;
+}
+
+table th {
+  background-color: var(--rosa-claro);
+  color: var(--vino);
+  border-bottom: 2px solid var(--rosa);
+  text-align: left;
+  padding: .55em .7em;
+}
+
+table td {
+  border-bottom: 1px solid var(--gris-borde);
+  padding: .55em .7em;
+  vertical-align: top;
+}
+
+table tr:hover td { background-color: #FAF4F5; }
+
+/* Cualquier tabla ancha se desplaza dentro de su propio contenedor
+   en vez de romper el ancho de la página. */
+.tabla-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.2em 0;
+}
+.tabla-scroll table { margin: 0; min-width: 640px; }
+
+/* ---------- Tarjetas de sesión / semana ---------- */
+
+.semana {
+  border: 1px solid var(--gris-borde);
+  border-left: 5px solid var(--rosa);
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin: 1.1em 0;
+  background-color: #FFFFFF;
+}
+
+.semana-suspendida {
+  border-left-color: #B0A0A2;
+  background-color: #F7F4F4;
+}
+
+.semana h3 {
+  margin-top: 0;
+  font-size: 1.15em;
+}
+
+.semana .fechas {
+  font-weight: bold;
+  color: var(--vino-osc);
+}
+
+.semana .campo { margin: .5em 0 0 0; }
+
+.semana .etiqueta {
+  display: inline-block;
+  font-size: .78em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #FFFFFF;
+  background-color: var(--rosa);
+  border-radius: 3px;
+  padding: .15em .55em;
+  margin-bottom: .5em;
+}
+
+.aviso {
+  background-color: var(--arena);
+  border-left: 5px solid var(--vino);
+  border-radius: 4px;
+  padding: .9em 1.1em;
+  margin: 1.2em 0;
+}
+
+/* ---------- Material embebido (iframes) ---------- */
+
+/* Antes los iframes tenían width:800px fijo y se salían en móvil.
+   Ahora conservan proporción y nunca exceden el ancho disponible. */
+.embed {
+  position: relative;
+  width: 100%;
+  padding-top: 62%;            /* proporción ~16:10 para diapositivas */
+  margin: 1em 0 1.6em 0;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* Documentos verticales (PDF, formularios): más altos que anchos */
+.embed-doc { padding-top: 120%; }
+
+iframe { max-width: 100%; }
+
+/* ---------- Imágenes ---------- */
+
+img { max-width: 100%; height: auto; }
+
+/* ---------- Móvil ---------- */
+
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  h1 { font-size: 1.5em; }
+  .embed     { padding-top: 75%; }
+  .embed-doc { padding-top: 150%; }
+}
