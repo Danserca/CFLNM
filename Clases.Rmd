@@ -66,6 +66,12 @@ sociales: ¿qué y cuáles son las ciencias sociales?
 ',
 
   "2" = '
+**Presentación.** ¿De dónde salen las cifras? El proceso de generación de
+estadísticas básicas: fuentes, censos, encuestas, registros administrativos y
+las fases del proceso.
+
+<div class="embed"><iframe src="clase02_generacion_estadisticas.html"></iframe></div>
+
 **Lectura guía.** INEGI, *El proceso de generación de estadísticas básicas*
 ([Manual 3, PDF](https://www.inegi.org.mx/contenidos/inegi/spc/doc/INTERNET/2-GeneracionInfoEestadistica/manual3.pdf)).
 

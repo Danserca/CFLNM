@@ -1,0 +1,773 @@
+---
+title: "¿De dónde salen las cifras?"
+subtitle: "El proceso de generación de estadísticas básicas"
+author: "Daniela Serrano Campos"
+institute: "FCPyS · CFLNM 2102"
+date: "Semana 2 · 7 y 10 de septiembre de 2026"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - rladies
+      - rladies-fonts
+    seal: false
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "4:3"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi = 300, warning = FALSE, message = FALSE)
+```
+
+class: title-slide, middle, center
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+<style>
+.fase {
+  display: inline-block; padding: 6px 12px; margin: 3px;
+  border-radius: 6px; background: #88398a; color: #fff;
+  font-weight: bold; font-size: 0.85em;
+}
+.fase-adm { background: #e8dbe8; color: #562457; }
+.fase-ok  { background: #ddeedd; color: #1f4d1f; }
+.chico { font-size: 0.8em; }
+.chico table { font-size: 0.85em; }
+</style>
+
+---
+class: inverse, middle, center
+
+# Semana 2 · Unidad 1
+
+## Fuentes primarias, secundarias y terciarias
+### Censos, encuestas y registros administrativos
+
+---
+
+# Hoy
+
+| Minutos | Tema |
+|---|---|
+| 0–10 | ¿De dónde salen las cifras de una noticia? |
+| 10–25 | Tipos de fuentes y la información como bien público |
+| 25–45 | Tres métodos: censo, encuesta y registro administrativo |
+| 45–75 | Las fases del proceso de generación de estadísticas |
+| 75–90 | Actividad: validar y comparar |
+
+**Lectura de hoy:** INEGI (s. f.). *El proceso de generación de estadísticas
+básicas* (Manual 3). Dirección de Capacitación.
+
+---
+class: inverse, middle, center
+
+# 0–10 min
+
+## ¿De dónde salen las cifras?
+
+---
+class: middle, center
+
+.large[
+"En México viven **126 millones** de personas."
+
+"La tasa de desocupación fue de **2.7 %**."
+
+"Se registraron **800 mil** defunciones."
+]
+
+--
+
+## ¿Quién contó? ¿Cómo? ¿A quiénes?
+
+---
+
+# Recordemos la clase pasada
+
+.pull-left[
+**Dato** → **información** → **conocimiento**
+
+Un dato no es dato por sí mismo: depende de **la pregunta**, de **cómo se
+obtiene** y de **lo que hacemos con él**.
+]
+
+.pull-right[
+Hoy vamos un paso atrás:
+
+**¿cómo se produce una cifra oficial?**
+
+¿Qué decisiones se tomaron *antes* de que el número llegara a la noticia?
+]
+
+--
+
+<br>
+
+.large[
+Detrás de cada cifra hay un **proyecto**: personas, cuestionarios, mapas,
+presupuesto, reglas de validación y muchas decisiones.
+]
+
+---
+class: inverse, middle, center
+
+# 10–25 min
+
+## Tipos de fuentes
+### y la información como bien público
+
+---
+
+# Primarias, secundarias, terciarias
+
+| Tipo | ¿Qué es? | Ejemplo |
+|---|---|---|
+| **Primaria** | Produce el dato directamente de la realidad que observa | Microdatos del Censo 2020; una entrevista que tú haces |
+| **Secundaria** | Analiza, resume o interpreta fuentes primarias | Un artículo que usa el Censo para estudiar migración |
+| **Terciaria** | Organiza y remite a otras fuentes | Un catálogo, un índice, una enciclopedia, una base bibliográfica |
+
+--
+
+<br>
+
+.large[
+Igual que con el dato: **el tipo de fuente depende de la pregunta.**
+
+Una nota de prensa es fuente secundaria sobre el desempleo… pero fuente
+primaria si estudio *cómo la prensa habla* del desempleo.
+]
+
+---
+
+# La información como bien público
+
+El manual parte de una idea: la información estadística se concibe hoy como un
+**bien público** y su acceso como un **derecho social**.
+
+--
+
+Un **bien público** tiene dos características:
+
+- **No rivalidad:** que tú consultes una cifra no impide que yo la consulte.
+- **No exclusión:** no se puede (o no se debe) impedir que otras personas se
+  beneficien de ella.
+
+--
+
+<br>
+
+.large[
+**¿Por qué el Estado debe producir estadísticas?**
+
+Porque para actuar sobre un problema social primero hay que **medir** su
+estructura, su intensidad y cómo se relaciona con otros fenómenos.
+]
+
+---
+
+# ¿Quién las produce en México?
+
+El **Sistema Nacional de Información Estadística y Geográfica (SNIEG)**:
+conjunto de instituciones que producen, integran y difunden información.
+
+El **INEGI** es la **unidad central coordinadora** del sistema.
+
+--
+
+<br>
+
+| Concepto | Definición |
+|---|---|
+| **Estadísticas oficiales** | Las que difunde el sistema nacional estadístico |
+| **Estadística básica** | Datos de un censo, encuesta o registro, calculados sin conceptos ajenos al proyecto |
+| **Estadística derivada** | Datos calculados combinando una o varias fuentes con metodologías ajenas a ellas (p. ej. cuentas nacionales) |
+| **Integración** | Ordenar datos de fuentes distintas para facilitar su consulta (p. ej. un anuario) |
+
+---
+class: inverse, middle, center
+
+# 25–45 min
+
+## Tres maneras de generar datos
+
+---
+
+# Censo
+
+> Obtiene datos individuales de **todos y cada uno** de los elementos que
+> conforman el conjunto de estudio.
+
+--
+
+.pull-left[
+**Ventajas**
+
+- Cobertura total
+- Permite desagregar hasta áreas geográficas muy pequeñas
+- Sirve como **marco** para otras encuestas
+]
+
+.pull-right[
+**Limitaciones**
+
+- Muy caro y complejo
+- Se hace con poca frecuencia (cada 5 o 10 años)
+- Cuestionarios cortos: no puede preguntar todo
+]
+
+--
+
+**Ejemplo:** Censo de Población y Vivienda 2020.
+
+---
+
+# Encuesta por muestreo
+
+> Usa una **muestra representativa** de la población, seleccionada con
+> procedimientos técnicos, y a partir de ella **infiere** datos válidos para la
+> población total, bajo determinados niveles de **precisión**.
+
+--
+
+.pull-left[
+**Ventajas**
+
+- Más barata y rápida que un censo
+- Puede ser periódica (mensual, trimestral)
+- Permite cuestionarios más largos y temas específicos
+]
+
+.pull-right[
+**Limitaciones**
+
+- Las cifras son **estimaciones** con error
+- No siempre alcanza para desagregar por municipio o grupos pequeños
+- Depende de un buen marco de muestreo
+]
+
+--
+
+**Ejemplo:** Encuesta Nacional de Ocupación y Empleo (ENOE).
+
+---
+
+# Aprovechamiento de registros administrativos
+
+> Usa los sistemas de **registro de hechos o sucesos individuales** que las
+> dependencias públicas realizan **como parte de su función**.
+
+--
+
+.pull-left[
+**Ventajas**
+
+- Ya existen: bajo costo adicional
+- Cobertura continua en el tiempo
+- Gran detalle sobre el trámite o suceso
+]
+
+.pull-right[
+**Limitaciones**
+
+- Se diseñaron para **administrar**, no para **investigar**
+- Solo registran lo que llega a la institución (subregistro)
+- Conceptos y formatos cambian con las normas
+]
+
+--
+
+**Ejemplo:** estadísticas de nacimientos, defunciones, matrimonios o
+relaciones laborales.
+
+---
+class: inverse, middle
+
+# Ejercicio rápido (5 min)
+
+En parejas: **¿qué método usarían?** y **¿por qué?**
+
+1. Saber cuántas personas hablan una lengua indígena en cada municipio.
+2. Conocer cada trimestre cuántas personas están desocupadas.
+3. Contar cuántos divorcios hubo en 2025.
+4. Saber cuántas horas dedican las mujeres al trabajo de cuidados.
+5. Conocer cuántas denuncias por robo recibió una fiscalía.
+
+--
+
+### ¿Alguno podría hacerse con más de un método? ¿Qué cambiaría en la cifra?
+
+---
+class: middle, center
+
+.large[
+Un **registro administrativo** cuenta lo que **llega a la institución**.
+
+Una **encuesta** puede preguntar lo que **nunca se denunció**.
+
+Por eso la misma pregunta puede dar **cifras distintas**
+— y ninguna está "mal": miden cosas distintas.
+]
+
+---
+class: inverse, middle, center
+
+# 45–75 min
+
+## El proceso de generación de estadísticas básicas
+
+---
+
+# Cualquiera que sea el método…
+
+…la estadística se produce mediante un **proyecto** que combina dos tipos de
+actividades:
+
+.pull-left[
+**Técnicas** (propias de la estadística)
+
+- Diseño conceptual
+- Diseño de la muestra
+- Diseño del operativo
+- Captación
+- Procesamiento
+- Presentación de resultados
+]
+
+.pull-right[
+**Administrativas** (de toda logística)
+
+- Planeación
+- Programación
+- Organización
+- Presupuestación
+- Esquemas de control
+- Ejecución y control
+- Evaluación
+]
+
+--
+
+Son **interdependientes**: unas van en secuencia y otras interactúan entre sí.
+
+---
+
+# El esquema general
+
+<br>
+
+<span class="fase fase-adm">1. Planeación</span> →
+<span class="fase">2. Diseño conceptual</span> →
+<span class="fase">Diseño de la muestra*</span> →
+<span class="fase">3. Diseño del operativo</span>
+
+<br>
+
+→ <span class="fase">4. Captación</span> →
+<span class="fase">5. Procesamiento</span> →
+<span class="fase">6. Presentación de resultados</span> →
+<span class="fase fase-ok">7. Evaluación</span>
+
+<br>
+
+.chico[\* Solo en encuestas por muestreo.]
+
+--
+
+Todo el proceso descansa en el **control y soporte administrativo**: que haya
+personal, materiales y dinero a tiempo, y que se usen bien.
+
+--
+
+.large[
+Las fases de **diseño** incluyen **pruebas y ajustes**. Antes de salir a campo,
+se ensaya.
+]
+
+---
+
+# 1. Planeación
+
+Definir **qué** se va a hacer, **cómo**, **cuándo**, **con quién** y **con
+cuánto**.
+
+- **Objetivos y estrategia general:** qué información, qué método (censo,
+  encuesta o registro), qué cobertura geográfica, qué tecnología, qué marco
+  legal.
+- **Programa de actividades:** secuencia, tiempos, cronograma.
+- **Estructura de organización:** funciones, cargas de trabajo, coordinación.
+- **Presupuesto global:** personal y recursos por fase.
+
+--
+
+<br>
+
+**Productos:** objetivos, programa, organigrama, presupuesto y convenios de
+financiamiento → se integran en un **plan del proyecto** que se ajusta en el
+camino.
+
+---
+
+# 2. Diseño conceptual
+
+Responde dos preguntas: **¿qué se va a captar?** y **¿para qué?**
+
+--
+
+1. **Identificar necesidades de información:** consultar a usuarios y
+   expertos, revisar leyes, programas, antecedentes y recomendaciones
+   internacionales.
+2. **Diseñar el marco conceptual.**
+3. **Diseñar la presentación de resultados:** qué productos, para quién.
+4. **Diseñar y probar el instrumento de captación** (cuestionario,
+   instructivos, manuales).
+5. **Definir criterios de validación.**
+
+--
+
+<br>
+
+.large[
+Todo gira en torno a definir bien la **unidad de observación**: ¿de quién o de
+qué obtengo los datos?
+]
+
+---
+
+# El marco conceptual
+
+Ordenamiento de **temas, categorías, variables y clasificaciones**, con un
+**glosario** que define cada concepto.
+
+| Concepto | Qué es | Ejemplo |
+|---|---|---|
+| **Tema** | Campo de interés que justifica el proyecto | Empleo |
+| **Categoría** | Conjunto que se cuantifica y caracteriza | Personas, hogares, defunciones, huelgas |
+| **Variable** | Concepto que admite distintos valores | Sexo, edad, causa de defunción |
+| **Clasificación** | Ordenamiento de los valores de una variable | 1 Hombres · 2 Mujeres · 3 No especificado |
+| **Clase** | Cada valor o intervalo de la clasificación | "Mujeres"; "15 a 19 años" |
+
+---
+
+# Un ejemplo del manual
+
+**Tema:** convenios de trabajo (estadísticas de relaciones laborales).
+
+.chico[
+| Categoría | Variable | Clasificación |
+|---|---|---|
+| Convenios de trabajo fuera de juicio | Fecha de registro | 01 Enero … 12 Diciembre |
+| | Lugar de registro | Entidad y municipio (catálogo territorial) |
+| | Número de trabajadores | Abierta |
+| | Motivo del convenio | Terminación de contrato, retiro voluntario, indemnización, aumento de salario… |
+| | Clase de contrato | Individual · Colectivo · Se ignora |
+| Trabajadores involucrados | Sexo | Hombres · Mujeres · No especificado |
+]
+
+--
+
+### ¿Por qué incluir "Se ignora" y "No especificado"?
+
+---
+
+# ¿Por qué definir con tanto cuidado?
+
+Porque las definiciones deben permitir **comparar**:
+
+- entre periodos,
+- entre países,
+- y entre métodos (censo, encuesta, registro).
+
+--
+
+<br>
+
+.pull-left[
+Si una encuesta define *hogar* como "personas que comparten el gasto" y otra
+como "personas que duermen bajo el mismo techo"…
+]
+
+.pull-right[
+**…¿podemos comparar el número de hogares?**
+]
+
+--
+
+<br>
+
+.large[
+Esto es lo que en la clase pasada llamamos **interoperabilidad** (la *I* de
+FAIR).
+]
+
+---
+
+# Diseño de la muestra (solo encuestas)
+
+1. **Marco de muestreo:** listas, croquis, cartografía, directorios que
+   identifican **todas** las unidades, para que cada una tenga una probabilidad
+   **conocida y distinta de cero** de ser elegida.
+2. **Tamaño de la muestra:** depende de la desagregación deseada, la precisión
+   y confianza requeridas y la **no respuesta** esperada.
+3. **Distribución y selección:** por subpoblaciones (dominios). En una etapa
+   (*unietápico*: viviendas) o en varias (*polietápico*: primero manzanas,
+   luego viviendas).
+4. **Factores de expansión:** cada unidad de la muestra **representa** a un
+   número de unidades de la población.
+
+--
+
+.large[
+Si a una vivienda le toca un factor de **350**, sus respuestas "cuentan" por
+350 viviendas.
+]
+
+---
+
+# 3. Diseño del operativo
+
+¿Cómo vamos a **salir a campo** y **procesar** lo que traigamos?
+
+.pull-left[
+**Para la captación**
+
+- Estrategia operativa y controles de avance
+- Reclutar, seleccionar, contratar y **capacitar** al personal
+- Comunicación y concertación: sensibilizar a quienes informan
+]
+
+.pull-right[
+**Para el procesamiento**
+
+- Base tecnológica necesaria
+- Metodología de procesamiento
+- Aplicaciones informáticas de captura, codificación y validación
+- Manuales de operación
+]
+
+--
+
+<br>
+
+.large[
+De la labor en campo **depende la obtención de los datos**. Las personas
+entrevistadoras son parte del método.
+]
+
+---
+
+# 4. Captación
+
+Obtener los datos de **cada elemento** de la población (o de la muestra).
+
+- **Preparación operativa:** instalar equipos, distribuir cartografía,
+  manuales y cuestionarios; capacitar.
+- **Levantamiento:** asignar cargas de trabajo; visita personal, correo,
+  internet u otra vía; **supervisión** y medidas correctivas.
+- **Cierre:** recuperar materiales y elaborar un **informe** con los problemas
+  frecuentes y sus soluciones.
+
+--
+
+<br>
+
+**Productos:** cuestionarios ordenados, formatos de control y reportes de
+avance, incidencias y cierre.
+
+--
+
+.large[El informe de campo también es un dato: documenta **cómo** se obtuvo todo lo demás.]
+
+---
+
+# 5. Procesamiento
+
+Convertir cuestionarios en **archivos de datos congruentes y ordenados**.
+
+- **Codificación y captura:** asignar códigos e ingresar los datos.
+- **Validación:** revisar que los datos cumplan los criterios definidos en el
+  diseño conceptual.
+- **Archivos de datos:** la base que alimenta los tabulados.
+- **En encuestas:** calcular factores de expansión y **precisiones**
+  (error estándar, coeficiente de variación).
+
+--
+
+<br>
+
+La validación resuelve cuatro problemas:
+
+| Problema | Ejemplo |
+|---|---|
+| **Omisión** | La pregunta quedó en blanco |
+| **No aplicable** | Responde "escolaridad del hijo" alguien sin hijos |
+| **Multirrespuesta** | Marcó "soltera" y "casada" |
+| **Incongruencia** | 4 años de edad y nivel licenciatura |
+
+---
+
+# 6. Presentación de resultados
+
+Concretar los productos diseñados desde el principio: tabulados, publicaciones,
+mapas, consultas en línea.
+
+Antes de publicar se revisa la **consistencia**:
+
+- **Valores equivalentes:** el mismo total no puede diferir entre cuadros.
+- **Valores relacionados:** un subtotal no puede ser mayor que el total.
+- **Estructuras:** compararlas con otros contextos para detectar distribuciones
+  atípicas.
+
+--
+
+<br>
+
+Siempre **respetando la confidencialidad** y acompañando los datos con la
+**documentación del proceso**: qué se hizo, por qué, y cuáles son los
+**alcances y limitaciones** de las cifras.
+
+---
+
+# 7. Evaluación
+
+.pull-left[
+**Evaluación del proceso**
+
+¿Qué funcionó y qué no en cada fase?
+
+Sirve para **mejorar los proyectos futuros**.
+]
+
+.pull-right[
+**Evaluación de los datos**
+
+¿Hay problemas de **cobertura**, **sesgo** o inconsistencias no resueltas?
+
+Sirve para **orientar a quien usa** los datos.
+]
+
+--
+
+<br>
+
+.large[
+Una cifra oficial confiable no es la que "no tiene errores", sino la que
+**documenta** sus errores y limitaciones.
+]
+
+---
+class: middle, center
+
+# planeación → diseño → captación
+# → procesamiento → resultados → evaluación
+
+--
+
+.large[
+¿Les recuerda algo de la clase pasada?
+
+Es un **ciclo de vida del dato** (RDM), visto desde una oficina de estadística.
+]
+
+---
+
+# Lo que se conecta con FAIR
+
+| Fase | Lo que produce | Principio FAIR |
+|---|---|---|
+| Diseño conceptual | Glosario, catálogos, clasificaciones | **I**nteroperable |
+| Procesamiento | Archivos de datos validados | **A**ccesible |
+| Presentación | Productos, consulta en línea | **F**indable / **A**ccesible |
+| Documentación | Metodología, alcances y limitaciones | **R**eusable |
+
+--
+
+<br>
+
+.large[
+Lo que vamos a hacer en este curso —buscar fuentes, construir bases,
+documentarlas y analizarlas— **sigue este mismo proceso**, en pequeño.
+]
+
+---
+class: inverse, middle, center
+
+# 75–90 min
+
+## Actividad: validar y comparar
+
+---
+
+# Parte 1 · Ustedes validan (8 min)
+
+Estos registros vienen de un cuestionario de hogares. **¿Cuáles tienen
+problemas y de qué tipo?**
+
+.chico[
+| id | edad | parentesco | estado conyugal | asiste a la escuela | nivel |
+|---|---|---|---|---|---|
+| 01 | 34 | jefa | casada | no | licenciatura |
+| 02 | 6 | hijo | casado | sí | primaria |
+| 03 | 250 | cónyuge | casado | no | secundaria |
+| 04 | 15 | hija | soltera | | secundaria |
+| 05 | 41 | cónyuge | soltero / casado | no | preparatoria |
+| 06 | 3 | hijo | soltero | sí | licenciatura |
+| 07 | 72 | madre | viuda | no | primaria |
+]
+
+--
+
+### ¿Qué regla de validación escribirían para cada caso? ¿Corregirían o marcarían "no especificado"?
+
+---
+
+# Parte 2 · Un indicador, tres fuentes (tarea)
+
+Elijan **un indicador social** (desempleo, escolaridad, defunciones por
+homicidio, matrimonios, discapacidad…) y búsquenlo en:
+
+1. un **censo**,
+2. una **encuesta**,
+3. un **registro administrativo**.
+
+--
+
+Para cada fuente anoten:
+
+- ¿Quién la produce y con qué periodicidad?
+- ¿Cuál es la **unidad de observación**?
+- ¿Cómo **definen** el concepto? (busquen el glosario)
+- ¿Qué cifra reportan y para qué año?
+
+--
+
+### ¿Coinciden las cifras? Si no, ¿por qué?
+
+Se sube a Classroom · CFLNM-2027 · código `woza42ty`
+
+---
+class: middle, center
+
+# Para la próxima semana
+
+## Lunes 14 de septiembre
+
+**Población, muestra, dominio de estudio,**
+**unidad de observación y unidad de análisis.**
+
+Lectura: Gerring, J. (2014). *Metodología de las ciencias sociales.*
+
+---
+class: inverse, middle, center
+
+# Gracias
+
+## danserca.github.io/CFLNM
