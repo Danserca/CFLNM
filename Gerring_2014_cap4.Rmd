@@ -1,0 +1,864 @@
+---
+title: "Muestra aleatoria y asignación aleatoria"
+subtitle: "Gerring, cap. 4 (Análisis) y cap. 8 (pp. 223–233)"
+author: "Daniela Serrano Campos"
+institute: "FCPyS · CFLNM 2102"
+date: "Semestre 2027-1"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css:
+      - default
+      - rladies
+      - rladies-fonts
+    seal: false
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "4:3"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi = 200, warning = FALSE, message = FALSE)
+```
+
+```{r simulacion, include = FALSE}
+# Población ficticia de 10,000 estudiantes. La motivación no se observa,
+# pero influye en todo: en si trabajan, en si contestan encuestas,
+# en si se inscriben a un taller y en sus calificaciones.
+set.seed(2027)
+n_pob <- 10000
+motivacion <- rnorm(n_pob)
+trabaja <- rbinom(n_pob, 1, plogis(-0.2 - 0.8 * motivacion))
+
+# A. Estimar qué porcentaje trabaja, repitiendo 1,000 veces cada método.
+#    Voluntarios: contestan más quienes tienen más motivación.
+prob_contestar <- plogis(-2 + 1.5 * motivacion)
+est_aleatoria <- replicate(1000, mean(trabaja[sample(n_pob, 400)]))
+est_voluntaria <- replicate(1000, mean(trabaja[sample(n_pob, 400, prob = prob_contestar)]))
+real_trabaja <- mean(trabaja)
+
+# B. Efecto de un taller de redacción en la calificación (efecto real: +0.3).
+efecto_real <- 0.3
+calif_base <- 7.5 + 0.8 * motivacion + rnorm(n_pob, sd = 0.5)
+# Autoselección: se inscriben sobre todo quienes tienen más motivación.
+taller_elegido <- rbinom(n_pob, 1, plogis(1.5 * motivacion))
+# Sorteo: una moneda decide quién toma el taller.
+taller_sorteo <- rbinom(n_pob, 1, 0.5)
+calif_elegido <- calif_base + efecto_real * taller_elegido
+calif_sorteo  <- calif_base + efecto_real * taller_sorteo
+dif_elegido <- mean(calif_elegido[taller_elegido == 1]) - mean(calif_elegido[taller_elegido == 0])
+dif_sorteo  <- mean(calif_sorteo[taller_sorteo == 1]) - mean(calif_sorteo[taller_sorteo == 0])
+mot_elegido <- tapply(motivacion, taller_elegido, mean)
+mot_sorteo  <- tapply(motivacion, taller_sorteo, mean)
+
+pct <- function(x) paste0(format(round(100 * x, 1), nsmall = 1), " %")
+num <- function(x) format(round(x, 2), nsmall = 2)
+```
+
+class: title-slide, middle, center
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+<style>
+.chico { font-size: 0.8em; }
+.chico table { font-size: 0.85em; }
+.caja {
+  border-left: 6px solid #88398a; background: #f6eef6;
+  padding: 8px 16px; margin: 12px 0;
+}
+.caja-gris {
+  border-left: 6px solid #777; background: #f2f2f2;
+  padding: 8px 16px; margin: 12px 0;
+}
+</style>
+
+---
+class: inverse, middle, center
+
+# Dos preguntas, dos tipos de azar
+
+## ¿A quién estudio?
+## ¿Quién recibe el tratamiento?
+
+---
+
+# Hoy
+
+| Minutos | Tema |
+|---|---|
+| 0–10 | Dos preguntas para empezar |
+| 10–25 | Vocabulario: población, muestra, unidad, observación |
+| 25–40 | Buen análisis: validez, precisión, validez interna y externa |
+| 40–55 | Muestreo: representatividad, tamaño, nivel de análisis |
+| 55–70 | Argumentos causales: manipular, separar, aislar (cap. 8) |
+| 70–90 | **Muestra aleatoria vs. asignación aleatoria** + ejercicios |
+
+**Lectura:** Gerring, J. (2014). *Metodología de las ciencias sociales. Un
+marco unificado*. Alianza; UNAM. Cap. 4 y pp. 223–233.
+
+---
+class: inverse, middle, center
+
+# 0–10 min
+
+## Dos preguntas para empezar
+
+---
+
+# Piensen en estas dos preguntas
+
+.pull-left[
+.caja[
+**Pregunta A**
+
+¿Qué porcentaje de estudiantes de la FCPyS **trabaja** además de estudiar?
+]
+]
+
+.pull-right[
+.caja[
+**Pregunta B**
+
+¿Tomar un **taller de redacción** mejora las calificaciones?
+]
+]
+
+--
+
+<br>
+
+En parejas, 3 minutos:
+
+1. ¿A **quiénes** les preguntarían?
+2. ¿Qué harían para que la respuesta sea **confiable**?
+3. ¿En qué se **parecen** y en qué se **distinguen** las dos preguntas?
+
+---
+
+# Lo que distingue a las dos preguntas
+
+.pull-left[
+**A es descriptiva**
+
+Quiero saber **cómo es** una población.
+
+El problema es **a quién elijo** para preguntar.
+]
+
+.pull-right[
+**B es causal**
+
+Quiero saber si **algo produce** un cambio.
+
+El problema es **con quién comparo**.
+]
+
+--
+
+<br>
+
+.large[
+Las dos se resuelven mejor con **azar**… pero con un **azar distinto** y en
+un **momento distinto** de la investigación.
+
+Hoy vamos a aprender a no confundirlos.
+]
+
+---
+class: inverse, middle, center
+
+# 10–25 min
+
+## Vocabulario del análisis empírico
+
+---
+
+# Las piezas de un análisis
+
+| Término | Qué es | Ejemplo |
+|---|---|---|
+| **Población** | El universo que la hipótesis quiere describir o explicar | Todas las escuelas del país |
+| **Muestra** | La evidencia que sí examinamos | 8 escuelas |
+| **Unidad / caso** | Cada entidad que observamos | Una escuela |
+| **Observación** | Una unidad en un momento del tiempo (una **fila**) | La escuela 3 en 2024 |
+| **Variable** | Lo que medimos en cada observación (una **columna**) | Matrícula, cupones, rendimiento |
+| **Celda** | Una variable para una observación | Rendimiento de la escuela 3 en 2024 |
+| **N** | Número de observaciones | 40 |
+
+--
+
+Cuando incluimos **a toda la población** en la muestra, hacemos un **censo**
+(¿lo recuerdan de la semana 2?).
+
+---
+
+# El ejemplo de Gerring (figura 4.1)
+
+**8 escuelas** observadas **cada año durante 5 años**, con **3 variables**.
+
+--
+
+- Unidades (casos): **8**
+- Observaciones: 8 × 5 = **40** → N = 40
+- Celdas: 40 × 3 = **120**
+
+--
+
+<br>
+
+.pull-left[
+Si sólo miro **un año** de las 8 escuelas (diseño **transversal**):
+
+**N = 8**
+]
+
+.pull-right[
+Si sólo miro **una escuela** durante 5 años (diseño **temporal**):
+
+**N = 5**
+]
+
+--
+
+<br>
+
+.large[N no siempre es "número de casos". **Depende del diseño.**]
+
+---
+class: inverse, middle
+
+# Ejercicio 1 · Contemos (4 min)
+
+Una investigadora entrevista a **30 estudiantes** al final de **cada semestre**
+durante **4 semestres**. En cada entrevista registra **5 variables**.
+
+1. ¿Cuántas **unidades** hay?
+2. ¿Cuántas **observaciones** (N)?
+3. ¿Cuántas **celdas**?
+4. ¿Cuál es la **población**? ¿La conocemos?
+
+--
+
+### Respuestas: 30 unidades · 120 observaciones · 600 celdas · la población depende de la pregunta (¿estudiantes de su grupo? ¿de la UNAM? ¿del país?)
+
+---
+
+# Primero diseñar, después analizar
+
+**Diseño de la investigación:** elegir y organizar la evidencia (*ex ante*).
+
+**Análisis de datos:** trabajar con los datos ya recolectados (*ex post*).
+
+--
+
+<br>
+
+Gerring cita a Donald Rubin: **"El diseño triunfa sobre el análisis"**.
+
+--
+
+.pull-left[
+.caja[
+**Diseño** = medicina **preventiva**
+
+Evitar enfermarse.
+]
+]
+
+.pull-right[
+.caja-gris[
+**Análisis** = medicina de **urgencias**
+
+Intentar salvar a quien ya llegó grave.
+]
+]
+
+--
+
+.large[Si recolectamos mal, la estadística no lo arregla: **"si metes basura, sacas basura"**.]
+
+---
+class: inverse, middle, center
+
+# 25–40 min
+
+## ¿Qué es un buen análisis?
+
+---
+
+# Cuatro criterios (tabla 4.1)
+
+| Criterio | Pregunta |
+|---|---|
+| **Exactitud** | ¿Son los resultados válidos y precisos? ¿Sabemos cuánta incertidumbre tienen? |
+| **Muestreo** | ¿Las observaciones son representativas, suficientes y del nivel adecuado? |
+| **Acumulación** | ¿El estudio se puede comparar, replicar y es transparente? |
+| **Ajuste teórico** | ¿La prueba realmente pone a prueba la teoría? ¿Es una prueba difícil? |
+
+--
+
+<br>
+
+Hoy nos concentramos en los dos primeros: **exactitud** y **muestreo**.
+
+(Acumulación y transparencia: ¿les recuerda a FAIR y a la reproducibilidad?)
+
+---
+
+# Validez y precisión
+
+```{r dianas, fig.width = 9, fig.height = 3.4, out.width = "100%"}
+op <- par(mfrow = c(1, 3), mar = c(0.5, 0.5, 3, 0.5))
+diana <- function(titulo, cx, cy, dispersion) {
+  plot(NA, xlim = c(-1.2, 1.2), ylim = c(-1.2, 1.2), asp = 1,
+       axes = FALSE, xlab = "", ylab = "", main = titulo, cex.main = 1.6)
+  for (r in c(1, 0.66, 0.33)) symbols(0, 0, circles = r, inches = FALSE, add = TRUE, fg = "grey60")
+  points(0, 0, pch = 19, cex = 2.2)
+  set.seed(4)
+  points(cx + rnorm(12, sd = dispersion), cy + rnorm(12, sd = dispersion),
+         pch = 19, col = "#88398a", cex = 1.6)
+}
+diana("Fiable, no válido", 0.55, 0.45, 0.06)
+diana("Válido, no fiable", 0, 0, 0.38)
+diana("Válido y fiable", 0, 0, 0.07)
+par(op)
+```
+
+- **Validez:** en promedio, ¿le atinamos al valor verdadero? Su enemigo es el
+  **sesgo** (error sistemático).
+- **Precisión (fiabilidad):** ¿los resultados se parecen entre sí? Su enemigo
+  es el **ruido** (error aleatorio).
+
+---
+
+# Validez interna y validez externa
+
+.pull-left[
+**Validez interna**
+
+¿El hallazgo es verdadero **para la muestra** que estudié?
+]
+
+.pull-right[
+**Validez externa**
+
+¿El hallazgo se puede **generalizar** a una población mayor?
+]
+
+--
+
+<br>
+
+Gerring propone pensarlo como **círculos concéntricos**. Adaptado a nosotros:
+
+1. Las y los estudiantes de **este grupo**
+2. La **FCPyS**
+3. La **UNAM**
+4. Las universidades **públicas de México**
+5. Las universidades de **América Latina**
+6. Las universidades **del mundo**
+
+--
+
+Mientras más grande el círculo, **menos confianza** tenemos al extrapolar.
+Y si no confiamos en el círculo 1, menos en el 6.
+
+---
+class: inverse, middle, center
+
+# 40–55 min
+
+## Muestreo
+
+### Representatividad · tamaño · nivel de análisis
+
+---
+
+# Representatividad y muestra aleatoria
+
+> La mejor manera de obtener una muestra **representativa** es extraer una
+> **muestra aleatoria** de la población: cada unidad tiene **la misma
+> oportunidad** de ser elegida.
+
+--
+
+**Ventaja extra:** como sabemos cómo se eligió, podemos **calcular la
+precisión** (el margen de error).
+
+--
+
+.pull-left[
+**Pero no siempre es posible…**
+
+Los estudios sobre cupones escolares dependen de los distritos que **aceptan
+participar**, que no son una muestra aleatoria.
+]
+
+.pull-right[
+**…ni siempre tiene sentido**
+
+Con **un caso o un puñado** de casos, elegir al azar puede darnos casos muy
+raros. Por eso los estudios de caso eligen **intencionalmente**.
+]
+
+---
+
+# Veámoslo con datos (simulados)
+
+Creamos una población ficticia de **10,000 estudiantes**. Sabemos que
+**`r pct(real_trabaja)`** trabaja. Ahora "encuestamos" a 400, **1,000 veces**:
+
+- **Muestra aleatoria:** cualquier estudiante puede salir.
+- **Voluntarios:** contesta quien quiere… y contestan más quienes tienen más
+  tiempo y motivación (y esos trabajan menos).
+
+```{r hist-muestras, fig.width = 9, fig.height = 3.6, out.width = "100%"}
+op <- par(mar = c(4.5, 4, 1, 1))
+rango <- range(c(est_aleatoria, est_voluntaria, real_trabaja))
+cortes <- seq(floor(rango[1] * 100) / 100, ceiling(rango[2] * 100) / 100, by = 0.01)
+hist(est_voluntaria, breaks = cortes, col = adjustcolor("grey50", 0.6), border = "white",
+     main = "", xlab = "Porcentaje que trabaja según cada encuesta", ylab = "Encuestas",
+     xaxt = "n", ylim = c(0, max(hist(est_aleatoria, breaks = cortes, plot = FALSE)$counts,
+                                 hist(est_voluntaria, breaks = cortes, plot = FALSE)$counts)))
+hist(est_aleatoria, breaks = cortes, col = adjustcolor("#88398a", 0.7), border = "white", add = TRUE)
+axis(1, at = pretty(cortes), labels = paste0(100 * pretty(cortes), "%"))
+abline(v = real_trabaja, lwd = 3)
+legend("topleft", bty = "n", cex = 1.1,
+       legend = c("Muestra aleatoria", "Voluntarios", "Valor real"),
+       fill = c(adjustcolor("#88398a", 0.7), adjustcolor("grey50", 0.6), NA),
+       border = c("white", "white", NA), lty = c(NA, NA, 1), lwd = c(NA, NA, 3))
+par(op)
+```
+
+---
+
+# ¿Qué vimos?
+
+| | Promedio de las 1,000 encuestas | ¿Válida? |
+|---|---|---|
+| Valor real | **`r pct(real_trabaja)`** | — |
+| Muestra aleatoria | `r pct(mean(est_aleatoria))` | Sí: se centra en el valor real |
+| Voluntarios | `r pct(mean(est_voluntaria))` | No: **sesgo** sistemático |
+
+--
+
+<br>
+
+.large[
+Encuestar a **más** voluntarios no corrige el problema: obtendríamos
+**con mucha precisión** un número **equivocado**.
+
+Es la diana "fiable, no válida".
+]
+
+---
+
+# Tamaño de la muestra (N)
+
+**Más observaciones son mejores que pocas** (si todo lo demás es igual).
+
+--
+
+- Con **un solo punto** en una gráfica de X y Y se pueden trazar **infinitas
+  líneas**: no sabemos cuál es la relación.
+- Con muchas observaciones hay **menos indeterminación** y **más precisión**.
+
+--
+
+<br>
+
+**Excepción:** si la teoría dice que algo **siempre** pasa, **un solo caso**
+en contra basta para refutarla.
+
+--
+
+**Y una advertencia:** si para tener una muestra más grande sacrificamos la
+representatividad, **no vale la pena**. Mejor pequeña y representativa.
+
+---
+
+# Datos perdidos
+
+Una muestra de **1,000 casos con huecos** no es lo mismo que una de **1,000
+completos**.
+
+| Si los datos faltan… | Consecuencia |
+|---|---|
+| **al azar** | La muestra es más chica, pero sigue siendo representativa |
+| **de forma sistemática** | La muestra queda **sesgada** |
+
+--
+
+<br>
+
+### ¿Ejemplo de datos perdidos de forma sistemática?
+
+En una encuesta sobre ingresos, ¿quiénes suelen **no contestar** cuánto ganan?
+
+---
+
+# Nivel de análisis
+
+Las observaciones sirven más cuando están **en el mismo nivel** que la
+hipótesis.
+
+- Hipótesis sobre **escuelas** → observo **escuelas**.
+- Hipótesis sobre **personas** → observo **personas**.
+
+--
+
+.pull-left[
+**De arriba hacia abajo**
+
+Tengo datos por **municipio** y quiero hablar de **personas**.
+
+→ Problema de **inferencia ecológica**.
+]
+
+.pull-right[
+**De abajo hacia arriba**
+
+Tengo datos de **estudiantes** y quiero hablar de **escuelas**.
+
+→ Problema de **reduccionismo**.
+]
+
+--
+
+.caja[
+**Ejemplo:** en los municipios donde hay más jóvenes, un partido gana más
+votos. ¿Significa que **los jóvenes** votan por ese partido?
+]
+
+---
+class: inverse, middle, center
+
+# 55–70 min
+
+## Argumentos causales
+### Gerring, cap. 8, pp. 223–233
+
+---
+
+# Manipulabilidad
+
+Idealmente, la causa (X) debe poder **cambiarse deliberadamente**, por quien
+investiga o por alguien más.
+
+--
+
+.pull-left[
+**Fácil de manipular**
+
+Los **cupones escolares**: sabemos qué es tenerlos (X = 1) y no tenerlos
+(X = 0).
+
+Eso define el **tratamiento** y el **control**.
+]
+
+.pull-right[
+**Difícil de manipular**
+
+La **democracia**: puedo cambiar la ley electoral, pero no puedo "poner"
+elecciones competidas sin cambiar muchas otras cosas a la vez.
+]
+
+--
+
+<br>
+
+.large[
+Preguntarnos **"¿cómo cambiaría X?"** nos obliga a aclarar **qué estamos
+afirmando** cuando decimos que X causa Y.
+]
+
+---
+
+# ¿Por qué algunas causas no se pueden manipular?
+
+| Obstáculo | Ejemplo de Gerring |
+|---|---|
+| **Estados mentales** | Confianza, legitimidad, motivación: podemos influirlos, no fijarlos |
+| **Procesos continuos** | La transición demográfica: no podemos "detenerla" para comparar |
+| **Cambios que arrastran otros cambios** | Democratizar un país (Rusia en 1991 cambió también al capitalismo) |
+| **Causas que funcionan como *proxy*** | "Raza": ¿hablamos de genes, de discriminación, de ingreso…? |
+
+--
+
+<br>
+
+Para Gerring la manipulabilidad es **cuestión de grado**: es deseable, pero
+su ausencia no vuelve "no causal" un argumento. Sí lo vuelve **más ambiguo**.
+
+---
+
+# Separación, independencia, impacto y mecanismo
+
+**Separación:** la causa debe distinguirse del efecto. "El ataque al Fuerte
+Sumter causó la Guerra Civil" explica poco: el ataque **es parte** de la guerra.
+
+--
+
+**Independencia:** si X se explica casi por completo por otra cosa (A), quizá
+la verdadera causa es A.
+
+--
+
+**Impacto:** mientras más variación de Y explica X, más importante es el
+argumento.
+
+--
+
+**Mecanismo:** el camino por el que X produce Y.
+
+.center[**X → M → Y**]
+
+.center[cupones → mejores profesores → mejor rendimiento]
+
+---
+class: middle
+
+.caja[
+.large[
+**La frase clave (p. 230):** cuando el tratamiento lo **manipula quien
+investiga**, por definición es **independiente** de todo lo demás.
+]
+]
+
+--
+
+<br>
+
+.large[
+¿Y cuál es la forma más limpia de manipular un tratamiento sin que nada más
+decida quién lo recibe?
+
+## Echar una moneda al aire.
+]
+
+---
+class: inverse, middle, center
+
+# 70–90 min
+
+## Muestra aleatoria vs. asignación aleatoria
+
+---
+
+# Dos sorteos distintos
+
+.pull-left[
+.caja[
+### Muestra aleatoria
+
+**¿Quiénes entran** al estudio?
+
+Sorteo **desde la población** hacia la muestra.
+
+Busca **representatividad**.
+
+Protege la **validez externa**.
+
+Sirve sobre todo para preguntas **descriptivas**.
+]
+]
+
+.pull-right[
+.caja-gris[
+### Asignación aleatoria
+
+**¿Quiénes reciben** el tratamiento?
+
+Sorteo **dentro de la muestra**: tratamiento o control.
+
+Busca **grupos comparables**.
+
+Protege la **validez interna**.
+
+Sirve para preguntas **causales**.
+]
+]
+
+--
+
+<br>
+
+.large[Una responde **"¿a quién puedo generalizar?"**; la otra, **"¿puedo atribuir la diferencia al tratamiento?"**]
+
+---
+
+# La pregunta B con datos (simulados)
+
+Taller de redacción. **Efecto real: +`r num(efecto_real)` puntos** en la
+calificación. Pero la **motivación** (que no vemos) también sube las
+calificaciones.
+
+| Cómo se decidió quién toma el taller | Motivación promedio: taller / sin taller | Diferencia en calificación |
+|---|---|---|
+| **Cada quien eligió** | `r num(mot_elegido["1"])` / `r num(mot_elegido["0"])` | **`r num(dif_elegido)`** |
+| **Sorteo (moneda)** | `r num(mot_sorteo["1"])` / `r num(mot_sorteo["0"])` | **`r num(dif_sorteo)`** |
+
+--
+
+<br>
+
+- Cuando **cada quien elige**, los grupos ya eran distintos **antes** del
+  taller: la diferencia mezcla el efecto del taller con la motivación.
+- Con el **sorteo**, la motivación queda **repartida por igual**, aunque no
+  la midamos. La diferencia se acerca al efecto real.
+
+---
+
+# Ojo: se pueden combinar (o no)
+
+.chico[
+| | **Con asignación aleatoria** | **Sin asignación aleatoria** |
+|---|---|---|
+| **Con muestra aleatoria** | Encuesta nacional aleatoria donde **a la mitad** se le pregunta con una redacción y a la otra mitad con otra | Encuesta aleatoria que compara a quienes leen noticias con quienes no |
+| | *Generalizo y atribuyo causa* | *Generalizo, pero no sé si es causa* |
+| **Sin muestra aleatoria** | Experimento con estudiantes **voluntarios** de un salón: una moneda decide quién ve un video | Comparar a quienes **eligieron** ir a asesorías con quienes no |
+| | *Atribuyo causa, pero ¿a quién generalizo?* | *Ni generalizo ni atribuyo causa* |
+]
+
+--
+
+Gerring nota que muchas veces hay que **elegir**: un experimento con muestra
+no aleatoria **o** un estudio sin experimento con muestra aleatoria. Lo común
+es priorizar la **validez interna**.
+
+---
+
+# Errores frecuentes
+
+❌ "Como mi muestra fue aleatoria, ya puedo decir que X **causa** Y."
+
+✅ La muestra aleatoria **no** reparte el tratamiento; sólo elige a quién
+observo.
+
+--
+
+❌ "Como hice un experimento, mis resultados valen para **todo el país**."
+
+✅ La asignación aleatoria **no** vuelve representativa a la muestra.
+
+--
+
+❌ "Si la muestra es muy grande, no importa cómo la elegí."
+
+✅ Una muestra enorme **y sesgada** da un resultado **precisamente equivocado**.
+
+--
+
+❌ "Aleatorio es lo mismo que **sin orden** o **como salga**."
+
+✅ Aleatorio significa que **un sorteo con probabilidades conocidas** decide,
+no la persona investigadora ni las personas estudiadas.
+
+---
+class: inverse, middle
+
+# Ejercicio 2 · ¿Qué sorteo hay? (10 min)
+
+Para cada caso digan: ¿hay **muestra aleatoria**, **asignación aleatoria**,
+**ambas** o **ninguna**? ¿Qué validez gana y qué validez pierde?
+
+.chico[
+1. El INEGI elige viviendas **al azar** para saber cuántas personas están desempleadas.
+2. Una alcaldía **sortea** un apoyo para emprender **entre quienes se inscribieron** y compara sus ingresos un año después.
+3. Una profesora compara las calificaciones de quienes **fueron a asesorías** con las de quienes no fueron.
+4. En una encuesta telefónica con números **al azar**, a la mitad se le pregunta "¿apoya la *ayuda a los pobres*?" y a la otra "¿apoya la *asistencia social*?", decidido **con una moneda**.
+5. En este salón, **una moneda** decide quién lee una noticia **con** fotografía y quién **sin** ella; luego medimos cuánto recuerdan.
+6. Una influencer publica en Instagram una encuesta sobre por quién votarán sus seguidores.
+]
+
+---
+
+# Respuestas del ejercicio 2
+
+.chico[
+| Caso | Muestra aleatoria | Asignación aleatoria | Gana | Pierde o arriesga |
+|---|---|---|---|---|
+| 1. Viviendas INEGI | Sí | — (es descriptivo) | Validez externa | — |
+| 2. Apoyo sorteado | No (sólo inscritas) | Sí | Validez interna | ¿Vale para quien no se inscribió? |
+| 3. Asesorías | No | No | — | Autoselección: ¿van las y los más motivados? |
+| 4. Redacción de la pregunta | Sí | Sí | Ambas | Costo, diseño cuidadoso |
+| 5. Noticia con foto | No (nuestro salón) | Sí | Validez interna | ¿Vale para otras personas? |
+| 6. Instagram | No | No | — | Sesgo de voluntarios |
+]
+
+--
+
+### ¿En cuál hubo más dudas? ¿Por qué?
+
+---
+class: inverse, middle
+
+# Ejercicio 3 · ¿Se puede manipular? (5 min)
+
+Ordenen de **más** a **menos** manipulable. Para los difíciles, propongan
+qué parte **sí** podría manipularse.
+
+.pull-left[
+- Recibir un **mensaje de texto** que recuerda ir a votar
+- El **tamaño del grupo** en una escuela
+- El **ingreso** de un hogar
+]
+
+.pull-right[
+- La **religión** de una persona
+- La **confianza** en las instituciones
+- Que un país sea una **democracia**
+]
+
+--
+
+<br>
+
+### Pista de Gerring: cuando X no se puede manipular, solemos terminar manipulando **las causas de X**.
+
+---
+class: inverse, middle
+
+# Ejercicio 4 · Diseñen (cierre, en equipos de 3)
+
+**Pregunta:** ¿la **lectura previa obligatoria** aumenta la **participación**
+en clase?
+
+1. **Población:** ¿a quiénes quieren poder generalizar?
+2. **Muestra:** ¿cómo elegirían a quiénes estudiar? ¿Puede ser aleatoria?
+3. **Tratamiento:** ¿cómo decidirían quién tiene lectura obligatoria y quién
+   no? ¿Puede ser un sorteo? ¿Por grupo o por estudiante (**nivel de
+   análisis**)?
+4. **Medición:** ¿cómo medirían "participación"?
+5. **Ética y factibilidad:** ¿es justo sortearlo? ¿Qué podría salir mal?
+
+### Se sube a Classroom · CFLNM-2027 · código `woza42ty`
+
+---
+class: middle, center
+
+# Para llevarse
+
+.large[
+**Muestra aleatoria** → ¿a **quién** puedo generalizar?
+
+**Asignación aleatoria** → ¿puedo atribuir la diferencia **al tratamiento**?
+
+Una no sustituye a la otra.
+
+Y ninguna rescata un mal **diseño**: primero se diseña, después se analiza.
+]
+
+---
+class: inverse, middle, center
+
+# Gracias
+
+## danserca.github.io/CFLNM

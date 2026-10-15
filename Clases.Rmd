@@ -84,6 +84,12 @@ y compáralo en un censo, una encuesta y un registro administrativo.
 
 <div class="embed"><iframe src="Gerring_2014_cap3.html"></iframe></div>
 
+**Presentación.** Muestra aleatoria y asignación aleatoria (Gerring, cap. 4 y
+cap. 8, pp. 223–233): población, muestra, unidad y observación; validez
+interna y externa; manipulabilidad; ejercicios.
+
+<div class="embed"><iframe src="Gerring_2014_cap4.html"></iframe></div>
+
 **Actividad.** Identifica, en dos investigaciones sociales publicadas, la
 población, la muestra, el dominio de estudio, la unidad de observación y la
 unidad de análisis.
